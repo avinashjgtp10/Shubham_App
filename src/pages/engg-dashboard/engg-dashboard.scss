@@ -1,0 +1,39 @@
+page-engg-dashboard {
+    ion-header{
+        .back-button.show-back-button {
+            display: none;
+        }
+    }
+    ion-content{
+        .scroll-content{
+            margin-top: auto !important;
+        }
+        section{
+            display: block;
+            margin-top:50%;
+            margin-bottom: 50%;
+            hr{
+                background: none !important;
+            }
+                .container{
+                    border: 1px solid;
+                    width: 50%;
+                    border-radius: 2%;
+                    margin: auto;
+                    padding-top: 25px;
+                    padding-bottom: 25px;
+                    
+                        img{
+                        width: 100px;
+                        display: block;
+                        margin: auto;
+                        }
+                           label{
+                            display: block;
+                            text-align: center;
+                           } 
+                    
+                }
+        }
+    }
+}
