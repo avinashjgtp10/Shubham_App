@@ -30,9 +30,6 @@ export class HomePage {
 
   }
   ionViewDidLoad(){
-  this.rest.getAllComplaint().subscribe((data:any)=>{
-    console.log(data);
-  })
   }
 
   login(form:NgForm){

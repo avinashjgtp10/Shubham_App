@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EnggAcceptComplaintPage } from '../engg-accept-complaint/engg-accept-complaint'
+import { EnggViewPreviousPage } from "../engg-view-previous/engg-view-previous"
+
 
 /**
  * Generated class for the EnggDashboardPage page.
@@ -25,5 +27,8 @@ export class EnggDashboardPage {
 
   acceptComplaint(event){
     this.navCtrl.push(EnggAcceptComplaintPage,{user_id:this.navParams.get("user_id")});
+  }
+  previousComplaint(){
+    this.navCtrl.push(EnggViewPreviousPage,{user_id:this.navParams.get("user_id")});
   }
 }

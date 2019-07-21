@@ -6,10 +6,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { EnggDashboardPage }  from '../pages/engg-dashboard/engg-dashboard'
+import { EnggDashboardPage } from '../pages/engg-dashboard/engg-dashboard'
 import { RestProvider } from '../providers/rest/rest';
-import { EnggViewComplaintPage} from '../pages/engg-view-complaint/engg-view-complaint'
-import { EnggAcceptComplaintPage} from '../pages/engg-accept-complaint/engg-accept-complaint'
+import { EnggViewComplaintPage } from '../pages/engg-view-complaint/engg-view-complaint'
+import { EnggAcceptComplaintPage } from '../pages/engg-accept-complaint/engg-accept-complaint'
+import { EnggViewPreviousPage } from "../pages/engg-view-previous/engg-view-previous"
 
 //http call
 import { HttpClientModule } from '@angular/common/http'
@@ -23,7 +24,8 @@ import { ToastProvider } from '../providers/toast/toast';
     HomePage,
     EnggDashboardPage,
     EnggViewComplaintPage,
-    EnggAcceptComplaintPage
+    EnggAcceptComplaintPage,
+    EnggViewPreviousPage
   ],
   imports: [
     BrowserModule,
@@ -36,15 +38,16 @@ import { ToastProvider } from '../providers/toast/toast';
     HomePage,
     EnggDashboardPage,
     EnggViewComplaintPage,
-    EnggAcceptComplaintPage
+    EnggAcceptComplaintPage,
+    EnggViewPreviousPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     RestProvider,
     LoaderProvider,
     ToastProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }

@@ -6,138 +6,151 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>Complaint</ion-title>
+    <ion-title>Complaint Details</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <form (ngSubmit)="enggForm()">
-      <ion-grid>
-          <ion-row>
-            <ion-col col-5>
-              <div>
-                  Complaint ID:
-              </div>
-            </ion-col>
-            <ion-col>
-              <div>
-                  {{filterData.c_id}}
-              </div>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-              <ion-col col-5>
-                <div>
-                    User name:
-                </div>
-              </ion-col>
-              <ion-col>
-                <div>
-                    Testing
-                </div>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col col-5>
-                  <div>
-                      Mobile Number
-                  </div>
-                </ion-col>
-                <ion-col>
-                  <div>
-                      +91-8987898767
-                  </div>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                  <ion-col col-5> 
-                    <div>
-                        Email
-                    </div>
-                  </ion-col>
-                  <ion-col>
-                    <div>
-                        abc@gmail.com
-                    </div>
-                  </ion-col>
-                </ion-row>
-          <ion-row>
-              <ion-col col-5>
-                <div>
-                    Description
-                </div>
-              </ion-col>
-              <ion-col>
-                <div>
-                    {{filterData.c_desc}}
-                </div>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col col-5>
-                  <div>
-                      Complaint Date
-                  </div>
-                </ion-col>
-                <ion-col>
-                  <div>
-                      {{filterData.c_date}}
-                  </div>
-                </ion-col>
-              </ion-row>
-                <ion-row>
-                    <ion-col col-5>
-                      <div>
-                    Photos
-                      </div>
-                    </ion-col>
-                    <ion-col>
-                      <div>
-                          N/A
-                      </div>
-                    </ion-col>
-                  </ion-row>
-                  <ion-row>
-                      <ion-col col-5>
-                        <div>
-                      Status
-                        </div>
-                      </ion-col>
-                      <ion-col>
-                        <div>
-                            {{filterData.c_status}}
-                        </div>
-                      </ion-col>
-                    </ion-row>
-                    <ion-row>
-                        <ion-col col-5> 
-                          <div>
-                        Comments:
-                          </div>
-                        </ion-col>
-                        <ion-col>
-                          <div>
-                              <ion-textarea placeholder="Enter your comments" name="description"></ion-textarea>
-                          </div>
-                        </ion-col>
-                      </ion-row>
-                      <ion-row>
-                          <ion-col col-5>
-                            <div>
-Change Status:
-                            </div>
-                          </ion-col>
-                          <ion-col>
-                            <div>
-                                <ion-select class="statusChange">
-                                    <ion-option value="bacon" selected="true">Pending</ion-option>
-                                    <ion-option value="olives">Close</ion-option>
-                  
-                                  </ion-select>
-                                       </div>
-                          </ion-col>
-                        </ion-row>
-        </ion-grid> 
-    <button ion-button type="submit" block>Add Data</button>
+  <form (ngSubmit)="addData()">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-5>
+          <div>
+            Complaint ID:
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            {{filterData.c_id}}
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <div>
+            User name:
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            {{filterData.c_name}}
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <div>
+            Mobile Number
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            {{filterData.u_mobile}}
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <div>
+            Alternative Mobile:
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            {{filterData.u_altermobile}}
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <div>
+            Email
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            {{filterData.u_email}}
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <div>
+            Description
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            {{filterData.c_desc}}
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <div>
+            Complaint Date
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            {{filterData.c_date}}
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <div>
+            Photos
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            N/A
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <div>
+            Status
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            {{filterData.c_status}}
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <div>
+            Comments:
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <ion-textarea placeholder="Enter your comments" name="description" [(ngModel)]="filterData.e_desc">
+            </ion-textarea>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <div>
+            Change Status:
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <ion-select class="statusChange" [ngModelOptions]="{standalone: true}" [(ngModel)]="filterData.c_status">
+              <ion-option value="3" selected="true">Pending</ion-option>
+              <ion-option value="2">Close</ion-option>
+
+            </ion-select>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <button ion-button type="submit" block [disabled]="!filterData.e_desc">Add Data</button>
   </form>
 </ion-content>
