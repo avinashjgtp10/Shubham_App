@@ -25696,6 +25696,44 @@ ion-navbar.toolbar {
   min-height: 46px;
 }
 
+table, th, td {
+  border: 1px solid black;
+}
+
+page-admin-create-customer ion-content ion-list {
+  margin: 10px;
+}
+
+page-admin-dashboard ion-header .back-button.show-back-button {
+  display: none;
+}
+
+page-admin-dashboard ion-content .container {
+  width: 100%;
+  position: absolute;
+  height: auto;
+  top: 15%;
+}
+
+page-admin-dashboard ion-content .container .firstContainer {
+  width: 100%;
+  text-align: center;
+}
+
+page-admin-dashboard ion-content .container .firstContainer .createCustomer {
+  width: 50%;
+  margin: 10px;
+  border: 2px solid #ffcccc;
+  border-radius: 3px;
+}
+
+page-admin-dashboard ion-content .container .firstContainer .createEngg {
+  width: 50%;
+  margin: 10px;
+  border: 2px solid #ffcccc;
+  border-radius: 3px;
+}
+
 page-engg-accept-complaint ion-content .col {
   border: 1px solid #f781a1 !important;
 }
@@ -25749,6 +25787,10 @@ page-engg-view-complaint .text-input-md {
 
 page-engg-view-complaint .statusChange {
   max-width: 100% !important;
+}
+
+page-engg-view-previous table, page-engg-view-previous th, page-engg-view-previous td {
+  border: 1px solid black;
 }
 
 page-home .loginScreen {

@@ -1,0 +1,34 @@
+page-admin-dashboard {
+    ion-header{
+        .back-button.show-back-button {
+            display: none;
+        }
+    }
+    ion-content{
+        .container{
+            width: 100%;
+            position: absolute;
+            height: auto;
+            top: 15%;
+            .firstContainer{
+                width:100%;
+                text-align: center;
+                .createCustomer{
+                    width: 50%;
+                    margin: 10px;
+                    border: 2px solid #ffcccc;
+                    border-radius: 3px;
+                }
+                .createEngg{
+                    width: 50%; 
+                    margin:10px;
+                    border: 2px solid #ffcccc;  
+                    border-radius: 3px;
+
+                }
+
+            }
+
+        }
+    }
+}

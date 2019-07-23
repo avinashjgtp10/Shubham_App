@@ -6,62 +6,30 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>Accept Complaint</ion-title>
+    <ion-title>Closed Complaint</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <!-- <ion-searchbar></ion-searchbar> -->
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <div>
-          Comp. No.
-        </div>
-      </ion-col>
-      <ion-col>
-        <div>
-          Complaint
-        </div>
-      </ion-col>
-      <ion-col>
-        <div>
-          Complaint Date
-        </div>
-      </ion-col>
-      
-      <ion-col>
-        <div>
-          Comp. Date
-        </div>
-      </ion-col>
-      <ion-col>
-        <div>
-          Action
-        </div>
-      </ion-col>
-    </ion-row>
-    <ion-row *ngFor="let c of complaintData">
-      <ion-col>
-        <div>
-          {{c.c_id}}
-        </div>
-      </ion-col>
-      <ion-col>
-        <div>
+  <table>
+    <thead>
+      <th> C.No</th>
+      <th> Complaint</th>
+      <th> Complaint Date </th>
+      <th> Action</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of complaintData">
+        <td> {{c.c_id}}</td>
+        <td>
           {{c.c_desc}}
-        </div>
-      </ion-col>
-      <ion-col>
-        <div>
-          {{c.c_date}}
-        </div>
-      </ion-col>
-      <ion-col>
-        <div>
-          {{c.e_desc}}
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+        </td>
+        <td> {{c.c_date}}</td>
+        <td> {{c.e_desc}} </td>
+      </tr>
+    </tbody>
+  </table>
+
+
 </ion-content>

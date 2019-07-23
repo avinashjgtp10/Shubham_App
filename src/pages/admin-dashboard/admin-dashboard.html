@@ -1,0 +1,55 @@
+<!--
+  Generated template for the AdminDashboardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <ion-icon ios="ios-home" md="md-home"> Home</ion-icon>
+    </ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only>
+        <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <section class="container">
+    <ion-grid>
+      <ion-row class="firstContainer">
+        <ion-col class="createCustomer" (click)="createComplaint()">
+          <img src="../../assets/imgs/creatCust.jpeg">
+          Create Customer
+        </ion-col>
+        <ion-col class="createEngg">
+          <img src="../../assets/imgs/serviceEngg.png">
+          Create Service Enginner
+        </ion-col>
+      </ion-row>
+      <ion-row class="firstContainer">
+          <ion-col class="createCustomer">
+            <img src="../../assets/imgs/assignService.png">
+            Assign Enginner
+          </ion-col>
+          <ion-col class="createEngg">
+            <img src="../../assets/imgs/viewComplaint.png">
+           View Complaint
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+    <!-- <section class="firstContainer">
+      <div class="createCustomer">
+
+      </div>
+      <div class="createEngg">
+
+      </div>
+
+    </section> -->
+  </section>
+</ion-content>

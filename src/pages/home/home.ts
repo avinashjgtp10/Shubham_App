@@ -5,48 +5,35 @@ import { RestProvider } from '../../providers/rest/rest';
 import { NgForm } from '@angular/forms';
 import { LoaderProvider } from '../../providers/loader/loader'
 import { ToastProvider } from "../../providers/toast/toast"
+import { AdminDashboardPage } from "../admin-dashboard/admin-dashboard";
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
 
-  config=[
-    {id:1,
-      username:"engg@gmail.com",
-    password:'engg123',
-    role:2},
-    {id:2,
-      username:"user@gmail.com",
-    password:'user123',
-    role:1},
-    {id:3,
-      username:"admin@gmail.com",
-    password:'admin',
-    role:3},
-   ]
-
-  constructor(public navCtrl: NavController,private toast:ToastProvider, private loader:LoaderProvider, private rest:RestProvider) {
+  constructor(public navCtrl: NavController, private toast: ToastProvider, private loader: LoaderProvider, private rest: RestProvider) {
 
   }
-  ionViewDidLoad(){
+  ionViewDidLoad() {
   }
 
-  login(form:NgForm){
+  login(form: NgForm) {
     this.loader.presentLoading();
-    let value=form.value
-    this.rest.userLogin(value.email,value.password).subscribe((data:any)=>{
+    let value = form.value
+    this.rest.userLogin(value.email, value.password).subscribe((data: any) => {
       this.loader.stoploading();
-      if(data.status  === "success" && data.data.u_role === 3 ){
-        this.navCtrl.push(EnggDashboardPage,{user_id:data.data.u_id});
-      }if(data.status  === "success" && data.data.u_role === 2 ){
-        console.log("admin")
-      }if(data.status  === "success" && data.data.u_role === 1 ){
+      if (data.status === "success" && data.data.u_role === 3) {
+        this.navCtrl.push(EnggDashboardPage, { user_id: data.data.u_id });
+      } if (data.status === "success" && data.data.u_role === 2) {
+        this.navCtrl.push(AdminDashboardPage, { user_id: data.data.u_id });
+      } if (data.status === "success" && data.data.u_role === 1) {
         console.log("client")
-      }if(data.status  === "error" ){
+      } if (data.status === "error") {
         this.toast.showToast("Wrong Password");
         console.log("error")
-      }else{
+      } else {
         console.log('error!')
       }
     });

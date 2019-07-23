@@ -11,7 +11,8 @@ import { RestProvider } from '../providers/rest/rest';
 import { EnggViewComplaintPage } from '../pages/engg-view-complaint/engg-view-complaint'
 import { EnggAcceptComplaintPage } from '../pages/engg-accept-complaint/engg-accept-complaint'
 import { EnggViewPreviousPage } from "../pages/engg-view-previous/engg-view-previous"
-
+import { AdminDashboardPage } from "../pages/admin-dashboard/admin-dashboard"
+import { AdminCreateCustomerPage } from "../pages/admin-create-customer/admin-create-customer"
 //http call
 import { HttpClientModule } from '@angular/common/http'
 import { LoaderProvider } from '../providers/loader/loader';
@@ -25,7 +26,9 @@ import { ToastProvider } from '../providers/toast/toast';
     EnggDashboardPage,
     EnggViewComplaintPage,
     EnggAcceptComplaintPage,
-    EnggViewPreviousPage
+    EnggViewPreviousPage,
+    AdminDashboardPage,
+    AdminCreateCustomerPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,9 @@ import { ToastProvider } from '../providers/toast/toast';
     EnggDashboardPage,
     EnggViewComplaintPage,
     EnggAcceptComplaintPage,
-    EnggViewPreviousPage
+    EnggViewPreviousPage,
+    AdminDashboardPage,
+    AdminCreateCustomerPage
   ],
   providers: [
     StatusBar,
