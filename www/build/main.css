@@ -25704,6 +25704,30 @@ page-admin-create-customer ion-content ion-list {
   margin: 10px;
 }
 
+page-admin-create-customer ion-content ion-list .error-message {
+  color: red;
+  font-size: 14px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+page-admin-create-customer ion-footer {
+  background: white;
+  border: none;
+}
+
+page-admin-create-customer ion-footer button {
+  margin: auto;
+  display: block;
+  height: 50px;
+  width: 100%;
+  background-color: #488aff;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #fff;
+}
+
 page-admin-dashboard ion-header .back-button.show-back-button {
   display: none;
 }

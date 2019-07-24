@@ -12,16 +12,35 @@
 
 <ion-content>
   <ion-list lines="none">
-    <form>
+    <form [formGroup]="validations_form"  (ngSubmit)="onSubmit(validations_form.value)">
 
       <ion-item>
         <ion-label floating>Customer Name</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" formControlName="name"></ion-input>
       </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.name">
+          <div class="error-message"
+            *ngIf="validations_form.get('name').hasError(validation.type) && (validations_form.get('name').dirty || validations_form.get('name').touched)">
+            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
       <ion-item>
         <ion-label floating>Mobile Number</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" formControlName="phone"></ion-input>
       </ion-item>
+      <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.phone">
+            <div class="error-message"
+              *ngIf="validations_form.get('phone').hasError(validation.type) && (validations_form.get('phone').dirty || validations_form.get('phone').touched)">
+              <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+
+
       <ion-item>
         <ion-label floating>Alternative Contact number</ion-label>
         <ion-input type="text"></ion-input>
@@ -56,10 +75,10 @@
         <ion-label floating>Confirm Password</ion-label>
         <ion-input type="password"></ion-input>
       </ion-item>
-
+      
     </form>
   </ion-list>
 </ion-content>
 <ion-footer>
-  <button ion-button full>Submit</button>
+  <button  full color="primary" class="submit-btn" expand="full" type="submit" [disabled]="!validations_form.valid">Submit</button>
 </ion-footer>

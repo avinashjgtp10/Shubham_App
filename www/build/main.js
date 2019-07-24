@@ -7,6 +7,7 @@ webpackJsonp([6],{
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminCreateCustomerPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(16);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,6 +19,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 /**
  * Generated class for the AdminCreateCustomerPage page.
  *
@@ -25,20 +27,76 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var AdminCreateCustomerPage = /** @class */ (function () {
-    function AdminCreateCustomerPage(navCtrl, navParams) {
+    function AdminCreateCustomerPage(navCtrl, formBuilder, navParams) {
         this.navCtrl = navCtrl;
+        this.formBuilder = formBuilder;
         this.navParams = navParams;
+        this.typesOfMachin = [
+            "Computerised Embroidery Machines",
+            "Reconditioned Barudan  Embroidery Machines",
+            "Circular Knitting Machines",
+            "Flat knitting Machines",
+            "Chain Stitch Machines",
+            "Laser Cutting Machines",
+            "Dual sequence cording Machines",
+            "Cap knitting Machines", "Coller Knitting Machines"
+        ];
+        this.validation_messages = {
+            // 'username': [
+            //   { type: 'required', message: 'Username is required.' },
+            //   { type: 'minlength', message: 'Username must be at least 5 characters long.' },
+            //   { type: 'maxlength', message: 'Username cannot be more than 25 characters long.' },
+            //   { type: 'pattern', message: 'Your username must contain only numbers and letters.' },
+            //   { type: 'validUsername', message: 'Your username has already been taken.' }
+            // ],
+            'name': [
+                { type: 'required', message: 'Name is required.' }
+            ],
+            'lastname': [
+                { type: 'required', message: 'Last name is required.' }
+            ],
+            'email': [
+                { type: 'required', message: 'Email is required.' },
+                { type: 'pattern', message: 'Please wnter a valid email.' }
+            ],
+            'phone': [
+                { type: 'required', message: 'Phone is required.' },
+                { type: 'maxLength', message: 'The phone is incorrect' },
+                { type: 'pattern', message: 'The phone is incorrect' }
+            ],
+            'password': [
+                { type: 'required', message: 'Password is required.' },
+                { type: 'minlength', message: 'Password must be at least 5 characters long.' },
+                { type: 'pattern', message: 'Your password must contain at least one uppercase, one lowercase, and one number.' }
+            ],
+            'confirm_password': [
+                { type: 'required', message: 'Confirm password is required.' }
+            ],
+            'matching_passwords': [
+                { type: 'areEqual', message: 'Password mismatch.' }
+            ],
+            'terms': [
+                { type: 'pattern', message: 'You must accept terms and conditions.' }
+            ],
+        };
     }
     AdminCreateCustomerPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad AdminCreateCustomerPage');
     };
+    AdminCreateCustomerPage.prototype.ngOnInit = function () {
+        this.validations_form = this.formBuilder.group({
+            name: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required),
+            phone: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].maxLength(10), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].pattern("^[0][1-9]\d{9}$|^[1-9]\d{9}$")])
+        });
+    };
     AdminCreateCustomerPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-admin-create-customer',template:/*ion-inline-start:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/admin-create-customer/admin-create-customer.html"*/'<!--\n  Generated template for the AdminCreateCustomerPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Create Customer</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list lines="none">\n    <form>\n\n      <ion-item>\n        <ion-label floating>Customer Name</ion-label>\n        <ion-input type="text"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label floating>Mobile Number</ion-label>\n        <ion-input type="text"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label floating>Alternative Contact number</ion-label>\n        <ion-input type="text"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label floating>Email</ion-label>\n        <ion-input type="text"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label floating>Address</ion-label>\n        <ion-input type="text"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Machine purchased</ion-label>\n        <ion-select>\n          <ion-option *ngFor="let mach of typesOfMachin" [value]="mach">\n            {{mach}}</ion-option>\n        </ion-select>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Date of purchase</ion-label>\n        <ion-input type="Date"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label floating>Password</ion-label>\n        <ion-input type="password"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label floating>Confirm Password</ion-label>\n        <ion-input type="password"></ion-input>\n      </ion-item>\n\n    </form>\n  </ion-list>\n</ion-content>\n<ion-footer>\n  <button ion-button full>Submit</button>\n</ion-footer>'/*ion-inline-end:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/admin-create-customer/admin-create-customer.html"*/,
+            selector: 'page-admin-create-customer',template:/*ion-inline-start:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/admin-create-customer/admin-create-customer.html"*/'<!--\n  Generated template for the AdminCreateCustomerPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Create Customer</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list lines="none">\n    <form [formGroup]="validations_form"  (ngSubmit)="onSubmit(validations_form.value)">\n\n      <ion-item>\n        <ion-label floating>Customer Name</ion-label>\n        <ion-input type="text" formControlName="name"></ion-input>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.name">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'name\').hasError(validation.type) && (validations_form.get(\'name\').dirty || validations_form.get(\'name\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n      <ion-item>\n        <ion-label floating>Mobile Number</ion-label>\n        <ion-input type="text" formControlName="phone"></ion-input>\n      </ion-item>\n      <div class="validation-errors">\n          <ng-container *ngFor="let validation of validation_messages.phone">\n            <div class="error-message"\n              *ngIf="validations_form.get(\'phone\').hasError(validation.type) && (validations_form.get(\'phone\').dirty || validations_form.get(\'phone\').touched)">\n              <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n            </div>\n          </ng-container>\n        </div>\n\n\n      <ion-item>\n        <ion-label floating>Alternative Contact number</ion-label>\n        <ion-input type="text"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label floating>Email</ion-label>\n        <ion-input type="text"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label floating>Address</ion-label>\n        <ion-input type="text"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Machine purchased</ion-label>\n        <ion-select>\n          <ion-option *ngFor="let mach of typesOfMachin" [value]="mach">\n            {{mach}}</ion-option>\n        </ion-select>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Date of purchase</ion-label>\n        <ion-input type="Date"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label floating>Password</ion-label>\n        <ion-input type="password"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label floating>Confirm Password</ion-label>\n        <ion-input type="password"></ion-input>\n      </ion-item>\n      \n    </form>\n  </ion-list>\n</ion-content>\n<ion-footer>\n  <button  full color="primary" class="submit-btn" expand="full" type="submit" [disabled]="!validations_form.valid">Submit</button>\n</ion-footer>'/*ion-inline-end:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/admin-create-customer/admin-create-customer.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _c || Object])
     ], AdminCreateCustomerPage);
     return AdminCreateCustomerPage;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=admin-create-customer.js.map
