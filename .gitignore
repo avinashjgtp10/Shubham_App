@@ -7,7 +7,7 @@
 *.o
 node_modules/
 /node_modules
-
+platforms/
 *.so
 
 # Packages #
