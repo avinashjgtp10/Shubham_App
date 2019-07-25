@@ -25711,12 +25711,7 @@ page-admin-create-customer ion-content ion-list .error-message {
   margin-top: 10px;
 }
 
-page-admin-create-customer ion-footer {
-  background: white;
-  border: none;
-}
-
-page-admin-create-customer ion-footer button {
+page-admin-create-customer ion-content ion-list button {
   margin: auto;
   display: block;
   height: 50px;
@@ -25726,6 +25721,11 @@ page-admin-create-customer ion-footer button {
   font-weight: 500;
   text-transform: uppercase;
   color: #fff;
+}
+
+page-admin-create-customer ion-footer {
+  background: white;
+  border: none;
 }
 
 page-admin-dashboard ion-header .back-button.show-back-button {

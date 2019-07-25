@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
-
+import { PasswordValidator } from '../../validators/password.validator';
 /**
  * Generated class for the AdminCreateCustomerPage page.
  *
@@ -17,8 +17,9 @@ import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms'
 export class AdminCreateCustomerPage {
 
   validations_form: FormGroup;
+  matching_passwords_group: FormGroup;
 
-  typesOfMachin:any = [
+  typesOfMachin: any = [
     "Computerised Embroidery Machines",
     "Reconditioned Barudan  Embroidery Machines",
     "Circular Knitting Machines",
@@ -28,28 +29,55 @@ export class AdminCreateCustomerPage {
     "Dual sequence cording Machines",
     "Cap knitting Machines", "Coller Knitting Machines"]
 
-  constructor(public navCtrl: NavController,  public formBuilder: FormBuilder, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public formBuilder: FormBuilder, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AdminCreateCustomerPage');
   }
+
   ngOnInit() {
-    this.validations_form = this.formBuilder.group({
-      name: new FormControl('', Validators.required),
-      phone: new FormControl('', [Validators.required,Validators.maxLength(10), Validators.pattern("^[0][1-9]\d{9}$|^[1-9]\d{9}$")])
+
+    this.matching_passwords_group = new FormGroup({
+      u_password: new FormControl('', Validators.compose([
+        Validators.minLength(5),
+        Validators.required,
+        Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')
+      ])),
+      u_cpassword: new FormControl('', Validators.required)
+    }, (formGroup: FormGroup) => {
+      return PasswordValidator.areEqual(formGroup);
     });
+
+    this.validations_form = this.formBuilder.group({
+      u_dateOf_Purchased: new FormControl('', Validators.required),
+      address: new FormControl(""),
+      u_MachinePurchased: new FormControl('', Validators.required),
+      alter: new FormControl("", [Validators.minLength(10), Validators.pattern("[0-9]+")]),
+      name: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+      ])),
+      matching_passwords: this.matching_passwords_group,
+      phone: new FormControl('', [Validators.required, Validators.minLength(10), Validators.pattern("[0-9]+")])
+    });
+
+
+
+  }
+  onSubmit(values) {
+    console.log("Hello", values);
 
   }
 
   validation_messages = {
-    // 'username': [
-    //   { type: 'required', message: 'Username is required.' },
-    //   { type: 'minlength', message: 'Username must be at least 5 characters long.' },
-    //   { type: 'maxlength', message: 'Username cannot be more than 25 characters long.' },
-    //   { type: 'pattern', message: 'Your username must contain only numbers and letters.' },
-    //   { type: 'validUsername', message: 'Your username has already been taken.' }
-    // ],
+    'u_dateOf_Purchased': [
+      { type: 'required', message: 'Date is required.' }
+    ],
+    'u_MachinePurchased': [
+      { type: 'required', message: 'Machine name is required.' }
+    ],
     'name': [
       { type: 'required', message: 'Name is required.' }
     ],
@@ -65,12 +93,16 @@ export class AdminCreateCustomerPage {
       { type: 'maxLength', message: 'The phone is incorrect' },
       { type: 'pattern', message: 'The phone is incorrect' }
     ],
-    'password': [
+    'alter': [
+      { type: 'maxLength', message: 'The phone is incorrect' },
+      { type: 'pattern', message: 'The phone is incorrect' }
+    ],
+    'u_password': [
       { type: 'required', message: 'Password is required.' },
       { type: 'minlength', message: 'Password must be at least 5 characters long.' },
       { type: 'pattern', message: 'Your password must contain at least one uppercase, one lowercase, and one number.' }
     ],
-    'confirm_password': [
+    'u_cpassword': [
       { type: 'required', message: 'Confirm password is required.' }
     ],
     'matching_passwords': [
