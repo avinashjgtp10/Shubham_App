@@ -801,7 +801,8 @@ var PasswordValidator = /** @class */ (function () {
 var AppSettings = /** @class */ (function () {
     function AppSettings() {
     }
-    AppSettings.baseUrl = "https://thawing-eyrie-14958.herokuapp.com/";
+    //  public static baseUrl:string="https://thawing-eyrie-14958.herokuapp.com/";
+    AppSettings.baseUrl = "http://localhost:3000/";
     return AppSettings;
 }());
 
