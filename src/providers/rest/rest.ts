@@ -41,5 +41,9 @@ export class RestProvider {
   public updateComplaint(updatedate: any) {
     return this.http.post(AppSettings.baseUrl + 'complaint/updateComplaint', updatedate);
   }
+  public createCustomer(userData:any){
+    return this.http.post(AppSettings.baseUrl + 'users/createUser', userData);
+  }
+
 
 }
