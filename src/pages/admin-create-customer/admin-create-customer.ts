@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { PasswordValidator } from '../../validators/password.validator';
+import { RestProvider } from '../../providers/rest/rest'
 /**
  * Generated class for the AdminCreateCustomerPage page.
  *
@@ -29,7 +30,7 @@ export class AdminCreateCustomerPage {
     "Dual sequence cording Machines",
     "Cap knitting Machines", "Coller Knitting Machines"]
 
-  constructor(public navCtrl: NavController, public formBuilder: FormBuilder, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,public rest:RestProvider, public formBuilder: FormBuilder, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -66,11 +67,6 @@ export class AdminCreateCustomerPage {
 
 
   }
-  onSubmit(values) {
-    console.log("Hello", values);
-
-  }
-
   validation_messages = {
     'u_dateOf_Purchased': [
       { type: 'required', message: 'Date is required.' }
@@ -112,5 +108,28 @@ export class AdminCreateCustomerPage {
       { type: 'pattern', message: 'You must accept terms and conditions.' }
     ],
   };
+
+  onSubmit(values:any) {
+    console.log("Hello", values);
+    let Obj={
+      "u_name": values.name,
+      "u_mobile": values.phone,
+      "u_altermobile": values.alter,
+      "u_email": values.email,
+      "u_address": values.address,
+      "u_MachinePurchased": values.u_MachinePurchased,
+      "u_dateOf_Purchased": new Date(values.u_dateOf_Purchased),
+      "u_password": values.matching_passwords.u_password,
+      "u_cpassword": values.matching_passwords.u_cpassword,
+      "u_role": 1,
+      "u_roleType": null,
+      "u_joinDate": new Date()
+  }
+    this.rest.createCustomer(Obj).subscribe((result:any) => {
+      if(result.status === "success"){
+        alert("success")
+      }
+    })
+  }
 
 }
