@@ -13,6 +13,11 @@ export class RestProvider {
   constructor(public http: HttpClient) {
     console.log('Hello RestProvider Provider');
   }
+
+  public isCustomer() {
+   return this.http.get(AppSettings.baseUrl + 'users/getAllCustomer');
+
+  }
   public userLogin(username: string, pass: string) {
     var headers = new Headers();
     headers.append('Access-Control-Allow-Origin', '*');
@@ -41,7 +46,7 @@ export class RestProvider {
   public updateComplaint(updatedate: any) {
     return this.http.post(AppSettings.baseUrl + 'complaint/updateComplaint', updatedate);
   }
-  public createCustomer(userData:any){
+  public createCustomer(userData: any) {
     return this.http.post(AppSettings.baseUrl + 'users/createUser', userData);
   }
 

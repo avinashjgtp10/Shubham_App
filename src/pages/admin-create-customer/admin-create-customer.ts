@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { PasswordValidator } from '../../validators/password.validator';
 import { RestProvider } from '../../providers/rest/rest'
+import { ToastProvider } from "../../providers/toast/toast"
 /**
  * Generated class for the AdminCreateCustomerPage page.
  *
@@ -30,7 +31,7 @@ export class AdminCreateCustomerPage {
     "Dual sequence cording Machines",
     "Cap knitting Machines", "Coller Knitting Machines"]
 
-  constructor(public navCtrl: NavController,public rest:RestProvider, public formBuilder: FormBuilder, public navParams: NavParams) {
+  constructor(public toast: ToastProvider, public navCtrl: NavController, public rest: RestProvider, public formBuilder: FormBuilder, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -109,9 +110,9 @@ export class AdminCreateCustomerPage {
     ],
   };
 
-  onSubmit(values:any) {
+  onSubmit(values: any) {
     console.log("Hello", values);
-    let Obj={
+    let Obj = {
       "u_name": values.name,
       "u_mobile": values.phone,
       "u_altermobile": values.alter,
@@ -124,12 +125,20 @@ export class AdminCreateCustomerPage {
       "u_role": 1,
       "u_roleType": null,
       "u_joinDate": new Date()
-  }
-    this.rest.createCustomer(Obj).subscribe((result:any) => {
-      if(result.status === "success"){
-        alert("success")
+    }
+    this.rest.isCustomer().subscribe((result: any) => {
+      let i = result.data.findIndex((obj: any) => {
+        return obj.u_email === Obj.u_email
+      })
+      if (i === -1) {
+        this.rest.createCustomer(Obj).subscribe((result: any) => {
+          if (result.status === "success") {
+            this.toast.showToast("Customer Deatils saved")
+          }
+        })
+      } else {
+        this.toast.showToast("Customer Email-id already exist");
       }
     })
   }
-
 }
