@@ -118,7 +118,7 @@ export class AdminCreateCustomerPage {
       "u_email": values.email,
       "u_address": values.address,
       "u_MachinePurchased": values.u_MachinePurchased,
-      "u_dateOf_Purchased": values.u_dateOf_Purchased,
+      "u_dateOf_Purchased": new Date(values.u_dateOf_Purchased),
       "u_password": values.matching_passwords.u_password,
       "u_cpassword": values.matching_passwords.u_cpassword,
       "u_role": 1,
