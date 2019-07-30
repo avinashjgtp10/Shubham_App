@@ -13,6 +13,7 @@ import { EnggAcceptComplaintPage } from '../pages/engg-accept-complaint/engg-acc
 import { EnggViewPreviousPage } from "../pages/engg-view-previous/engg-view-previous"
 import { AdminDashboardPage } from "../pages/admin-dashboard/admin-dashboard"
 import { AdminCreateCustomerPage } from "../pages/admin-create-customer/admin-create-customer"
+import { AdminCreateEnggPage } from "../pages/admin-create-engg/admin-create-engg"
 //http call
 import { HttpClientModule } from '@angular/common/http'
 import { LoaderProvider } from '../providers/loader/loader';
@@ -28,6 +29,7 @@ import { ToastProvider } from '../providers/toast/toast';
     EnggAcceptComplaintPage,
     EnggViewPreviousPage,
     AdminDashboardPage,
+    AdminCreateEnggPage,
     AdminCreateCustomerPage
   ],
   imports: [
@@ -44,6 +46,7 @@ import { ToastProvider } from '../providers/toast/toast';
     EnggAcceptComplaintPage,
     EnggViewPreviousPage,
     AdminDashboardPage,
+    AdminCreateEnggPage,
     AdminCreateCustomerPage
   ],
   providers: [

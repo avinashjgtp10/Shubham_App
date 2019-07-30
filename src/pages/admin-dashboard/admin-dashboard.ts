@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AdminCreateCustomerPage } from "../admin-create-customer/admin-create-customer"
+import { AdminCreateEnggPage } from "../admin-create-engg/admin-create-engg"
 /**
  * Generated class for the AdminDashboardPage page.
  *
@@ -21,8 +22,11 @@ export class AdminDashboardPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AdminDashboardPage');
   }
-  createComplaint(){
-    this.navCtrl.push(AdminCreateCustomerPage,{user_id:this.navParams.get("user_id")})
+  createComplaint() {
+    this.navCtrl.push(AdminCreateCustomerPage, { user_id: this.navParams.get("user_id") })
+  }
+  createEngg() {
+    this.navCtrl.push(AdminCreateEnggPage, { user_id: this.navParams.get("user_id") })
   }
 
 }
