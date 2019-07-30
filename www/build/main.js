@@ -522,11 +522,11 @@ var map = {
 		2
 	],
 	"../pages/engg-view-complaint/engg-view-complaint.module": [
-		289,
+		290,
 		1
 	],
 	"../pages/engg-view-previous/engg-view-previous.module": [
-		290,
+		289,
 		0
 	]
 };
@@ -755,8 +755,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/admin-dashboard/admin-dashboard.module#AdminDashboardPageModule', name: 'AdminDashboardPage', segment: 'admin-dashboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/engg-accept-complaint/engg-accept-complaint.module#EnggAcceptComplaintPageModule', name: 'EnggAcceptComplaintPage', segment: 'engg-accept-complaint', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/engg-dashboard/engg-dashboard.module#EnggDashboardPageModule', name: 'EnggDashboardPage', segment: 'engg-dashboard', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/engg-view-complaint/engg-view-complaint.module#EnggViewComplaintPageModule', name: 'EnggViewComplaintPage', segment: 'engg-view-complaint', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/engg-view-previous/engg-view-previous.module#EnggViewPreviousPageModule', name: 'EnggViewPreviousPage', segment: 'engg-view-previous', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/engg-view-previous/engg-view-previous.module#EnggViewPreviousPageModule', name: 'EnggViewPreviousPage', segment: 'engg-view-previous', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/engg-view-complaint/engg-view-complaint.module#EnggViewComplaintPageModule', name: 'EnggViewComplaintPage', segment: 'engg-view-complaint', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_14__angular_common_http__["b" /* HttpClientModule */]
@@ -837,8 +837,7 @@ var PasswordValidator = /** @class */ (function () {
 var AppSettings = /** @class */ (function () {
     function AppSettings() {
     }
-    //  public static baseUrl:string="https://thawing-eyrie-14958.herokuapp.com/";
-    AppSettings.baseUrl = "http://localhost:3000/";
+    AppSettings.baseUrl = "https://thawing-eyrie-14958.herokuapp.com/";
     return AppSettings;
 }());
 
