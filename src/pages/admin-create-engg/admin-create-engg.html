@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>Create Customer</ion-title>
+    <ion-title>Create Service Enginner</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -73,30 +73,30 @@
         <ion-textarea formControlName="address"></ion-textarea>
       </ion-item>
 
-      <!-- <ion-item>
-        <ion-label>Machine purchased</ion-label>
-        <ion-select formControlName="u_MachinePurchased">
-          <ion-option *ngFor="let mach of typesOfMachin" [value]="mach">
-            {{mach}}</ion-option>
+      <ion-item>
+        <ion-label>Engg Type</ion-label>
+        <ion-select formControlName="engg_type">
+          <ion-option *ngFor="let mach of typesOfMachin" [value]="mach.key">
+            {{mach.value}}</ion-option>
         </ion-select>
       </ion-item>
       <div class="validation-errors">
-        <ng-container *ngFor="let validation of validation_messages.u_MachinePurchased">
+        <ng-container *ngFor="let validation of validation_messages.engg_type">
           <div class="error-message"
-            *ngIf="validations_form.get('u_MachinePurchased').hasError(validation.type) && (validations_form.get('u_MachinePurchased').dirty || validations_form.get('u_MachinePurchased').touched)">
+            *ngIf="validations_form.get('engg_type').hasError(validation.type) && (validations_form.get('engg_type').dirty || validations_form.get('engg_type').touched)">
             <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
           </div>
         </ng-container>
-      </div> -->
+      </div>
 
       <ion-item>
-        <ion-label>Date of purchase</ion-label>
-        <ion-input type="Date" formControlName="u_dateOf_Purchased"></ion-input>
+        <ion-label>Date of Joining</ion-label>
+        <ion-input type="Date" formControlName="u_Joining_date"></ion-input>
       </ion-item>
       <div class="validation-errors">
-        <ng-container *ngFor="let validation of validation_messages.u_MachinePurchased">
+        <ng-container *ngFor="let validation of validation_messages.engg_type">
           <div class="error-message"
-            *ngIf="validations_form.get('u_dateOf_Purchased').hasError(validation.type) && (validations_form.get('u_dateOf_Purchased').dirty || validations_form.get('u_dateOf_Purchased').touched)">
+            *ngIf="validations_form.get('u_Joining_date').hasError(validation.type) && (validations_form.get('u_Joining_date').dirty || validations_form.get('u_Joining_date').touched)">
             <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
           </div>
         </ng-container>

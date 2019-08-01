@@ -21,15 +21,7 @@ export class AdminCreateEnggPage {
   validations_form: FormGroup;
   matching_passwords_group: FormGroup;
 
-  typesOfMachin: any = [
-    "Computerised Embroidery Machines",
-    "Reconditioned Barudan  Embroidery Machines",
-    "Circular Knitting Machines",
-    "Flat knitting Machines",
-    "Chain Stitch Machines",
-    "Laser Cutting Machines",
-    "Dual sequence cording Machines",
-    "Cap knitting Machines", "Coller Knitting Machines"]
+  typesOfMachin: any = [{key:1,value:"Mechnical"},{key:2,value:"Electronic"},{key:3,value:"Designing"}]
 
   constructor(public toast: ToastProvider, public navCtrl: NavController, public rest: RestProvider, public formBuilder: FormBuilder, public navParams: NavParams) {
   }
@@ -52,9 +44,9 @@ export class AdminCreateEnggPage {
     });
 
     this.validations_form = this.formBuilder.group({
-      u_dateOf_Purchased: new FormControl('', Validators.required),
+      u_Joining_date: new FormControl('', Validators.required),
       address: new FormControl(""),
-      u_MachinePurchased: new FormControl('', Validators.required),
+      engg_type: new FormControl('', Validators.required),
       alter: new FormControl("", [Validators.minLength(10), Validators.pattern("[0-9]+")]),
       name: new FormControl('', Validators.required),
       email: new FormControl('', Validators.compose([
@@ -67,10 +59,10 @@ export class AdminCreateEnggPage {
   }
 
   validation_messages = {
-    'u_dateOf_Purchased': [
+    'u_Joining_date': [
       { type: 'required', message: 'Date is required.' }
     ],
-    'u_MachinePurchased': [
+    'engg_type': [
       { type: 'required', message: 'Machine name is required.' }
     ],
     'name': [
@@ -107,5 +99,40 @@ export class AdminCreateEnggPage {
       { type: 'pattern', message: 'You must accept terms and conditions.' }
     ],
   };
+
+  onSubmit(values: any) {
+    console.log("Hello", values);
+    let Obj = {
+      "u_name": values.name,
+      "u_mobile": values.phone,
+      "u_altermobile": values.alter,
+      "u_email": values.email,
+      "u_address": values.address,
+      "u_MachinePurchased": null,
+      "u_dateOf_Purchased": new Date(values.u_dateOf_Purchased),
+      "u_password": values.matching_passwords.u_password,
+      "u_cpassword": values.matching_passwords.u_cpassword,
+      "u_role": 3,
+      "u_roleType": values.engg_type,
+      "u_joinDate": values.u_Joining_date
+    }
+
+    console.log(JSON.stringify(Obj));
+    this.rest.isCustomer().subscribe((result: any) => {
+      let i = result.data.findIndex((obj: any) => {
+        return obj.u_email === Obj.u_email
+      })
+      if (i === -1) {
+        this.rest.createCustomer(Obj).subscribe((result: any) => {
+          if (result.status === "success") {
+            this.toast.showToast("Engineer Details saved")
+          }
+        })
+      } else {
+        this.toast.showToast("Engineer Email-id already exist");
+      }
+    })
+  }
+
 
 }
