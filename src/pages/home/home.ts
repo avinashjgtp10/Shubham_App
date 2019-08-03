@@ -1,29 +1,52 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { EnggDashboardPage } from '../engg-dashboard/engg-dashboard'
 import { RestProvider } from '../../providers/rest/rest';
-import { NgForm } from '@angular/forms';
 import { LoaderProvider } from '../../providers/loader/loader'
 import { ToastProvider } from "../../providers/toast/toast"
 import { AdminDashboardPage } from "../admin-dashboard/admin-dashboard";
+import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { PageLoader } from "../../reusable_component/loader/page_loader"
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-
-  constructor(public navCtrl: NavController, private toast: ToastProvider, private loader: LoaderProvider, private rest: RestProvider) {
+  @ViewChild(PageLoader) loadPage: PageLoader;
+  validations_form: FormGroup;
+  matching_passwords_group: FormGroup;
+  constructor(public navCtrl: NavController, public formBuilder: FormBuilder, private toast: ToastProvider, private loader: LoaderProvider, private rest: RestProvider) {
 
   }
-  ionViewDidLoad() {
+  ngOnInit() {
+    this.validations_form = this.formBuilder.group({
+      password: new FormControl("", [Validators.minLength(3), Validators.required]),
+      email: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+      ]))
+    });
+
+    console.log(this.validations_form.get('email'))
   }
 
-  login(form: NgForm) {
-    this.loader.presentLoading();
-    let value = form.value
+  validation_messages = {
+    'email': [
+      { type: 'required', message: 'Email is required.' },
+      { type: 'pattern', message: 'Please enter a valid email.' }
+    ],
+    'password': [
+      { type: 'maxLength', message: 'Password length should be grater than 5!' },
+      { type: 'required', message: 'Password is required.' }
+    ],
+  };
+
+
+  login(value: any) {
+    this.loadPage.showLoader()
     this.rest.userLogin(value.email, value.password).subscribe((data: any) => {
-      this.loader.stoploading();
+      this.loadPage.hideLoader()
       if (data.status === "success" && data.data.u_role === 3) {
         this.navCtrl.push(EnggDashboardPage, { user_id: data.data.u_id });
       } if (data.status === "success" && data.data.u_role === 2) {

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EnggAcceptComplaintPage } from '../engg-accept-complaint/engg-accept-complaint'
 import { EnggViewPreviousPage } from "../engg-view-previous/engg-view-previous"
-
+import { HomePage } from "../home/home"
 
 /**
  * Generated class for the EnggDashboardPage page.
@@ -17,7 +17,7 @@ import { EnggViewPreviousPage } from "../engg-view-previous/engg-view-previous"
   templateUrl: 'engg-dashboard.html',
 })
 export class EnggDashboardPage {
-
+  label: string = "Enginner"
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -30,5 +30,9 @@ export class EnggDashboardPage {
   }
   previousComplaint(){
     this.navCtrl.push(EnggViewPreviousPage,{user_id:this.navParams.get("user_id")});
+  }
+
+  goToHome(event){
+    this.navCtrl.push(HomePage);
   }
 }

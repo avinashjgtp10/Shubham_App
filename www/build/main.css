@@ -25850,3 +25850,61 @@ page-home .loginScreen {
   margin-bottom: 50%;
   margin-top: 50%;
 }
+
+page-home .loginScreen .submit-btn {
+  width: 100%;
+  height: 40px;
+  background: #e815e8;
+  font-style: normal;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.6em;
+  border-radius: 25px;
+}
+
+.loadContainer {
+  z-index: 4;
+  -webkit-transition: z-index 0.2s step-end;
+  transition: z-index 0.2s step-end;
+  background: rgba(185, 162, 162, 0.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.loadContainer .busy {
+  display: none;
+}
+
+.loadContainer.busy {
+  z-index: 9999;
+  -webkit-transition: z-index 0.2s step-start;
+  transition: z-index 0.2s step-start;
+}
+
+.loadContainer.busy .backdrop {
+  opacity: 0.3;
+}
+
+.loadContainer .backdrop {
+  opacity: 0.01;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.loadContainer ion-spinner {
+  width: 60px;
+  height: 60px;
+}

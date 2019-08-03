@@ -94,7 +94,7 @@
         <ion-input type="Date" formControlName="u_dateOf_Purchased"></ion-input>
       </ion-item>
       <div class="validation-errors">
-        <ng-container *ngFor="let validation of validation_messages.u_MachinePurchased">
+        <ng-container *ngFor="let validation of validation_messages.u_dateOf_Purchased">
           <div class="error-message"
             *ngIf="validations_form.get('u_dateOf_Purchased').hasError(validation.type) && (validations_form.get('u_dateOf_Purchased').dirty || validations_form.get('u_dateOf_Purchased').touched)">
             <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}

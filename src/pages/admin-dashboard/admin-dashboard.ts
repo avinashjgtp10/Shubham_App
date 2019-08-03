@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AdminCreateCustomerPage } from "../admin-create-customer/admin-create-customer"
 import { AdminCreateEnggPage } from "../admin-create-engg/admin-create-engg"
+import { HomePage } from "../home/home"
 /**
  * Generated class for the AdminDashboardPage page.
  *
@@ -15,7 +16,7 @@ import { AdminCreateEnggPage } from "../admin-create-engg/admin-create-engg"
   templateUrl: 'admin-dashboard.html',
 })
 export class AdminDashboardPage {
-
+  label:string="Admin"
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -28,5 +29,7 @@ export class AdminDashboardPage {
   createEngg() {
     this.navCtrl.push(AdminCreateEnggPage, { user_id: this.navParams.get("user_id") })
   }
-
+  goToHome(event){
+    this.navCtrl.push(HomePage);
+  }
 }

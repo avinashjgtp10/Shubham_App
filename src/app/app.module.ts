@@ -19,6 +19,9 @@ import { HttpClientModule } from '@angular/common/http'
 import { LoaderProvider } from '../providers/loader/loader';
 import { ToastProvider } from '../providers/toast/toast';
 
+//Reusable Component
+import {HeaderComponent} from "../reusable_component/header/header_component"
+import {PageLoader } from "../reusable_component/loader/page_loader";
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import { ToastProvider } from '../providers/toast/toast';
     EnggViewPreviousPage,
     AdminDashboardPage,
     AdminCreateEnggPage,
-    AdminCreateCustomerPage
+    AdminCreateCustomerPage,
+    PageLoader,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +52,9 @@ import { ToastProvider } from '../providers/toast/toast';
     EnggViewPreviousPage,
     AdminDashboardPage,
     AdminCreateEnggPage,
-    AdminCreateCustomerPage
+    AdminCreateCustomerPage,
+    PageLoader,
+    HeaderComponent
   ],
   providers: [
     StatusBar,

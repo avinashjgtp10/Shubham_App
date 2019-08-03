@@ -1,5 +1,6 @@
 <ion-content padding>
-  <form class="loginScreen"  #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+  <page-loader></page-loader>
+  <form class="loginScreen" [formGroup]="validations_form"   (ngSubmit)="login(validations_form.value)" >
       <ion-grid>
         <ion-row color="primary" justify-content-center>
           <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
@@ -9,14 +10,33 @@
             <div padding>
 
               <ion-item>
-                <ion-input name="email" type="email" placeholder="your@email.com" ngModel required></ion-input>
+                <ion-input  type="email" placeholder="your@email.com" formControlName="email"></ion-input>
               </ion-item>
+              <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.email">
+                  <div class="error-message"
+                    *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+                    <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+                  </div>
+                </ng-container>
+              </div>
+
               <ion-item>
-                <ion-input name="password" type="password" placeholder="Password" ngModel required></ion-input>
+                <ion-input  type="password" placeholder="Password" formControlName="password"></ion-input>
               </ion-item>
+              <div class="validation-errors">
+                  <ng-container *ngFor="let validation of validation_messages.password">
+                    <div class="error-message"
+                      *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
+                      <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
             </div>
             <div padding>
-                <button ion-button full type="submit">Submit</button>
+                <button full color="primary" class="submit-btn" expand="full" type="submit"
+                [disabled]="!validations_form.valid">Submit</button>
+                    
             </div>
           </ion-col>
         </ion-row>
