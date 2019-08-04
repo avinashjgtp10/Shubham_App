@@ -50,5 +50,13 @@ export class RestProvider {
     return this.http.post(AppSettings.baseUrl + 'users/createUser', userData);
   }
 
+  public getMachineType(){
+    return this.http.get(AppSettings.baseUrl + 'complaint/getMachineType');
+  } 
+
+  public getAllUsers(){
+    return this.http.get(AppSettings.baseUrl + 'users/getAllCustomer');
+  }
+
 
 }

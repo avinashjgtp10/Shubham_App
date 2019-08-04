@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AdminCreateCustomerPage } from "../admin-create-customer/admin-create-customer"
 import { AdminCreateEnggPage } from "../admin-create-engg/admin-create-engg"
 import { HomePage } from "../home/home"
+import { AdminAssignEnggPage } from "../admin-assign-engg/admin-assign-engg"
 /**
  * Generated class for the AdminDashboardPage page.
  *
@@ -28,6 +29,9 @@ export class AdminDashboardPage {
   }
   createEngg() {
     this.navCtrl.push(AdminCreateEnggPage, { user_id: this.navParams.get("user_id") })
+  }
+  assignEng(){
+    this.navCtrl.push(AdminAssignEnggPage,{ user_id: this.navParams.get("user_id") });
   }
   goToHome(event){
     this.navCtrl.push(HomePage);

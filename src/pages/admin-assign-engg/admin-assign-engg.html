@@ -1,0 +1,66 @@
+<!--
+  Generated template for the AdminAssignEnggPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Assign Complaint</ion-title>
+    <button ion-button color="light" (click)="isSearchEng = true" *ngIf="!isSearchEng">Close</button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <page-loader></page-loader>
+
+  <section *ngIf="isSearchEng">
+
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    <section>
+      <table>
+        <thead>
+          <tr>
+            <th>C.NO</th>
+            <th>Complaint</th>
+            <th>Date</th>
+            <th>Type of Machine</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let complaint of allcomplaint">
+            <td>{{complaint.c_id}}</td>
+            <td>{{complaint.c_desc}}</td>
+            <td>{{complaint.c_date}}</td>
+            <td>{{complaint.Machine_type}}</td>
+            <td> <button (click)="asign(complaint)"> Assign </button> </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </section>
+  <section *ngIf="!isSearchEng">
+    <ion-searchbar (ionInput)="getEngg($event)"></ion-searchbar>
+    <table>
+      <thead>
+        <tr>
+          <th>U.no</th>
+          <th>Name</th>
+          <th>Mobile Number</th>
+          <th>Email</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of getAllEngg">
+          <td>{{user.u_id}}</td>
+          <td>{{user.u_name}}</td>
+          <td>{{user.u_mobile}}</td>
+          <td>{{user.u_email}}</td>
+          <td> <button (click)="updateComplaint(complaint)"> Assign </button> </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</ion-content>

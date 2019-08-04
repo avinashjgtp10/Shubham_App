@@ -2,59 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbdf6f2c-f350-4133-aeda-83f06466911d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../.sourcemaps/5.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../.sourcemaps/5.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.sourcemaps/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../.sourcemaps/main.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CordovaLib/CordovaLib.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CordovaLib/CordovaLib.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/packageReleaseResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/packageReleaseResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/www/build/0.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/www/build/0.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/www/build/1.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/www/build/1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/www/build/2.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/www/build/2.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/www/build/3.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/www/build/3.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/www/build/4.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/www/build/4.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/www/build/5.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/www/build/5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/www/build/5.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/www/build/5.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/www/build/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/www/build/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/www/build/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/www/build/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/www/build/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/www/build/main.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/www/build/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/www/build/vendor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/assets/release/www/build/vendor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/release/www/build/vendor.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseAssets/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseAssets/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeReleaseResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageRelease/release/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageRelease/release/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/reports/lint-results-release-fatal.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/reports/lint-results-release-fatal.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/release/app-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/app-release.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/www/build/0.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/www/build/0.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/www/build/1.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/www/build/1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/www/build/2.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/www/build/2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/www/build/3.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/www/build/3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/www/build/4.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/www/build/4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/www/build/5.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/www/build/5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/www/build/5.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/www/build/5.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/www/build/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/www/build/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/www/build/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/www/build/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/www/build/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/www/build/main.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/www/build/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/www/build/vendor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/www/build/vendor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/www/build/vendor.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/pages/admin-create-customer/admin-create-customer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/pages/admin-create-customer/admin-create-customer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/pages/admin-create-engg/admin-create-engg.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/pages/admin-create-engg/admin-create-engg.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/pages/admin-create-engg/admin-create-engg.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/pages/admin-create-engg/admin-create-engg.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../www/build/0.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../www/build/0.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../www/build/1.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../www/build/1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../www/build/2.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../www/build/2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../www/build/3.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../www/build/3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../www/build/4.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../www/build/4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../www/build/5.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../www/build/5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../www/build/5.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../www/build/5.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../www/build/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../www/build/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../www/build/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../www/build/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../www/build/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../www/build/main.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../www/build/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../www/build/vendor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../www/build/vendor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../www/build/vendor.js.map" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,10 +66,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane" />
       <pane id="AndroidView" />
+      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">

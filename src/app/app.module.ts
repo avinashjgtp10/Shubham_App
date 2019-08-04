@@ -14,6 +14,7 @@ import { EnggViewPreviousPage } from "../pages/engg-view-previous/engg-view-prev
 import { AdminDashboardPage } from "../pages/admin-dashboard/admin-dashboard"
 import { AdminCreateCustomerPage } from "../pages/admin-create-customer/admin-create-customer"
 import { AdminCreateEnggPage } from "../pages/admin-create-engg/admin-create-engg"
+import { AdminAssignEnggPage } from "../pages/admin-assign-engg/admin-assign-engg"
 //http call
 import { HttpClientModule } from '@angular/common/http'
 import { LoaderProvider } from '../providers/loader/loader';
@@ -23,8 +24,11 @@ import { ToastProvider } from '../providers/toast/toast';
 import {HeaderComponent} from "../reusable_component/header/header_component"
 import {PageLoader } from "../reusable_component/loader/page_loader";
 
+//pipe
+import {ConvertMachinNamePipe} from "../pipes/convert-machin-name/convert-machin-name"
 @NgModule({
   declarations: [
+    ConvertMachinNamePipe,
     MyApp,
     HomePage,
     EnggDashboardPage,
@@ -35,6 +39,7 @@ import {PageLoader } from "../reusable_component/loader/page_loader";
     AdminCreateEnggPage,
     AdminCreateCustomerPage,
     PageLoader,
+    AdminAssignEnggPage,
     HeaderComponent
   ],
   imports: [
@@ -53,6 +58,7 @@ import {PageLoader } from "../reusable_component/loader/page_loader";
     AdminDashboardPage,
     AdminCreateEnggPage,
     AdminCreateCustomerPage,
+    AdminAssignEnggPage,
     PageLoader,
     HeaderComponent
   ],
