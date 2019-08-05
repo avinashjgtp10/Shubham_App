@@ -1,0 +1,36 @@
+<!--
+  Generated template for the CustViewComplaintPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Previous Complaint</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+<b *ngIf="complaintData.length === 0"> Data not available</b>
+  <section *ngIf="complaintData.length > 0">
+   
+    <table>
+        <thead>
+          <th> C.No</th>
+          <th> Complaint</th>
+          <th> Complaint Date </th>
+          <th> Status</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of complaintData">
+            <td> {{c.c_id}}</td>
+            <td>
+              {{c.c_desc}}
+            </td>
+            <td> {{c.c_date | convertMachinName}}</td>
+            <td> {{c.c_status}} </td>
+          </tr>
+        </tbody>
+      </table>
+  </section>
+</ion-content>

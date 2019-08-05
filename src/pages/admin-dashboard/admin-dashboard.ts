@@ -4,6 +4,7 @@ import { AdminCreateCustomerPage } from "../admin-create-customer/admin-create-c
 import { AdminCreateEnggPage } from "../admin-create-engg/admin-create-engg"
 import { HomePage } from "../home/home"
 import { AdminAssignEnggPage } from "../admin-assign-engg/admin-assign-engg"
+import { AdminViewPreviousPage } from "../admin-view-previous/admin-view-previous"
 /**
  * Generated class for the AdminDashboardPage page.
  *
@@ -32,6 +33,9 @@ export class AdminDashboardPage {
   }
   assignEng(){
     this.navCtrl.push(AdminAssignEnggPage,{ user_id: this.navParams.get("user_id") });
+  }
+  viewPrevious(){
+    this.navCtrl.push(AdminViewPreviousPage,{ user_id: this.navParams.get("user_id") });
   }
   goToHome(event){
     this.navCtrl.push(HomePage);

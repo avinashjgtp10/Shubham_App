@@ -15,7 +15,7 @@ export class RestProvider {
   }
 
   public isCustomer() {
-   return this.http.get(AppSettings.baseUrl + 'users/getAllCustomer');
+    return this.http.get(AppSettings.baseUrl + 'users/getAllCustomer');
 
   }
   public userLogin(username: string, pass: string) {
@@ -43,6 +43,10 @@ export class RestProvider {
     return this.http.post(AppSettings.baseUrl + 'users/getAll', data);
   }
 
+  public assignComplaint(data: any) {
+    return this.http.post(AppSettings.baseUrl + 'complaint/assignComplaint', data);
+  }
+
   public updateComplaint(updatedate: any) {
     return this.http.post(AppSettings.baseUrl + 'complaint/updateComplaint', updatedate);
   }
@@ -50,12 +54,16 @@ export class RestProvider {
     return this.http.post(AppSettings.baseUrl + 'users/createUser', userData);
   }
 
-  public getMachineType(){
+  public getMachineType() {
     return this.http.get(AppSettings.baseUrl + 'complaint/getMachineType');
-  } 
+  }
 
-  public getAllUsers(){
+  public getAllUsers() {
     return this.http.get(AppSettings.baseUrl + 'users/getAllCustomer');
+  }
+
+  public createComplaint(data: any) {
+    return this.http.post(AppSettings.baseUrl + 'complaint/newComplaint', data);
   }
 
 

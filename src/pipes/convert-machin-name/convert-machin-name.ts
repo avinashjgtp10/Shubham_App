@@ -16,24 +16,11 @@ export class ConvertMachinNamePipe implements PipeTransform {
   constructor(public rest: RestProvider) { }
 
   transform(value: string, ...args) {
-    let getValue;
-    let machin = [];
-    console.log(value)
-    this.rest.getMachineType().subscribe((result: any) => {
-      machin = result.data; 
-    })
-    machin.forEach((element: any) => {
-      if (parseInt(element.id) === parseInt(value)) {
-        getValue = element.Value
-      } else {
-        getValue = "";
-      }
-    });
-    let index = machin.findIndex((ele:any) => {
-      return ele.id === value;
-    
-    })
-    console.log("value", index);
-    return getValue;
+    console.log(value);
+    return this.getDate(value);
+  }
+  getDate(val){
+    var d = new Date(val);
+    return d.getFullYear() +"/"+ (d.getMonth()+1)+"/"+d.getDate();
   }
 }

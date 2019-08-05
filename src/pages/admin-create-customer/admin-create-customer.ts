@@ -133,7 +133,8 @@ export class AdminCreateCustomerPage {
       if (i === -1) {
         this.rest.createCustomer(Obj).subscribe((result: any) => {
           if (result.status === "success") {
-            this.toast.showToast("Customer Details saved")
+            this.toast.showToast("Customer Details saved");
+            this.validations_form.reset();
           }
         })
       } else {

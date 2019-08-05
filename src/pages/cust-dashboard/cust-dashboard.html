@@ -1,0 +1,20 @@
+<!--
+  Generated template for the CustDashboardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<header-component (onClick)="goToHome($event)" [label]="label"></header-component>
+
+<ion-content>
+  <section class="container">
+    <div class="raise" (click)="raise()">
+      <img src="../../assets/imgs/raise.png" />
+      <label>Raise Complaint</label>
+    </div>
+    <div class="view" (click)="view()"> 
+      <img src="../../assets/imgs/viewComplaint.png" />
+      <label>View Previos Complaint</label>
+    </div>
+  </section>
+</ion-content>

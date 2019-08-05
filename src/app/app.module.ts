@@ -15,17 +15,21 @@ import { AdminDashboardPage } from "../pages/admin-dashboard/admin-dashboard"
 import { AdminCreateCustomerPage } from "../pages/admin-create-customer/admin-create-customer"
 import { AdminCreateEnggPage } from "../pages/admin-create-engg/admin-create-engg"
 import { AdminAssignEnggPage } from "../pages/admin-assign-engg/admin-assign-engg"
+import { AdminViewPreviousPage } from "../pages/admin-view-previous/admin-view-previous"
+import { CustDashboardPage } from "../pages/cust-dashboard/cust-dashboard"
+import { CustRaiseComplaintPage } from "../pages/cust-raise-complaint/cust-raise-complaint"
+import { CustViewComplaintPage } from "../pages/cust-view-complaint/cust-view-complaint"
 //http call
 import { HttpClientModule } from '@angular/common/http'
 import { LoaderProvider } from '../providers/loader/loader';
 import { ToastProvider } from '../providers/toast/toast';
 
 //Reusable Component
-import {HeaderComponent} from "../reusable_component/header/header_component"
-import {PageLoader } from "../reusable_component/loader/page_loader";
+import { HeaderComponent } from "../reusable_component/header/header_component"
+import { PageLoader } from "../reusable_component/loader/page_loader";
 
 //pipe
-import {ConvertMachinNamePipe} from "../pipes/convert-machin-name/convert-machin-name"
+import { ConvertMachinNamePipe } from "../pipes/convert-machin-name/convert-machin-name"
 @NgModule({
   declarations: [
     ConvertMachinNamePipe,
@@ -40,6 +44,10 @@ import {ConvertMachinNamePipe} from "../pipes/convert-machin-name/convert-machin
     AdminCreateCustomerPage,
     PageLoader,
     AdminAssignEnggPage,
+    AdminViewPreviousPage,
+    CustDashboardPage,
+    CustViewComplaintPage,
+    CustRaiseComplaintPage,
     HeaderComponent
   ],
   imports: [
@@ -59,7 +67,11 @@ import {ConvertMachinNamePipe} from "../pipes/convert-machin-name/convert-machin
     AdminCreateEnggPage,
     AdminCreateCustomerPage,
     AdminAssignEnggPage,
+    AdminViewPreviousPage,
     PageLoader,
+    CustDashboardPage,
+    CustViewComplaintPage,
+    CustRaiseComplaintPage,
     HeaderComponent
   ],
   providers: [

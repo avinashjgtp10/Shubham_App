@@ -7,6 +7,7 @@ import { ToastProvider } from "../../providers/toast/toast"
 import { AdminDashboardPage } from "../admin-dashboard/admin-dashboard";
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { PageLoader } from "../../reusable_component/loader/page_loader"
+import { CustDashboardPage } from "../cust-dashboard/cust-dashboard"
 
 @Component({
   selector: 'page-home',
@@ -52,7 +53,7 @@ export class HomePage {
       } if (data.status === "success" && data.data.u_role === 2) {
         this.navCtrl.push(AdminDashboardPage, { user_id: data.data.u_id });
       } if (data.status === "success" && data.data.u_role === 1) {
-        console.log("client")
+        this.navCtrl.push(CustDashboardPage, { user_id: data.data.u_id });
       } if (data.status === "error") {
         this.toast.showToast("Wrong Password");
         console.log("error")
