@@ -15,7 +15,7 @@
     <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
 
       <ion-item>
-        <ion-label floating>Customer Name</ion-label>
+        <ion-label floating>Customer Name<span style="color:red">*</span></ion-label>
         <ion-input type="text" formControlName="name"></ion-input>
       </ion-item>
       <div class="validation-errors">
@@ -28,7 +28,7 @@
       </div>
 
       <ion-item>
-        <ion-label floating>Mobile Number</ion-label>
+        <ion-label floating>Mobile Number<span style="color:red">*</span></ion-label>
         <ion-input type="text" formControlName="phone"></ion-input>
       </ion-item>
       <div class="validation-errors">
@@ -56,7 +56,7 @@
 
 
       <ion-item>
-        <ion-label floating>Email</ion-label>
+        <ion-label floating>Email<span style="color:red">*</span></ion-label>
         <ion-input type="email" formControlName="email"></ion-input>
       </ion-item>
       <div class="validation-errors">
@@ -69,12 +69,12 @@
       </div>
 
       <ion-item>
-        <ion-label floating>Address</ion-label>
+        <ion-label floating>Address<span style="color:red">*</span></ion-label>
         <ion-textarea formControlName="address"></ion-textarea>
       </ion-item>
 
       <ion-item>
-        <ion-label>Machine purchased</ion-label>
+        <ion-label>Machine purchased<span style="color:red">*</span></ion-label>
         <ion-select formControlName="u_MachinePurchased">
           <ion-option *ngFor="let mach of typesOfMachin" [value]="mach">
             {{mach}}</ion-option>
@@ -90,7 +90,7 @@
       </div>
 
       <ion-item>
-        <ion-label>Date of purchase</ion-label>
+        <ion-label>Date of purchase<span style="color:red">*</span></ion-label>
         <ion-input type="Date" formControlName="u_dateOf_Purchased"></ion-input>
       </ion-item>
       <div class="validation-errors">
@@ -104,7 +104,7 @@
 
       <div formGroupName="matching_passwords">
         <ion-item>
-          <ion-label position="floating" color="primary">Password</ion-label>
+          <ion-label position="floating" color="primary">Password<span style="color:red">*</span></ion-label>
           <ion-input type="password" formControlName="u_password"></ion-input>
         </ion-item>
         <div class="validation-errors">
@@ -116,7 +116,7 @@
         </div>
   
         <ion-item>
-          <ion-label position="floating" color="primary">Confirm Password</ion-label>
+          <ion-label position="floating" color="primary">Confirm Password<span style="color:red">*</span></ion-label>
           <ion-input type="password" formControlName="u_cpassword"></ion-input>
         </ion-item>
         <div class="validation-errors">

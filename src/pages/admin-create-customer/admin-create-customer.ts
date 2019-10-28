@@ -4,6 +4,7 @@ import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms'
 import { PasswordValidator } from '../../validators/password.validator';
 import { RestProvider } from '../../providers/rest/rest'
 import { ToastProvider } from "../../providers/toast/toast"
+import { MockData } from "../../app/mock-data"
 /**
  * Generated class for the AdminCreateCustomerPage page.
  *
@@ -20,6 +21,7 @@ export class AdminCreateCustomerPage {
 
   validations_form: FormGroup;
   matching_passwords_group: FormGroup;
+  validation_messages=MockData.adminCreateCustomerValidationMessage;
 
   typesOfMachin: any = [
     "Computerised Embroidery Machines",
@@ -39,12 +41,12 @@ export class AdminCreateCustomerPage {
   }
 
   ngOnInit() {
-
+    
     this.matching_passwords_group = new FormGroup({
       u_password: new FormControl('', Validators.compose([
         Validators.minLength(5),
         Validators.required,
-        Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')
+        Validators.pattern(MockData.validationPasswordPattern)
       ])),
       u_cpassword: new FormControl('', Validators.required)
     }, (formGroup: FormGroup) => {
@@ -64,54 +66,9 @@ export class AdminCreateCustomerPage {
       matching_passwords: this.matching_passwords_group,
       phone: new FormControl('', [Validators.required, Validators.minLength(10), Validators.pattern("[0-9]+")])
     });
-
-
-
   }
-  validation_messages = {
-    'u_dateOf_Purchased': [
-      { type: 'required', message: 'Date is required.' }
-    ],
-    'u_MachinePurchased': [
-      { type: 'required', message: 'Machine name is required.' }
-    ],
-    'name': [
-      { type: 'required', message: 'Name is required.' }
-    ],
-    'lastname': [
-      { type: 'required', message: 'Last name is required.' }
-    ],
-    'email': [
-      { type: 'required', message: 'Email is required.' },
-      { type: 'pattern', message: 'Please wnter a valid email.' }
-    ],
-    'phone': [
-      { type: 'required', message: 'Phone is required.' },
-      { type: 'maxLength', message: 'The phone is incorrect' },
-      { type: 'pattern', message: 'The phone is incorrect' }
-    ],
-    'alter': [
-      { type: 'maxLength', message: 'The phone is incorrect' },
-      { type: 'pattern', message: 'The phone is incorrect' }
-    ],
-    'u_password': [
-      { type: 'required', message: 'Password is required.' },
-      { type: 'minlength', message: 'Password must be at least 5 characters long.' },
-      { type: 'pattern', message: 'Your password must contain at least one uppercase, one lowercase, and one number.' }
-    ],
-    'u_cpassword': [
-      { type: 'required', message: 'Confirm password is required.' }
-    ],
-    'matching_passwords': [
-      { type: 'areEqual', message: 'Password mismatch.' }
-    ],
-    'terms': [
-      { type: 'pattern', message: 'You must accept terms and conditions.' }
-    ],
-  };
 
   onSubmit(values: any) {
-    console.log("Hello", values);
     let Obj = {
       "u_name": values.name,
       "u_mobile": values.phone,
