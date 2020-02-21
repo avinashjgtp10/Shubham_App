@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RestProvider } from "../../providers/rest/rest";
 import { PageLoader } from "../../reusable_component/loader/page_loader";
 import { ToastProvider } from "../../providers/toast/toast"
+import { ColumnMode, SelectionType } from '@swimlane/ngx-datatable';
 /**
  * Generated class for the AdminAssignEnggPage page.
  *
@@ -22,8 +23,18 @@ export class AdminAssignEnggPage {
   getAllEngg = [];
   userObj: any = {};
   isSearchEng = true;
+  public columns : any;
+  public rows : any;
+  ColumnMode = ColumnMode;
+  SelectionType = SelectionType;
 
   constructor(public toast: ToastProvider, public rest: RestProvider, public navCtrl: NavController, public navParams: NavParams) {
+    this.columns = [
+      { name:"name",prop: 'c_id' },
+      { name: 'Summary' },
+      { name: 'Company' }
+    ];
+
   }
 
   ionViewDidLoad() {
@@ -80,15 +91,18 @@ export class AdminAssignEnggPage {
   initializeItems() {
     this.rest.getAllComplaint().subscribe((result: any) => {
       this.allcomplaint = result.data;
+      
       this.allcomplaint = this.allcomplaint.filter((ele: any) => {
         this.rest.getMachineType().subscribe((result: any) => {
           this.machinType = result.data;
+
           this.machinType.forEach((el: any) => {
             if (ele.Machine_type === el.id) {
               ele.Machine_type = el.Value;
             }
           })
         })
+        console.log(JSON.stringify(this.allcomplaint))
         this.loadPage.hideLoader()
         return ele.c_status === 1
       })

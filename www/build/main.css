@@ -25700,6 +25700,25 @@ table, th, td {
   border: 1px solid black;
 }
 
+tab .firstContainer {
+  width: 100%;
+  text-align: center;
+}
+
+tab .firstContainer .createCustomer {
+  width: 50%;
+  margin: 10px;
+  border: 2px solid #ffcccc;
+  border-radius: 3px;
+}
+
+tab .firstContainer .createEngg {
+  width: 50%;
+  margin: 10px;
+  border: 2px solid #ffcccc;
+  border-radius: 3px;
+}
+
 page-admin-assign-engg #backBtn .back-button {
   display: block;
 }
@@ -25787,25 +25806,6 @@ page-admin-dashboard ion-content .container {
   position: absolute;
   height: auto;
   top: 15%;
-}
-
-page-admin-dashboard ion-content .container .firstContainer {
-  width: 100%;
-  text-align: center;
-}
-
-page-admin-dashboard ion-content .container .firstContainer .createCustomer {
-  width: 50%;
-  margin: 10px;
-  border: 2px solid #ffcccc;
-  border-radius: 3px;
-}
-
-page-admin-dashboard ion-content .container .firstContainer .createEngg {
-  width: 50%;
-  margin: 10px;
-  border: 2px solid #ffcccc;
-  border-radius: 3px;
 }
 
 page-admin-view-previous table {

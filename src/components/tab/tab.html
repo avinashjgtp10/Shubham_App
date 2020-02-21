@@ -1,0 +1,13 @@
+<ion-row class="firstContainer">
+  <ion-col class="createCustomer" *ngIf="imgSrc1" (click)="handleChange($event)">
+    <img [src]="imgSrc1">
+    {{title}}
+  </ion-col> 
+  <ion-col class="createEngg" *ngIf="imgSrc2" (click)="handleChange1($event)">
+    <img [src]="imgSrc2">
+    {{title1}}
+  </ion-col>
+</ion-row>
+
+
+<!-- (click)="createComplaint()" (click)="createEngg()" -->

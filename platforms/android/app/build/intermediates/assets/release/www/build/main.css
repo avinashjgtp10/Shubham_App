@@ -25700,6 +25700,28 @@ table, th, td {
   border: 1px solid black;
 }
 
+page-admin-assign-engg #backBtn .back-button {
+  display: block;
+}
+
+page-admin-assign-engg #searchEngg ion-title {
+  width: 80%;
+  float: left;
+}
+
+page-admin-assign-engg ion-content section {
+  margin: 10px;
+}
+
+page-admin-assign-engg ion-content section table, page-admin-assign-engg ion-content section th, page-admin-assign-engg ion-content section td {
+  margin: auto;
+  border: 1px solid black;
+}
+
+page-admin-assign-engg ion-content section table button, page-admin-assign-engg ion-content section th button, page-admin-assign-engg ion-content section td button {
+  font-size: 14px;
+}
+
 page-admin-create-customer ion-content ion-list {
   margin: 10px;
 }
@@ -25784,6 +25806,66 @@ page-admin-dashboard ion-content .container .firstContainer .createEngg {
   margin: 10px;
   border: 2px solid #ffcccc;
   border-radius: 3px;
+}
+
+page-admin-view-previous table {
+  margin: 10px;
+}
+
+page-cust-dashboard ion-content
+.container {
+  width: 70%;
+  height: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: auto;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+}
+
+page-cust-dashboard ion-content
+.container .raise {
+  border: 1px solid #aaafb5;
+  border-radius: 2%;
+  width: 100%;
+  margin: 10px;
+}
+
+page-cust-dashboard ion-content
+.container .view {
+  margin: 10px;
+  border: 1px solid #aaafb5;
+  border-radius: 2%;
+  width: 100%;
+}
+
+page-cust-dashboard ion-content
+.container img {
+  display: block;
+  margin: auto;
+  width: 50%;
+}
+
+page-cust-dashboard ion-content
+.container label {
+  font-size: 1.5em;
+}
+
+page-cust-raise-complaint ion-content button.submit-btn {
+  display: block;
+  width: 80%;
+  background: #008CBA;
+  height: 50px;
+  border-radius: 25px;
+  color: white;
+  font-size: 1.5em;
+  margin: 10px auto;
+}
+
+page-cust-view-complaint ion-content table {
+  margin: 10px auto;
 }
 
 page-engg-accept-complaint ion-content .col {

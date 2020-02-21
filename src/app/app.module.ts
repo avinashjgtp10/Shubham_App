@@ -19,6 +19,7 @@ import { AdminViewPreviousPage } from "../pages/admin-view-previous/admin-view-p
 import { CustDashboardPage } from "../pages/cust-dashboard/cust-dashboard"
 import { CustRaiseComplaintPage } from "../pages/cust-raise-complaint/cust-raise-complaint"
 import { CustViewComplaintPage } from "../pages/cust-view-complaint/cust-view-complaint"
+import { NgxDatatableModule} from "@swimlane/ngx-datatable"
 //http call
 import { HttpClientModule } from '@angular/common/http'
 import { LoaderProvider } from '../providers/loader/loader';
@@ -27,12 +28,15 @@ import { ToastProvider } from '../providers/toast/toast';
 //Reusable Component
 import { HeaderComponent } from "../reusable_component/header/header_component"
 import { PageLoader } from "../reusable_component/loader/page_loader";
+import { TabComponent } from "../components/tab/tab"
 
 //pipe
 import { ConvertMachinNamePipe } from "../pipes/convert-machin-name/convert-machin-name"
+
 @NgModule({
   declarations: [
     ConvertMachinNamePipe,
+    TabComponent,
     MyApp,
     HomePage,
     EnggDashboardPage,
@@ -53,7 +57,8 @@ import { ConvertMachinNamePipe } from "../pipes/convert-machin-name/convert-mach
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    NgxDatatableModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
