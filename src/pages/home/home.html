@@ -20,9 +20,9 @@
                   </div>
                 </ng-container>
               </div>
-
               <ion-item>
-                <ion-input  type="password" placeholder="Password" formControlName="password"></ion-input>
+                <ion-input  [type]="password_type" placeholder="Password" formControlName="password" ></ion-input>
+                <ion-icon name="eye" item-right (click)="changePaswordType()" ></ion-icon>
               </ion-item>
               <div class="validation-errors">
                   <ng-container *ngFor="let validation of validation_messages.password">

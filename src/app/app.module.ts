@@ -20,6 +20,7 @@ import { CustDashboardPage } from "../pages/cust-dashboard/cust-dashboard"
 import { CustRaiseComplaintPage } from "../pages/cust-raise-complaint/cust-raise-complaint"
 import { CustViewComplaintPage } from "../pages/cust-view-complaint/cust-view-complaint"
 import { NgxDatatableModule} from "@swimlane/ngx-datatable"
+import { CustDetailsPage } from "../pages/cust-details/cust-details"
 //http call
 import { HttpClientModule } from '@angular/common/http'
 import { LoaderProvider } from '../providers/loader/loader';
@@ -29,13 +30,21 @@ import { ToastProvider } from '../providers/toast/toast';
 import { HeaderComponent } from "../reusable_component/header/header_component"
 import { PageLoader } from "../reusable_component/loader/page_loader";
 import { TabComponent } from "../components/tab/tab"
+import { ComponentsShowPasswordComponent } from "../components/components-show-password/components-show-password"
+
 
 //pipe
 import { ConvertMachinNamePipe } from "../pipes/convert-machin-name/convert-machin-name"
 
+//Directives
+import { DirectivesShowPasswordDirective } from "../directives/directives-show-password/directives-show-password"
+
 @NgModule({
   declarations: [
+    CustDetailsPage,
     ConvertMachinNamePipe,
+    ComponentsShowPasswordComponent,
+    DirectivesShowPasswordDirective,
     TabComponent,
     MyApp,
     HomePage,
@@ -65,6 +74,7 @@ import { ConvertMachinNamePipe } from "../pipes/convert-machin-name/convert-mach
     MyApp,
     HomePage,
     EnggDashboardPage,
+    CustDetailsPage,
     EnggViewComplaintPage,
     EnggAcceptComplaintPage,
     EnggViewPreviousPage,

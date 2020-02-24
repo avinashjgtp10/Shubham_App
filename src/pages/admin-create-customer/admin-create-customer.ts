@@ -19,6 +19,9 @@ import { MockData } from "../../app/mock-data"
 })
 export class AdminCreateCustomerPage {
 
+
+  password_type:string="password";
+  cpassword_type:string="password"
   validations_form: FormGroup;
   matching_passwords_group: FormGroup;
   validation_messages=MockData.adminCreateCustomerValidationMessage;
@@ -40,13 +43,21 @@ export class AdminCreateCustomerPage {
     console.log('ionViewDidLoad AdminCreateCustomerPage');
   }
 
+  changePaswordType(){
+    this.password_type=this.password_type === "text" ? "password":"text";
+  }
+  changecPaswordType(){
+    this.cpassword_type=this.cpassword_type === "text" ? "password":"text";
+  }
+
+
   ngOnInit() {
     
     this.matching_passwords_group = new FormGroup({
       u_password: new FormControl('', Validators.compose([
         Validators.minLength(5),
         Validators.required,
-        Validators.pattern(MockData.validationPasswordPattern)
+        Validators.pattern('')
       ])),
       u_cpassword: new FormControl('', Validators.required)
     }, (formGroup: FormGroup) => {

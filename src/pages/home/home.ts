@@ -14,11 +14,17 @@ import { CustDashboardPage } from "../cust-dashboard/cust-dashboard"
   templateUrl: 'home.html'
 })
 export class HomePage {
+  password_type:string= 'password'
   @ViewChild(PageLoader) loadPage: PageLoader;
   validations_form: FormGroup;
   matching_passwords_group: FormGroup;
   constructor(public navCtrl: NavController, public formBuilder: FormBuilder, private toast: ToastProvider, private loader: LoaderProvider, private rest: RestProvider) {
 
+  }
+
+  changePaswordType(){
+    console.log(this.password_type)
+    this.password_type=  this.password_type === 'text' ? 'password':'text'
   }
   ngOnInit() {
     this.validations_form = this.formBuilder.group({

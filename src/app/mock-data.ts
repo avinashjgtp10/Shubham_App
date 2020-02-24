@@ -1,4 +1,5 @@
 export class MockData{
+ //public static validationPasswordPattern:string='^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]+$'
  public static validationPasswordPattern:string='^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]+$'
 public static adminCreateCustomerValidationMessage={
     'u_dateOf_Purchased': [

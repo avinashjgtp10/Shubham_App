@@ -3,25 +3,6 @@
   <section class="container">
     <ion-grid *ngFor="let d of tabData">
       <tab [imgSrc1]="d.url" [imgSrc2]="d.url1" [title]="d.title" [title1]="d.title1" (onChange)="tabEvent(d.event)" (onChange1)="tabEvent2(d.event1)"></tab>
-      <!-- <ion-row class="firstContainer">
-          <ion-col class="createCustomer" (click)="assignEng()">
-            <img src="../../assets/imgs/assignService.png">
-            Assign Enginner
-          </ion-col>
-          <ion-col class="createEngg" (click)="viewPrevious()">
-            <img src="../../assets/imgs/viewComplaint.png">
-           View Complaint
-          </ion-col>
-        </ion-row> -->
     </ion-grid>
-    <!-- <section class="firstContainer">
-      <div class="createCustomer">
-
-      </div>
-      <div class="createEngg">
-
-      </div>
-
-    </section> -->
   </section>
 </ion-content>

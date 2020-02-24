@@ -22,6 +22,8 @@ export class AdminCreateEnggPage {
   validations_form: FormGroup;
   matching_passwords_group: FormGroup;
   validation_messages = MockData.adminEnggValidationMsg;
+  password_type:string="password"
+  cpassword_type:string="password"
 
   typesOfMachin: any = [{key:1,value:"Mechnical"},{key:2,value:"Electronic"},{key:3,value:"Designing"}]
 
@@ -37,7 +39,7 @@ export class AdminCreateEnggPage {
       u_password: new FormControl('', Validators.compose([
         Validators.minLength(5),
         Validators.required,
-        Validators.pattern(MockData.validationPasswordPattern)
+        Validators.pattern('')
       ])),
       u_cpassword: new FormControl('', Validators.required)
     }, (formGroup: FormGroup) => {
@@ -59,7 +61,12 @@ export class AdminCreateEnggPage {
     });
   }
 
-  
+  changePaswordType(){
+    this.password_type=this.password_type === "text" ? "password":"text"
+  }
+  changecPaswordType(){
+    this.cpassword_type=this.cpassword_type === "text" ? "password":"text"
+  }
 
   onSubmit(values: any) {
     console.log("Hello", values);

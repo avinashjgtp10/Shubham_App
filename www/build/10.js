@@ -1,14 +1,14 @@
 webpackJsonp([10],{
 
-/***/ 696:
+/***/ 700:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminCreateCustomerPageModule", function() { return AdminCreateCustomerPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminCreateEnggPageModule", function() { return AdminCreateEnggPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__admin_create_customer__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__admin_create_engg__ = __webpack_require__(157);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AdminCreateCustomerPageModule = /** @class */ (function () {
-    function AdminCreateCustomerPageModule() {
+var AdminCreateEnggPageModule = /** @class */ (function () {
+    function AdminCreateEnggPageModule() {
     }
-    AdminCreateCustomerPageModule = __decorate([
+    AdminCreateEnggPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__admin_create_customer__["a" /* AdminCreateCustomerPage */],
+                __WEBPACK_IMPORTED_MODULE_2__admin_create_engg__["a" /* AdminCreateEnggPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__admin_create_customer__["a" /* AdminCreateCustomerPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__admin_create_engg__["a" /* AdminCreateEnggPage */]),
             ],
         })
-    ], AdminCreateCustomerPageModule);
-    return AdminCreateCustomerPageModule;
+    ], AdminCreateEnggPageModule);
+    return AdminCreateEnggPageModule;
 }());
 
-//# sourceMappingURL=admin-create-customer.module.js.map
+//# sourceMappingURL=admin-create-engg.module.js.map
 
 /***/ })
 
