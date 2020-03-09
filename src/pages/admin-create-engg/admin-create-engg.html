@@ -91,7 +91,8 @@
 
       <ion-item>
         <ion-label>Date of Joining<span style="color:red">*</span></ion-label>
-        <ion-input type="Date" formControlName="u_Joining_date"></ion-input>
+        <!-- <ion-input type="Date" formControlName="u_Joining_date"></ion-input> -->
+        <ion-datetime [max]="maxDate" formControlName="u_Joining_date"  display-timezone="utc"></ion-datetime>
       </ion-item>
       <div class="validation-errors">
         <ng-container *ngFor="let validation of validation_messages.u_Joining_date">

@@ -21,6 +21,7 @@ import { CustRaiseComplaintPage } from "../pages/cust-raise-complaint/cust-raise
 import { CustViewComplaintPage } from "../pages/cust-view-complaint/cust-view-complaint"
 import { NgxDatatableModule} from "@swimlane/ngx-datatable"
 import { CustDetailsPage } from "../pages/cust-details/cust-details"
+import { EnggDetailsPage } from "../pages/engg-details/engg-details"
 //http call
 import { HttpClientModule } from '@angular/common/http'
 import { LoaderProvider } from '../providers/loader/loader';
@@ -39,8 +40,10 @@ import { ConvertMachinNamePipe } from "../pipes/convert-machin-name/convert-mach
 //Directives
 import { DirectivesShowPasswordDirective } from "../directives/directives-show-password/directives-show-password"
 
+
 @NgModule({
   declarations: [
+    EnggDetailsPage,
     CustDetailsPage,
     ConvertMachinNamePipe,
     ComponentsShowPasswordComponent,
@@ -75,6 +78,7 @@ import { DirectivesShowPasswordDirective } from "../directives/directives-show-p
     HomePage,
     EnggDashboardPage,
     CustDetailsPage,
+    EnggDetailsPage,
     EnggViewComplaintPage,
     EnggAcceptComplaintPage,
     EnggViewPreviousPage,

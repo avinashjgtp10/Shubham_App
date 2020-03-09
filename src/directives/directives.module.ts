@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { DirectivesShowPasswordDirective } from './directives-show-password/directives-show-password';
+
 @NgModule({
-	declarations: [DirectivesShowPasswordDirective],
+	declarations: [DirectivesShowPasswordDirective
+    ],
 	imports: [],
-	exports: [DirectivesShowPasswordDirective]
+	exports: [DirectivesShowPasswordDirective
+    ]
 })
 export class DirectivesModule {}

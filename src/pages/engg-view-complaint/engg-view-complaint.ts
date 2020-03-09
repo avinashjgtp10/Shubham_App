@@ -42,7 +42,6 @@ export class EnggViewComplaintPage {
       this.filterData.u_email=result.data.u_email;
       this.filterData.e_desc=result.data.e_desc;
     })
-    console.log("Assigned user details");
   }
   addData(){
     let data={

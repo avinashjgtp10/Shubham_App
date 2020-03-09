@@ -91,7 +91,7 @@ export class AdminAssignEnggPage {
   initializeItems() {
     this.rest.getAllComplaint().subscribe((result: any) => {
       this.allcomplaint = result.data;
-      
+      console.log(this.allcomplaint)
       this.allcomplaint = this.allcomplaint.filter((ele: any) => {
         this.rest.getMachineType().subscribe((result: any) => {
           this.machinType = result.data;

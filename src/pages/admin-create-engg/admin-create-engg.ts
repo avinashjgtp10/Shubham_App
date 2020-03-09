@@ -24,7 +24,7 @@ export class AdminCreateEnggPage {
   validation_messages = MockData.adminEnggValidationMsg;
   password_type:string="password"
   cpassword_type:string="password"
-
+  maxDate:string = new Date().toISOString();
   typesOfMachin: any = [{key:1,value:"Mechnical"},{key:2,value:"Electronic"},{key:3,value:"Designing"}]
 
   constructor(public toast: ToastProvider, public navCtrl: NavController, public rest: RestProvider, public formBuilder: FormBuilder, public navParams: NavParams) {
@@ -50,14 +50,14 @@ export class AdminCreateEnggPage {
       u_Joining_date: new FormControl('', Validators.required),
       address: new FormControl(""),
       engg_type: new FormControl('', Validators.required),
-      alter: new FormControl("", [Validators.minLength(10), Validators.pattern("[0-9]+")]),
+      alter: new FormControl("", [Validators.minLength(10), Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]),
       name: new FormControl('', Validators.required),
       email: new FormControl('', Validators.compose([
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
       ])),
       matching_passwords: this.matching_passwords_group,
-      phone: new FormControl('', [Validators.required, Validators.minLength(10), Validators.pattern("[0-9]+")])
+      phone: new FormControl('', [Validators.required, Validators.minLength(10), Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")])
     });
   }
 
@@ -69,7 +69,6 @@ export class AdminCreateEnggPage {
   }
 
   onSubmit(values: any) {
-    console.log("Hello", values);
     let Obj = {
       "u_name": values.name,
       "u_mobile": values.phone,
@@ -84,23 +83,18 @@ export class AdminCreateEnggPage {
       "u_roleType": values.engg_type,
       "u_joinDate": values.u_Joining_date
     }
-
-    console.log(JSON.stringify(Obj));
-    this.rest.isCustomer().subscribe((result: any) => {
-      let i = result.data.findIndex((obj: any) => {
-        return obj.u_email === Obj.u_email
-      })
-      if (i === -1) {
-        this.rest.createCustomer(Obj).subscribe((result: any) => {
+      
+         this.rest.createCustomer(Obj).subscribe((result: any) => {
           if (result.status === "success") {
             this.toast.showToast("Engineer Details saved")
             this.validations_form.reset()
           }
+          if(result.status === "error"){
+            this.toast.showToast(result.message)
+          }
         })
-      } else {
-        this.toast.showToast("Engineer Email-id already exist");
-      }
-    })
+      
+  
   }
 
 

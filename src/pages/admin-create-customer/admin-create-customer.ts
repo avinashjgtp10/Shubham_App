@@ -25,6 +25,7 @@ export class AdminCreateCustomerPage {
   validations_form: FormGroup;
   matching_passwords_group: FormGroup;
   validation_messages=MockData.adminCreateCustomerValidationMessage;
+  maxDate:string=new Date().toISOString();
 
   typesOfMachin: any = [
     "Computerised Embroidery Machines",
@@ -68,14 +69,14 @@ export class AdminCreateCustomerPage {
       u_dateOf_Purchased: new FormControl('', Validators.required),
       address: new FormControl(""),
       u_MachinePurchased: new FormControl('', Validators.required),
-      alter: new FormControl("", [Validators.minLength(10), Validators.pattern("[0-9]+")]),
+      alter: new FormControl("", [Validators.minLength(10),Validators.maxLength(10), Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]),
       name: new FormControl('', Validators.required),
       email: new FormControl('', Validators.compose([
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
       ])),
       matching_passwords: this.matching_passwords_group,
-      phone: new FormControl('', [Validators.required, Validators.minLength(10), Validators.pattern("[0-9]+")])
+      phone: new FormControl('', [Validators.required, Validators.minLength(10),Validators.maxLength(10) ,Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")])
     });
   }
 
@@ -94,20 +95,15 @@ export class AdminCreateCustomerPage {
       "u_roleType": null,
       "u_joinDate": new Date()
     }
-    this.rest.isCustomer().subscribe((result: any) => {
-      let i = result.data.findIndex((obj: any) => {
-        return obj.u_email === Obj.u_email
-      })
-      if (i === -1) {
         this.rest.createCustomer(Obj).subscribe((result: any) => {
           if (result.status === "success") {
             this.toast.showToast("Customer Details saved");
             this.validations_form.reset();
           }
+          if(result.status === "error"){
+            this.toast.showToast(result.message)
+          }
         })
-      } else {
-        this.toast.showToast("Customer Email-id already exist");
-      }
-    })
+      
   }
 }

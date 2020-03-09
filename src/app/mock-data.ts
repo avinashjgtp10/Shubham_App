@@ -21,7 +21,9 @@ public static adminCreateCustomerValidationMessage={
     'phone': [
       { type: 'required', message: 'Phone is required.' },
       { type: 'maxLength', message: 'The phone is incorrect' },
-      { type: 'pattern', message: 'The phone is incorrect' }
+      { type: 'pattern', message: 'The phone is incorrect' },
+      { type: 'minLength', message: 'The phone is incorrect' }
+      
     ],
     'alter': [
       { type: 'maxLength', message: 'The phone is incorrect' },

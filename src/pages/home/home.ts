@@ -23,7 +23,6 @@ export class HomePage {
   }
 
   changePaswordType(){
-    console.log(this.password_type)
     this.password_type=  this.password_type === 'text' ? 'password':'text'
   }
   ngOnInit() {

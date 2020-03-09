@@ -27,7 +27,7 @@
       <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
       
       <section>
-          <ngx-datatable
+          <!-- <ngx-datatable
           class="material"
           [rows]="allcomplaint"
           [columnMode]="ColumnMode.force"
@@ -41,7 +41,7 @@
           (activate)="onActivate($event)"
           (select)="onSelect($event)"
         >
-        </ngx-datatable>
+        </ngx-datatable> -->
           <!-- <ngx-datatable
        [sortType]="'multi'"
        [headerHeight]="50"
@@ -62,7 +62,7 @@
           </ng-template>
         </ngx-datatable-column>
      </ngx-datatable> -->
-        <!-- <table>
+        <table>
           <thead>
             <tr>
               <th>C.NO</th>
@@ -81,7 +81,7 @@
               <td> <button (click)="asign(complaint)"> Assign </button> </td>
             </tr>
           </tbody>
-        </table> -->
+        </table>
       </section>
     </section>
     <section *ngIf="!isSearchEng">
@@ -91,7 +91,6 @@
           <tr>
             <th>U.no</th>
             <th>Name</th>
-            <th>Mobile Number</th>
             <th>Email</th>
             <th>Action</th>
           </tr>
@@ -100,7 +99,6 @@
           <tr *ngFor="let user of getAllEngg">
             <td>{{user.u_id}}</td>
             <td>{{user.u_name}}</td>
-            <td>{{user.u_mobile}}</td>
             <td>{{user.u_email}}</td>
             <td> <button (click)="updateComplaint(user)"> Assign </button> </td>
           </tr>

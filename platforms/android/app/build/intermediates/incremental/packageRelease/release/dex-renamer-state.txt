@@ -1,4 +1,4 @@
-#Mon Feb 24 11:09:44 IST 2020
+#Wed Feb 26 10:42:07 IST 2020
 base.0=/Users/avinash/Apps/complaints_tracker/App/Shubham_App/platforms/android/app/build/intermediates/transforms/dex/release/0
 path.0=classes.dex
 renamed.0=classes.dex

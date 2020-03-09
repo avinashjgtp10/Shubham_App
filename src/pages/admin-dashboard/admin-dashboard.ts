@@ -6,6 +6,7 @@ import { HomePage } from "../home/home"
 import { AdminAssignEnggPage } from "../admin-assign-engg/admin-assign-engg"
 import { AdminViewPreviousPage } from "../admin-view-previous/admin-view-previous"
 import { CustDetailsPage } from "../cust-details/cust-details"
+import { EnggDetailsPage } from "../engg-details/engg-details"
 /**
  * Generated class for the AdminDashboardPage page.
  *
@@ -42,7 +43,7 @@ export class AdminDashboardPage {
   event:"custDetails",
   class:"",
   class1:"",
-  event1:"viewComplaint",
+  event1:"enggDetails",
   title1:"Engineer Details ",
   url1:"../../assets/imgs/engg_details.png"}
 
@@ -60,15 +61,12 @@ export class AdminDashboardPage {
   tabEvent(value){
    
     if(value === "createCustomer"){
-      console.log(value)
       this.navCtrl.push(AdminCreateCustomerPage, { user_id: this.navParams.get("user_id") })
     }
     if(value === "custDetails"){
-      console.log(value)
       this.navCtrl.push(CustDetailsPage,{user_id: this.navParams.get("user_id") })
     }
     if(value === "assignEnginner"){
-      console.log(value)
       this.navCtrl.push(AdminAssignEnggPage,{ user_id: this.navParams.get("user_id") });
     }
   
@@ -83,6 +81,12 @@ export class AdminDashboardPage {
       console.log(value)
       this.navCtrl.push(AdminViewPreviousPage,{ user_id: this.navParams.get("user_id") });
     }
+    if(value === "enggDetails"){
+      console.log(value)
+      this.navCtrl.push(EnggDetailsPage,{ user_id: this.navParams.get("user_id") });
+    }
+
+    
   }
 
 

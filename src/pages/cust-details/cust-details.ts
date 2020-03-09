@@ -21,6 +21,11 @@ export class CustDetailsPage {
   }
 
   ionViewDidLoad() {
+    this.getUserDeatils();
+  }
+
+  getUserDeatils(){
+    this.userDetail = [];
     this.service.getAllUsers().subscribe((data:any)=>{
       this.userDetail=data.data.filter((el:any)=>{
         return el.u_role === 1 
@@ -29,20 +34,24 @@ export class CustDetailsPage {
   }
 
   filterList(event:any){
-
-    const searchterm=event.data;
+    const searchterm=event.value;
     if(!searchterm){
-      return;
+      this.getUserDeatils()
+      return
     }
-    this.userDetail=this.userDetail.filter((value:any)=>{
-      if(value.u_name && searchterm){
-        if(value.u_name.toLowerCase().indexOf(searchterm.toLowerCase())>-1){
-          return true;
-        }else{
-          return false;
+    if(searchterm.length >= 1){
+      this.userDetail=this.userDetail.filter((value:any)=>{
+        if(value.u_name && searchterm){
+          if(value.u_name.toLowerCase().indexOf(searchterm.toLowerCase())>-1){
+            return true;
+          }else{
+            return false;
+          }
         }
-      }
-    })
-  }
+      })
+    }
+   
+}
+  
 
 }

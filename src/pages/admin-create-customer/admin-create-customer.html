@@ -91,7 +91,8 @@
 
       <ion-item>
         <ion-label>Date of purchase<span style="color:red">*</span></ion-label>
-        <ion-input type="Date" formControlName="u_dateOf_Purchased"></ion-input>
+        <!-- <ion-input type="Date" formControlName="u_dateOf_Purchased"></ion-input> -->
+        <ion-datetime [max]="maxDate" formControlName="u_dateOf_Purchased"  display-timezone="utc"></ion-datetime>
       </ion-item>
       <div class="validation-errors">
         <ng-container *ngFor="let validation of validation_messages.u_dateOf_Purchased">
