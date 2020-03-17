@@ -14,7 +14,8 @@ import { CustDashboardPage } from "../cust-dashboard/cust-dashboard"
   templateUrl: 'home.html'
 })
 export class HomePage {
-  password_type:string= 'password'
+  eyeName = "eye"
+  password_type: string = 'password'
   @ViewChild(PageLoader) loadPage: PageLoader;
   validations_form: FormGroup;
   matching_passwords_group: FormGroup;
@@ -22,8 +23,9 @@ export class HomePage {
 
   }
 
-  changePaswordType(){
-    this.password_type=  this.password_type === 'text' ? 'password':'text'
+  changePaswordType() {
+    this.eyeName = this.eyeName === "eye" ? "eye-off" : "eye"
+    this.password_type = this.password_type === 'text' ? 'password' : 'text'
   }
   ngOnInit() {
     this.validations_form = this.formBuilder.group({

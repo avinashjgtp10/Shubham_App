@@ -8,6 +8,11 @@ public static adminCreateCustomerValidationMessage={
     'u_MachinePurchased': [
       { type: 'required', message: 'Machine name is required.' }
     ],
+    'purchase_condation':[
+      {
+         type: 'required', message: 'Purchase condation is required.' 
+      }
+    ],
     'name': [
       { type: 'required', message: 'Name is required.' }
     ],

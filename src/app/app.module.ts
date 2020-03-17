@@ -21,7 +21,8 @@ import { CustRaiseComplaintPage } from "../pages/cust-raise-complaint/cust-raise
 import { CustViewComplaintPage } from "../pages/cust-view-complaint/cust-view-complaint"
 import { NgxDatatableModule} from "@swimlane/ngx-datatable"
 import { CustDetailsPage } from "../pages/cust-details/cust-details"
-import { EnggDetailsPage } from "../pages/engg-details/engg-details"
+import { EnggDetailsPage } from "../pages/engg-details/engg-details";
+import { AssignEnggModalPage } from "../pages/assign-engg-modal/assign-engg-modal"
 //http call
 import { HttpClientModule } from '@angular/common/http'
 import { LoaderProvider } from '../providers/loader/loader';
@@ -64,10 +65,12 @@ import { DirectivesShowPasswordDirective } from "../directives/directives-show-p
     CustDashboardPage,
     CustViewComplaintPage,
     CustRaiseComplaintPage,
-    HeaderComponent
+    HeaderComponent,
+    AssignEnggModalPage,
   ],
   imports: [
     BrowserModule,
+    
     IonicModule.forRoot(MyApp),
     HttpClientModule,
     NgxDatatableModule
@@ -76,6 +79,7 @@ import { DirectivesShowPasswordDirective } from "../directives/directives-show-p
   entryComponents: [
     MyApp,
     HomePage,
+    AssignEnggModalPage,
     EnggDashboardPage,
     CustDetailsPage,
     EnggDetailsPage,

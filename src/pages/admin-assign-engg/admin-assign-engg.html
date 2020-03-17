@@ -13,97 +13,40 @@
 <ion-header *ngIf="!isSearchEng" id="searchEngg">
   <ion-navbar>
     <ion-title>Search Engineer</ion-title>
-    <button ion-button color="light" (click)="isSearchEng = true" *ngIf="!isSearchEng">Close</button>
+    <button ion-button   color="light" (click)="isSearchEng = true" *ngIf="!isSearchEng">Close</button>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <page-loader></page-loader>
-  <b *ngIf="allcomplaint.length === 0" style="text-align: center;    display: block;font-size: 2em; color:red;">Data not
-    Found</b>
-  <section *ngIf="allcomplaint.length > 0">
-    <section *ngIf="isSearchEng">
-
+  
       <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-      
-      <section>
-          <!-- <ngx-datatable
-          class="material"
-          [rows]="allcomplaint"
-          [columnMode]="ColumnMode.force"
-          [columns]="columns"
-          [headerHeight]="50"
-          [footerHeight]="50"
-          rowHeight="auto"
-          [limit]="5"
-          [selected]="selected"
-          [selectionType]="SelectionType.single"
-          (activate)="onActivate($event)"
-          (select)="onSelect($event)"
-        >
-        </ngx-datatable> -->
-          <!-- <ngx-datatable
-       [sortType]="'multi'"
-       [headerHeight]="50"
-       [footerHeight]="50"
-       [rowHeight]="50"
-       [rows]="allcomplaint"
-       [columns]="columns"
-       [columnMode]="'force'"
-       [limit]="10">
-       <ngx-datatable-column name="Name"></ngx-datatable-column>
-       <ngx-datatable-column name="Gender"></ngx-datatable-column>
-       <ngx-datatable-column name="Company"></ngx-datatable-column>
-       <ngx-datatable-column *ngFor="let column of allcomplaint; let i = index;" name="Action" prop="">
-          <ng-template let-value="value" let-row="row"  ngx-datatable-cell-template>
-            <span>
-              <button style="background-color:red;height:15px;" (click)='asign(row)'>Assign</button>
-            </span>
-          </ng-template>
-        </ngx-datatable-column>
-     </ngx-datatable> -->
-        <table>
-          <thead>
-            <tr>
-              <th>C.NO</th>
-              <th>Complaint</th>
-              <th>Date</th>
-              <th>Type of Machine</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let complaint of allcomplaint">
-              <td>{{complaint.c_id}}</td>
-              <td>{{complaint.c_desc}}</td>
-              <td>{{complaint.c_date}}</td>
-              <td>{{complaint.Machine_type}}</td>
-              <td> <button (click)="asign(complaint)"> Assign </button> </td>
-            </tr>
-          </tbody>
-        </table>
+      <b *ngIf="allcomplaint.length === 0" style="text-align: center;    display: block;font-size: 2em; color:red;">Data not
+        Found</b>
+      <section *ngIf="allcomplaint.length >= 1">
+        <div *ngFor="let c of allcomplaint">
+          <ion-card>
+            <ion-card-header>
+              <h2><b> {{c.c_id}}</b> </h2>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-row>
+                <ion-col> {{c.c_desc}} </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>Date:</ion-col>
+                <ion-col>{{c.c_date | convertMachinName}}</ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>Type of Machine:</ion-col>
+                <ion-col>{{c.Machine_type}}</ion-col>
+              </ion-row>
+              <ion-row>
+                  <button full ion-button float="right" expand="full" (click)="asign(c)">Assign Engineer</button>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </div>
       </section>
-    </section>
-    <section *ngIf="!isSearchEng">
-      <ion-searchbar (ionInput)="getEngg($event)"></ion-searchbar>
-      <table>
-        <thead>
-          <tr>
-            <th>U.no</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let user of getAllEngg">
-            <td>{{user.u_id}}</td>
-            <td>{{user.u_name}}</td>
-            <td>{{user.u_email}}</td>
-            <td> <button (click)="updateComplaint(user)"> Assign </button> </td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-  </section>
+   
 </ion-content>

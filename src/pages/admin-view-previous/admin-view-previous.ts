@@ -27,12 +27,10 @@ export class AdminViewPreviousPage {
   }
 
   initializeItems() {
-    console.log("Calling..")
     this.rest.getAllComplaint().subscribe((result: any) => {
       this.allcomplaint = result.data;
       this.allcomplaint = this.allcomplaint.filter((ele: any) => {
         AppSettings.status.forEach((e: any) => {
-         // console.log(e);
           if (parseInt(e.id) === parseInt(ele.c_status)) {
             ele.c_status = e.value;
           }
@@ -42,12 +40,8 @@ export class AdminViewPreviousPage {
     })
   }
   getItems(ev: any) {
-    // Reset items back to all of the items
-    this.initializeItems();
-
     // set val to the value of the searchbar
     const val = ev.target.value;
-
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
       this.allcomplaint = this.allcomplaint.filter((item) => {
@@ -57,7 +51,9 @@ export class AdminViewPreviousPage {
         
       })
     }
-    console.log("hfg")
+    if(val.length === 0){
+      this.initializeItems();   // Reset items back to all of the items
+    }
   }
   
 }

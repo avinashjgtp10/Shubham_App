@@ -22,7 +22,9 @@
               </div>
               <ion-item>
                 <ion-input  [type]="password_type" placeholder="Password" formControlName="password" ></ion-input>
-                <ion-icon name="eye" item-right (click)="changePaswordType()" ></ion-icon>
+      
+                <button ion-button clear color="dark" type="button" item-right (click)="changePaswordType()"> <ion-icon [name]="eyeName"> </ion-icon> </button>
+             
               </ion-item>
               <div class="validation-errors">
                   <ng-container *ngFor="let validation of validation_messages.password">

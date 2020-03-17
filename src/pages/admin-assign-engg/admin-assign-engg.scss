@@ -6,12 +6,17 @@ page-admin-assign-engg {
     }
     #searchEngg{
         ion-title {
-            width: 80%;
             float: left;
+        }
+        [ion-button]{
+            float:right ;
         }
     }
     ion-content { 
     section{
+        .assignBtn{
+            width:100%
+        }
         margin:10px;
         table, th, td {
           margin:auto;

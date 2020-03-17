@@ -1,14 +1,14 @@
 webpackJsonp([11],{
 
-/***/ 701:
+/***/ 703:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminCreateEnggPageModule", function() { return AdminCreateEnggPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminDashboardPageModule", function() { return AdminDashboardPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__admin_create_engg__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__admin_dashboard__ = __webpack_require__(159);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AdminCreateEnggPageModule = /** @class */ (function () {
-    function AdminCreateEnggPageModule() {
+var AdminDashboardPageModule = /** @class */ (function () {
+    function AdminDashboardPageModule() {
     }
-    AdminCreateEnggPageModule = __decorate([
+    AdminDashboardPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__admin_create_engg__["a" /* AdminCreateEnggPage */],
+                __WEBPACK_IMPORTED_MODULE_2__admin_dashboard__["a" /* AdminDashboardPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__admin_create_engg__["a" /* AdminCreateEnggPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__admin_dashboard__["a" /* AdminDashboardPage */]),
             ],
         })
-    ], AdminCreateEnggPageModule);
-    return AdminCreateEnggPageModule;
+    ], AdminDashboardPageModule);
+    return AdminDashboardPageModule;
 }());
 
-//# sourceMappingURL=admin-create-engg.module.js.map
+//# sourceMappingURL=admin-dashboard.module.js.map
 
 /***/ })
 

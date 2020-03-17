@@ -25724,12 +25724,19 @@ page-admin-assign-engg #backBtn .back-button {
 }
 
 page-admin-assign-engg #searchEngg ion-title {
-  width: 80%;
   float: left;
+}
+
+page-admin-assign-engg #searchEngg [ion-button] {
+  float: right;
 }
 
 page-admin-assign-engg ion-content section {
   margin: 10px;
+}
+
+page-admin-assign-engg ion-content section .assignBtn {
+  width: 100%;
 }
 
 page-admin-assign-engg ion-content section table, page-admin-assign-engg ion-content section th, page-admin-assign-engg ion-content section td {
@@ -25750,6 +25757,10 @@ page-admin-create-customer ion-content ion-list .error-message {
   font-size: 14px;
   margin-left: 10px;
   margin-top: 10px;
+}
+
+page-admin-create-customer ion-content ion-list item-right {
+  width: auto;
 }
 
 page-admin-create-customer ion-content ion-list button {
@@ -25808,8 +25819,8 @@ page-admin-dashboard ion-content .container {
   top: 15%;
 }
 
-page-admin-view-previous table {
-  margin: 10px;
+page-admin-view-previous ion-card ion-card-header {
+  text-align: center;
 }
 
 page-cust-dashboard ion-content

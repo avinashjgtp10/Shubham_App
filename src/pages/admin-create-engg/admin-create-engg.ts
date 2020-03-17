@@ -18,7 +18,8 @@ import { MockData } from "../../app/mock-data"
   templateUrl: 'admin-create-engg.html',
 })
 export class AdminCreateEnggPage {
-
+  passwordEye="eye"
+  confirmEye="eye"
   validations_form: FormGroup;
   matching_passwords_group: FormGroup;
   validation_messages = MockData.adminEnggValidationMsg;
@@ -62,9 +63,11 @@ export class AdminCreateEnggPage {
   }
 
   changePaswordType(){
+    this.passwordEye = this.passwordEye === "eye" ? "eye-off":"eye"
     this.password_type=this.password_type === "text" ? "password":"text"
   }
   changecPaswordType(){
+    this.confirmEye=this.confirmEye === "eye"?"eye-off":"eye"
     this.cpassword_type=this.cpassword_type === "text" ? "password":"text"
   }
 

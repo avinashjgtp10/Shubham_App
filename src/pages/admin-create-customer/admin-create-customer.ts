@@ -18,8 +18,12 @@ import { MockData } from "../../app/mock-data"
   templateUrl: 'admin-create-customer.html',
 })
 export class AdminCreateCustomerPage {
-
-
+passwordEye="eye";
+cPassEye="eye"
+  public form = [
+    { key:"new",val: 'New',isChecked:true},
+    { key:"reCondition",val: 'Re Conditioned',isChecked:false }
+  ];
   password_type:string="password";
   cpassword_type:string="password"
   validations_form: FormGroup;
@@ -45,9 +49,11 @@ export class AdminCreateCustomerPage {
   }
 
   changePaswordType(){
+    this.passwordEye = this.passwordEye === "eye" ? "eye-off":"eye";
     this.password_type=this.password_type === "text" ? "password":"text";
   }
   changecPaswordType(){
+    this.cPassEye=this.cPassEye === "eye"?"eye-off":"eye";
     this.cpassword_type=this.cpassword_type === "text" ? "password":"text";
   }
 
@@ -67,6 +73,7 @@ export class AdminCreateCustomerPage {
 
     this.validations_form = this.formBuilder.group({
       u_dateOf_Purchased: new FormControl('', Validators.required),
+      purchase_condation:new FormControl(''),
       address: new FormControl(""),
       u_MachinePurchased: new FormControl('', Validators.required),
       alter: new FormControl("", [Validators.minLength(10),Validators.maxLength(10), Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]),
@@ -91,10 +98,12 @@ export class AdminCreateCustomerPage {
       "u_dateOf_Purchased": new Date(values.u_dateOf_Purchased),
       "u_password": values.matching_passwords.u_password,
       "u_cpassword": values.matching_passwords.u_cpassword,
+      "u_purchase_con":values.purchase_condation,
       "u_role": 1,
       "u_roleType": null,
       "u_joinDate": new Date()
     }
+
         this.rest.createCustomer(Obj).subscribe((result: any) => {
           if (result.status === "success") {
             this.toast.showToast("Customer Details saved");
