@@ -1,4 +1,4 @@
-webpackJsonp([15],{
+webpackJsonp([16],{
 
 /***/ 120:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -57,17 +57,171 @@ var PageLoader = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 155:
+/***/ 133:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PasswordValidator; });
+var PasswordValidator = /** @class */ (function () {
+    function PasswordValidator() {
+    }
+    // Inspired on: http://plnkr.co/edit/Zcbg2T3tOxYmhxs7vaAm?p=preview
+    PasswordValidator.areEqual = function (formGroup) {
+        var val;
+        var valid = true;
+        for (var key in formGroup.controls) {
+            if (formGroup.controls.hasOwnProperty(key)) {
+                var control = formGroup.controls[key];
+                if (val === undefined) {
+                    val = control.value;
+                }
+                else {
+                    if (val !== control.value) {
+                        valid = false;
+                        break;
+                    }
+                }
+            }
+        }
+        if (valid) {
+            return null;
+        }
+        return {
+            areEqual: true
+        };
+    };
+    return PasswordValidator;
+}());
+
+//# sourceMappingURL=password.validator.js.map
+
+/***/ }),
+
+/***/ 134:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MockData; });
+var MockData = /** @class */ (function () {
+    function MockData() {
+    }
+    //public static validationPasswordPattern:string='^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]+$'
+    MockData.validationPasswordPattern = '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]+$';
+    MockData.adminCreateCustomerValidationMessage = {
+        'u_dateOf_Purchased': [
+            { type: 'required', message: 'Date is required.' }
+        ],
+        'u_MachinePurchased': [
+            { type: 'required', message: 'Machine name is required.' }
+        ],
+        'service_period': [
+            { type: 'required', message: 'Please select service period.' }
+        ],
+        'warrenty_period': [
+            { type: 'required', message: 'Please select warrenty period.' }
+        ],
+        'purchase_condation': [
+            {
+                type: 'required', message: 'Purchase condation is required.'
+            }
+        ],
+        'name': [
+            { type: 'required', message: 'Name is required.' }
+        ],
+        'Machine_No': [
+            { type: 'required', message: 'Machine Number is required.' }
+        ],
+        'lastname': [
+            { type: 'required', message: 'Last name is required.' }
+        ],
+        'email': [
+            { type: 'required', message: 'Email is required.' },
+            { type: 'pattern', message: 'Please enter a valid email.' }
+        ],
+        'phone': [
+            { type: 'required', message: 'Phone is required.' },
+            { type: 'maxLength', message: 'The phone is incorrect' },
+            { type: 'pattern', message: 'The phone is incorrect' },
+            { type: 'minLength', message: 'The phone is incorrect' }
+        ],
+        'alter': [
+            { type: 'maxLength', message: 'The phone is incorrect' },
+            { type: 'pattern', message: 'The phone is incorrect' }
+        ],
+        'u_password': [
+            { type: 'required', message: 'Password is required.' },
+            { type: 'minlength', message: 'Password must be at least 5 characters long.' },
+            { type: 'pattern', message: 'Your password must contain at least one uppercase, one lowercase, and one number.' }
+        ],
+        'u_cpassword': [
+            { type: 'required', message: 'Confirm password is required.' }
+        ],
+        'matching_passwords': [
+            { type: 'areEqual', message: 'Password mismatch.' }
+        ],
+        'terms': [
+            { type: 'pattern', message: 'You must accept terms and conditions.' }
+        ],
+    };
+    MockData.adminEnggValidationMsg = {
+        'u_Joining_date': [
+            { type: 'required', message: 'Date is required.' }
+        ],
+        'engg_type': [
+            { type: 'required', message: 'Machine name is required.' }
+        ],
+        'name': [
+            { type: 'required', message: 'Name is required.' }
+        ],
+        'lastname': [
+            { type: 'required', message: 'Last name is required.' }
+        ],
+        'email': [
+            { type: 'required', message: 'Email is required.' },
+            { type: 'pattern', message: 'Please enter a valid email.' }
+        ],
+        'phone': [
+            { type: 'required', message: 'Phone is required.' },
+            { type: 'maxLength', message: 'The phone is incorrect' },
+            { type: 'pattern', message: 'The phone is incorrect' }
+        ],
+        'alter': [
+            { type: 'maxLength', message: 'The phone is incorrect' },
+            { type: 'pattern', message: 'The phone is incorrect' }
+        ],
+        'u_password': [
+            { type: 'required', message: 'Password is required.' },
+            { type: 'minlength', message: 'Password must be at least 5 characters long.' },
+            { type: 'pattern', message: 'Your password must contain at least one uppercase, one lowercase, and one number.' }
+        ],
+        'u_cpassword': [
+            { type: 'required', message: 'Confirm password is required.' }
+        ],
+        'matching_passwords': [
+            { type: 'areEqual', message: 'Password mismatch.' }
+        ],
+        'terms': [
+            { type: 'pattern', message: 'You must accept terms and conditions.' }
+        ],
+    };
+    return MockData;
+}());
+
+//# sourceMappingURL=mock-data.js.map
+
+/***/ }),
+
+/***/ 157:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminAssignEnggPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__reusable_component_loader_page_loader__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__swimlane_ngx_datatable__ = __webpack_require__(227);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__assign_engg_modal_assign_engg_modal__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__swimlane_ngx_datatable__ = __webpack_require__(230);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__assign_engg_modal_assign_engg_modal__ = __webpack_require__(158);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -168,15 +322,15 @@ var AdminAssignEnggPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 156:
+/***/ 158:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AssignEnggModalPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_toast_toast__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_toast_toast__ = __webpack_require__(40);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -264,157 +418,18 @@ var AssignEnggModalPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 157:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminCreateCustomerPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validators_password_validator__ = __webpack_require__(321);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_rest_rest__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_toast_toast__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_mock_data__ = __webpack_require__(322);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-/**
- * Generated class for the AdminCreateCustomerPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var AdminCreateCustomerPage = /** @class */ (function () {
-    function AdminCreateCustomerPage(toast, navCtrl, rest, formBuilder, navParams) {
-        this.toast = toast;
-        this.navCtrl = navCtrl;
-        this.rest = rest;
-        this.formBuilder = formBuilder;
-        this.navParams = navParams;
-        this.passwordEye = "eye";
-        this.cPassEye = "eye";
-        this.form = [
-            { key: "new", val: 'New', isChecked: true },
-            { key: "reCondition", val: 'Re Conditioned', isChecked: false }
-        ];
-        this.password_type = "password";
-        this.cpassword_type = "password";
-        this.validation_messages = __WEBPACK_IMPORTED_MODULE_6__app_mock_data__["a" /* MockData */].adminCreateCustomerValidationMessage;
-        this.maxDate = new Date().toISOString();
-        this.typesOfMachin = [
-            "Computerised Embroidery Machines",
-            "Reconditioned Barudan  Embroidery Machines",
-            "Circular Knitting Machines",
-            "Flat knitting Machines",
-            "Chain Stitch Machines",
-            "Laser Cutting Machines",
-            "Dual sequence cording Machines",
-            "Cap knitting Machines", "Coller Knitting Machines"
-        ];
-    }
-    AdminCreateCustomerPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad AdminCreateCustomerPage');
-    };
-    AdminCreateCustomerPage.prototype.changePaswordType = function () {
-        this.passwordEye = this.passwordEye === "eye" ? "eye-off" : "eye";
-        this.password_type = this.password_type === "text" ? "password" : "text";
-    };
-    AdminCreateCustomerPage.prototype.changecPaswordType = function () {
-        this.cPassEye = this.cPassEye === "eye" ? "eye-off" : "eye";
-        this.cpassword_type = this.cpassword_type === "text" ? "password" : "text";
-    };
-    AdminCreateCustomerPage.prototype.ngOnInit = function () {
-        this.matching_passwords_group = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormGroup */]({
-            u_password: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].compose([
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].minLength(5),
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required,
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].pattern('')
-            ])),
-            u_cpassword: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required)
-        }, function (formGroup) {
-            return __WEBPACK_IMPORTED_MODULE_3__validators_password_validator__["a" /* PasswordValidator */].areEqual(formGroup);
-        });
-        this.validations_form = this.formBuilder.group({
-            u_dateOf_Purchased: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
-            purchase_condation: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */](''),
-            address: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */](""),
-            u_MachinePurchased: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
-            alter: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]("", [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].minLength(10), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].maxLength(10), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].pattern("^((\\+91-?)|0)?[0-9]{10}$")]),
-            name: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
-            email: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].compose([
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required,
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-            ])),
-            matching_passwords: this.matching_passwords_group,
-            phone: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].minLength(10), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].maxLength(10), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].pattern("^((\\+91-?)|0)?[0-9]{10}$")])
-        });
-    };
-    AdminCreateCustomerPage.prototype.onSubmit = function (values) {
-        var _this = this;
-        var Obj = {
-            "u_name": values.name,
-            "u_mobile": values.phone,
-            "u_altermobile": values.alter,
-            "u_email": values.email,
-            "u_address": values.address,
-            "u_MachinePurchased": values.u_MachinePurchased,
-            "u_dateOf_Purchased": new Date(values.u_dateOf_Purchased),
-            "u_password": values.matching_passwords.u_password,
-            "u_cpassword": values.matching_passwords.u_cpassword,
-            "u_purchase_con": values.purchase_condation,
-            "u_role": 1,
-            "u_roleType": null,
-            "u_joinDate": new Date()
-        };
-        this.rest.createCustomer(Obj).subscribe(function (result) {
-            if (result.status === "success") {
-                _this.toast.showToast("Customer Details saved");
-                _this.validations_form.reset();
-            }
-            if (result.status === "error") {
-                _this.toast.showToast(result.message);
-            }
-        });
-    };
-    AdminCreateCustomerPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-admin-create-customer',template:/*ion-inline-start:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/admin-create-customer/admin-create-customer.html"*/'<!--\n  Generated template for the AdminCreateCustomerPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Create Customer</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list lines="none">\n    <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">\n\n      <ion-item>\n        <ion-label floating>Customer Name<span style="color:red">*</span></ion-label>\n        <ion-input type="text" formControlName="name"></ion-input>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.name">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'name\').hasError(validation.type) && (validations_form.get(\'name\').dirty || validations_form.get(\'name\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n      <ion-item>\n        <ion-label floating>Mobile Number<span style="color:red">*</span></ion-label>\n        <ion-input type="text" formControlName="phone"></ion-input>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.phone">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'phone\').hasError(validation.type) && (validations_form.get(\'phone\').dirty || validations_form.get(\'phone\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n\n      <ion-item>\n        <ion-label floating>Alternative Contact number</ion-label>\n        <ion-input type="text" formControlName="alter"></ion-input>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.alter">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'alter\').hasError(validation.type) && (validations_form.get(\'alter\').dirty || validations_form.get(\'alter\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n\n      <ion-item>\n        <ion-label floating>Email<span style="color:red">*</span></ion-label>\n        <ion-input type="email" formControlName="email"></ion-input>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.email">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'email\').hasError(validation.type) && (validations_form.get(\'email\').dirty || validations_form.get(\'email\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n      <ion-item>\n        <ion-label floating>Address<span style="color:red">*</span></ion-label>\n        <ion-textarea formControlName="address"></ion-textarea>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Machine purchased<span style="color:red">*</span></ion-label>\n        <ion-select formControlName="u_MachinePurchased">\n          <ion-option *ngFor="let mach of typesOfMachin" [value]="mach">\n            {{mach}}</ion-option>\n        </ion-select>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.u_MachinePurchased">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'u_MachinePurchased\').hasError(validation.type) && (validations_form.get(\'u_MachinePurchased\').dirty || validations_form.get(\'u_MachinePurchased\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n        <!-- <ion-item > -->\n\n\n          <!-- <ion-list radio-group>\n            <ion-list-header>\n              <ion-label>condition </ion-label>\n            </ion-list-header>\n        \n            <ion-item *ngFor="let entry of form">\n              <ion-label>             {{entry.key}} </ion-label>\n              <ion-radio slot="start" value="{{entry.val}}"></ion-radio>\n            </ion-item>\n        \n          </ion-list> -->\n          <ion-list radio-group formControlName="purchase_condation">\n            <ion-list-header>\n              Purchase Type\n            </ion-list-header>\n          \n            <ion-item *ngFor="let f of form ">\n              <ion-label>{{f.val}}</ion-label>\n              <ion-radio checked="{{f.isChecked}}"  value="{{f.key}}"></ion-radio>\n            </ion-item>\n          </ion-list>\n          <div class="validation-errors">\n            <ng-container *ngFor="let validation of validation_messages.purchase_condation">\n              <div class="error-message"\n                *ngIf="validations_form.get(\'purchase_condation\').hasError(validation.type) && (validations_form.get(\'purchase_condation\').dirty || validations_form.get(\'purchase_condation\').touched)">\n                <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n              </div>\n            </ng-container>\n          </div>\n\n        <!-- </ion-item> -->\n\n      <ion-item>\n        <ion-label>Date of purchase<span style="color:red">*</span></ion-label>\n        <!-- <ion-input type="Date" formControlName="u_dateOf_Purchased"></ion-input> -->\n        <ion-datetime [max]="maxDate" formControlName="u_dateOf_Purchased"  display-timezone="utc"></ion-datetime>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.u_dateOf_Purchased">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'u_dateOf_Purchased\').hasError(validation.type) && (validations_form.get(\'u_dateOf_Purchased\').dirty || validations_form.get(\'u_dateOf_Purchased\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n      <div formGroupName="matching_passwords">\n        <ion-item>\n          <ion-label position="floating" color="primary">Password<span style="color:red">*</span></ion-label>\n          <ion-input [type]="password_type" formControlName="u_password"></ion-input>\n          \n          <button style="width:auto" ion-button clear color="dark" type="button" item-right (click)="changePaswordType()"> <ion-icon [name]="passwordEye"> </ion-icon> </button>\n        </ion-item>\n        <div class="validation-errors">\n          <ng-container *ngFor="let validation of validation_messages.u_password">\n            <div class="error-message" *ngIf="validations_form.get(\'matching_passwords\').get(\'u_password\').hasError(validation.type) && (validations_form.get(\'matching_passwords\').get(\'u_password\').dirty || validations_form.get(\'matching_passwords\').get(\'u_password\').touched)">\n              <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n            </div>\n          </ng-container>\n        </div>\n  \n        <ion-item>\n          <ion-label position="floating" color="primary">Confirm Password<span style="color:red">*</span></ion-label>\n          <ion-input [type]="cpassword_type" formControlName="u_cpassword"></ion-input>\n          \n          <button ion-button  style="width:auto"  clear color="dark" type="button" item-right (click)="changecPaswordType()"> <ion-icon [name]="cPassEye"> </ion-icon> </button>\n        </ion-item>\n        <div class="validation-errors">\n          <ng-container *ngFor="let validation of validation_messages.u_cpassword">\n            <div class="error-message" *ngIf="validations_form.get(\'matching_passwords\').get(\'u_cpassword\').hasError(validation.type) && (validations_form.get(\'matching_passwords\').get(\'u_cpassword\').dirty || validations_form.get(\'matching_passwords\').get(\'u_cpassword\').touched)">\n              <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n            </div>\n          </ng-container>\n        </div>\n      </div>\n      <!-- These validations are for the form group -->\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.matching_passwords">\n          <div class="error-message" *ngIf="validations_form.get(\'matching_passwords\').hasError(validation.type) && (validations_form.get(\'matching_passwords\').get(\'u_cpassword\').dirty || validations_form.get(\'matching_passwords\').get(\'u_cpassword\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n      <button full color="primary" class="submit-btn" expand="full" type="submit"\n        [disabled]="!validations_form.valid">Submit</button>\n    </form>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/admin-create-customer/admin-create-customer.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5__providers_toast_toast__["a" /* ToastProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__providers_rest_rest__["a" /* RestProvider */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
-    ], AdminCreateCustomerPage);
-    return AdminCreateCustomerPage;
-}());
-
-//# sourceMappingURL=admin-create-customer.js.map
-
-/***/ }),
-
-/***/ 158:
+/***/ 159:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminCreateEnggPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validators_password_validator__ = __webpack_require__(321);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_rest_rest__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_toast_toast__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_mock_data__ = __webpack_require__(322);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validators_password_validator__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_rest_rest__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_toast_toast__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_mock_data__ = __webpack_require__(134);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -527,20 +542,20 @@ var AdminCreateEnggPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 159:
+/***/ 160:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminDashboardPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__admin_create_customer_admin_create_customer__ = __webpack_require__(157);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__admin_create_engg_admin_create_engg__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__admin_create_customer_admin_create_customer__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__admin_create_engg_admin_create_engg__ = __webpack_require__(159);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__admin_assign_engg_admin_assign_engg__ = __webpack_require__(155);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__admin_view_previous_admin_view_previous__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__cust_details_cust_details__ = __webpack_require__(168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__engg_details_engg_details__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__admin_assign_engg_admin_assign_engg__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__admin_view_previous_admin_view_previous__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__cust_details_cust_details__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__engg_details_engg_details__ = __webpack_require__(172);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -641,15 +656,169 @@ var AdminDashboardPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 160:
+/***/ 161:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminCreateCustomerPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validators_password_validator__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_rest_rest__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_toast_toast__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_mock_data__ = __webpack_require__(134);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+/**
+ * Generated class for the AdminCreateCustomerPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var AdminCreateCustomerPage = /** @class */ (function () {
+    function AdminCreateCustomerPage(toast, navCtrl, rest, formBuilder, navParams) {
+        this.toast = toast;
+        this.navCtrl = navCtrl;
+        this.rest = rest;
+        this.formBuilder = formBuilder;
+        this.navParams = navParams;
+        this.passwordEye = "eye";
+        this.cPassEye = "eye";
+        this.form = [
+            { key: "new", val: 'New', isChecked: true },
+            { key: "reCondition", val: 'Re Conditioned', isChecked: false }
+        ];
+        this.password_type = "password";
+        this.cpassword_type = "password";
+        this.validation_messages = __WEBPACK_IMPORTED_MODULE_6__app_mock_data__["a" /* MockData */].adminCreateCustomerValidationMessage;
+        this.maxDate = new Date().toISOString();
+        this.typesOfMachin = [
+            "Computerised Embroidery Machines",
+            "Reconditioned Barudan  Embroidery Machines",
+            "Circular Knitting Machines",
+            "Flat knitting Machines",
+            "Chain Stitch Machines",
+            "Laser Cutting Machines",
+            "Dual sequence cording Machines",
+            "Cap knitting Machines", "Coller Knitting Machines"
+        ];
+    }
+    AdminCreateCustomerPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AdminCreateCustomerPage');
+    };
+    AdminCreateCustomerPage.prototype.getMonth = function () {
+        var arr = [];
+        for (var i = 1; i <= 12; i++) {
+            arr.push(i);
+        }
+        return arr;
+    };
+    AdminCreateCustomerPage.prototype.changePaswordType = function () {
+        this.passwordEye = this.passwordEye === "eye" ? "eye-off" : "eye";
+        this.password_type = this.password_type === "text" ? "password" : "text";
+    };
+    AdminCreateCustomerPage.prototype.changecPaswordType = function () {
+        this.cPassEye = this.cPassEye === "eye" ? "eye-off" : "eye";
+        this.cpassword_type = this.cpassword_type === "text" ? "password" : "text";
+    };
+    AdminCreateCustomerPage.prototype.ngOnInit = function () {
+        this.matching_passwords_group = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormGroup */]({
+            u_password: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].compose([
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].minLength(5),
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required,
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].pattern('')
+            ])),
+            u_cpassword: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required)
+        }, function (formGroup) {
+            return __WEBPACK_IMPORTED_MODULE_3__validators_password_validator__["a" /* PasswordValidator */].areEqual(formGroup);
+        });
+        this.validations_form = this.formBuilder.group({
+            u_dateOf_Purchased: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
+            purchase_condation: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */](''),
+            address: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */](""),
+            u_MachinePurchased: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
+            alter: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]("", [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].minLength(10), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].maxLength(10), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].pattern("^((\\+91-?)|0)?[0-9]{10}$")]),
+            name: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
+            u_note: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */](''),
+            service_period: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
+            warrenty_period: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
+            Machine_No: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
+            email: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].compose([
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required,
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+            ])),
+            matching_passwords: this.matching_passwords_group,
+            phone: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].minLength(10), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].maxLength(10), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].pattern("^((\\+91-?)|0)?[0-9]{10}$")])
+        });
+    };
+    AdminCreateCustomerPage.prototype.onSubmit = function (values) {
+        var _this = this;
+        var Obj = {
+            "u_name": values.name,
+            "u_mobile": values.phone,
+            "u_altermobile": values.alter,
+            "u_email": values.email,
+            "u_address": values.address,
+            "u_MachinePurchased": values.u_MachinePurchased,
+            "u_dateOf_Purchased": new Date(values.u_dateOf_Purchased),
+            "u_password": values.matching_passwords.u_password,
+            "u_cpassword": values.matching_passwords.u_cpassword,
+            "u_purchase_con": values.purchase_condation,
+            "u_note": values.u_note,
+            "u_MachineNo": values.Machine_No,
+            "u_ServicePeriod": values.service_period,
+            "u_WarrentyPeriod": values.warrenty_period,
+            "u_role": 1,
+            "u_roleType": null,
+            "u_joinDate": new Date()
+        };
+        this.rest.createCustomer(Obj).subscribe(function (result) {
+            if (result.status === "success") {
+                _this.toast.showToast("Customer Details saved");
+                _this.validations_form.reset();
+            }
+            if (result.status === "error") {
+                _this.toast.showToast(result.message);
+            }
+        });
+    };
+    AdminCreateCustomerPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-admin-create-customer',template:/*ion-inline-start:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/admin-create-customer/admin-create-customer.html"*/'<!--\n  Generated template for the AdminCreateCustomerPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Create Customer</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list lines="none">\n    <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">\n\n      <ion-item>\n        <ion-label floating>Customer Name<span style="color:red">*</span></ion-label>\n        <ion-input type="text" formControlName="name"></ion-input>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.name">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'name\').hasError(validation.type) && (validations_form.get(\'name\').dirty || validations_form.get(\'name\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n      <ion-item>\n        <ion-label floating>Mobile Number<span style="color:red">*</span></ion-label>\n        <ion-input type="text" formControlName="phone"></ion-input>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.phone">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'phone\').hasError(validation.type) && (validations_form.get(\'phone\').dirty || validations_form.get(\'phone\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n\n      <ion-item>\n        <ion-label floating>Alternative Contact number</ion-label>\n        <ion-input type="text" formControlName="alter"></ion-input>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.alter">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'alter\').hasError(validation.type) && (validations_form.get(\'alter\').dirty || validations_form.get(\'alter\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n\n      <ion-item>\n        <ion-label floating>Email<span style="color:red">*</span></ion-label>\n        <ion-input type="email" formControlName="email"></ion-input>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.email">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'email\').hasError(validation.type) && (validations_form.get(\'email\').dirty || validations_form.get(\'email\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n      <ion-item>\n        <ion-label floating>Address<span style="color:red">*</span></ion-label>\n        <ion-textarea formControlName="address"></ion-textarea>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Machine purchased<span style="color:red">*</span></ion-label>\n        <ion-select formControlName="u_MachinePurchased">\n          <ion-option *ngFor="let mach of typesOfMachin" [value]="mach">\n            {{mach}}</ion-option>\n        </ion-select>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.u_MachinePurchased">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'u_MachinePurchased\').hasError(validation.type) && (validations_form.get(\'u_MachinePurchased\').dirty || validations_form.get(\'u_MachinePurchased\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n      <ion-list radio-group formControlName="purchase_condation">\n        <ion-list-header>\n          Purchase Type\n        </ion-list-header>\n\n        <ion-item *ngFor="let f of form ">\n          <ion-label>{{f.val}}</ion-label>\n          <ion-radio checked="{{f.isChecked}}" value="{{f.key}}"></ion-radio>\n        </ion-item>\n      </ion-list>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.purchase_condation">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'purchase_condation\').hasError(validation.type) && (validations_form.get(\'purchase_condation\').dirty || validations_form.get(\'purchase_condation\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n\n\n\n      <ion-item>\n        <ion-label floating>Note</ion-label>\n        <ion-input type="text" formControlName="u_note"></ion-input>\n      </ion-item>\n\n\n      <ion-item>\n        <ion-label floating>Machine No<span style="color:red">*</span></ion-label>\n        <ion-input type="text" formControlName="Machine_No"></ion-input>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.Machine_No">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'Machine_No\').hasError(validation.type) && (validations_form.get(\'Machine_No\').dirty || validations_form.get(\'Machine_No\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n\n      <ion-item>\n        <ion-label>Service Period<span style="color:red">*</span></ion-label>\n        <ion-select formControlName="service_period">\n          <ion-option *ngFor="let i of getMonth()" [value]="i">\n            {{i}}</ion-option>\n        </ion-select>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.service_period">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'service_period\').hasError(validation.type) && (validations_form.get(\'service_period\').dirty || validations_form.get(\'service_period\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n      <ion-item>\n        <ion-label>Warrenty Period<span style="color:red">*</span></ion-label>\n        <ion-select formControlName="warrenty_period">\n          <ion-option *ngFor="let category of getMonth();let i=index;" [value]=\'category\' [selected]="i===0">\n            {{category}}\n          </ion-option>\n        </ion-select>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.warrenty_period">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'warrenty_period\').hasError(validation.type) && (validations_form.get(\'warrenty_period\').dirty || validations_form.get(\'warrenty_period\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n\n      <ion-item>\n        <ion-label>Date of purchase<span style="color:red">*</span></ion-label>\n          <ion-datetime [max]="maxDate" formControlName="u_dateOf_Purchased" display-timezone="utc"></ion-datetime>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.u_dateOf_Purchased">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'u_dateOf_Purchased\').hasError(validation.type) && (validations_form.get(\'u_dateOf_Purchased\').dirty || validations_form.get(\'u_dateOf_Purchased\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n      <div formGroupName="matching_passwords">\n        <ion-item>\n          <ion-label position="floating" color="primary">Password<span style="color:red">*</span></ion-label>\n          <ion-input [type]="password_type" formControlName="u_password"></ion-input>\n\n          <button style="width:auto" ion-button clear color="dark" type="button" item-right\n            (click)="changePaswordType()">\n            <ion-icon [name]="passwordEye"> </ion-icon>\n          </button>\n        </ion-item>\n        <div class="validation-errors">\n          <ng-container *ngFor="let validation of validation_messages.u_password">\n            <div class="error-message"\n              *ngIf="validations_form.get(\'matching_passwords\').get(\'u_password\').hasError(validation.type) && (validations_form.get(\'matching_passwords\').get(\'u_password\').dirty || validations_form.get(\'matching_passwords\').get(\'u_password\').touched)">\n              <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n            </div>\n          </ng-container>\n        </div>\n\n        <ion-item>\n          <ion-label position="floating" color="primary">Confirm Password<span style="color:red">*</span></ion-label>\n          <ion-input [type]="cpassword_type" formControlName="u_cpassword"></ion-input>\n\n          <button ion-button style="width:auto" clear color="dark" type="button" item-right\n            (click)="changecPaswordType()">\n            <ion-icon [name]="cPassEye"> </ion-icon>\n          </button>\n        </ion-item>\n        <div class="validation-errors">\n          <ng-container *ngFor="let validation of validation_messages.u_cpassword">\n            <div class="error-message"\n              *ngIf="validations_form.get(\'matching_passwords\').get(\'u_cpassword\').hasError(validation.type) && (validations_form.get(\'matching_passwords\').get(\'u_cpassword\').dirty || validations_form.get(\'matching_passwords\').get(\'u_cpassword\').touched)">\n              <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n            </div>\n          </ng-container>\n        </div>\n      </div>\n      <!-- These validations are for the form group -->\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.matching_passwords">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'matching_passwords\').hasError(validation.type) && (validations_form.get(\'matching_passwords\').get(\'u_cpassword\').dirty || validations_form.get(\'matching_passwords\').get(\'u_cpassword\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n      <button full color="primary" class="submit-btn" expand="full" type="submit"\n        [disabled]="!validations_form.valid">Submit</button>\n    </form>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/admin-create-customer/admin-create-customer.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5__providers_toast_toast__["a" /* ToastProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__providers_rest_rest__["a" /* RestProvider */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+    ], AdminCreateCustomerPage);
+    return AdminCreateCustomerPage;
+}());
+
+//# sourceMappingURL=admin-create-customer.js.map
+
+/***/ }),
+
+/***/ 162:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EnggDashboardPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__engg_accept_complaint_engg_accept_complaint__ = __webpack_require__(161);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__engg_view_previous_engg_view_previous__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__engg_accept_complaint_engg_accept_complaint__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__engg_view_previous_engg_view_previous__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(65);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -702,15 +871,15 @@ var EnggDashboardPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 161:
+/***/ 163:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EnggAcceptComplaintPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__engg_view_complaint_engg_view_complaint__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_rest_rest__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__engg_view_complaint_engg_view_complaint__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_rest_rest__ = __webpack_require__(20);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -768,15 +937,15 @@ var EnggAcceptComplaintPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 162:
+/***/ 164:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EnggViewComplaintPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_toast_toast__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_toast_toast__ = __webpack_require__(40);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -854,14 +1023,14 @@ var EnggViewComplaintPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 163:
+/***/ 165:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EnggViewPreviousPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(20);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -915,15 +1084,15 @@ var EnggViewPreviousPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 164:
+/***/ 166:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustDashboardPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cust_raise_complaint_cust_raise_complaint__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cust_view_complaint_cust_view_complaint__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cust_raise_complaint_cust_raise_complaint__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cust_view_complaint_cust_view_complaint__ = __webpack_require__(168);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(65);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -976,16 +1145,16 @@ var CustDashboardPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 165:
+/***/ 167:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustRaiseComplaintPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_rest_rest__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_toast_toast__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_rest_rest__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_toast_toast__ = __webpack_require__(40);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1066,14 +1235,14 @@ var CustRaiseComplaintPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 166:
+/***/ 168:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustViewComplaintPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_app_settings__ = __webpack_require__(120);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1130,14 +1299,14 @@ var CustViewComplaintPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 167:
+/***/ 169:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminViewPreviousPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_app_settings__ = __webpack_require__(120);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1211,14 +1380,15 @@ var AdminViewPreviousPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 168:
+/***/ 170:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustDetailsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__update_customer_modal_update_customer_modal__ = __webpack_require__(171);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1231,6 +1401,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the CustDetailsPage page.
  *
@@ -1238,8 +1409,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var CustDetailsPage = /** @class */ (function () {
-    function CustDetailsPage(navCtrl, service, navParams) {
+    function CustDetailsPage(navCtrl, modalCtrl, service, navParams) {
         this.navCtrl = navCtrl;
+        this.modalCtrl = modalCtrl;
         this.service = service;
         this.navParams = navParams;
     }
@@ -1274,11 +1446,19 @@ var CustDetailsPage = /** @class */ (function () {
             });
         }
     };
+    CustDetailsPage.prototype.updateUser = function (uId) {
+        var _this = this;
+        var updateModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_3__update_customer_modal_update_customer_modal__["a" /* UpdateCustomerModalPage */], { userId: uId });
+        updateModal.onDidDismiss(function (data) {
+            _this.getUserDeatils();
+        });
+        updateModal.present();
+    };
     CustDetailsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-cust-details',template:/*ion-inline-start:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/cust-details/cust-details.html"*/'<!--\n  Generated template for the CustDetailsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Customer Details</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-searchbar  (ionChange)="filterList($event)"></ion-searchbar>\n  <div *ngFor="let d of userDetail">\n  <ion-card>\n    <ion-card-header>\n     <h2><b> {{d.u_name}}</b> </h2>\n    </ion-card-header>\n    <ion-card-content>\n      <ion-row>\n        <ion-col>Email</ion-col>\n        <ion-col>{{d.u_email}}</ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>Address</ion-col>\n        <ion-col>{{d.u_address}}</ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>Password</ion-col>\n        <ion-col>{{d.u_password}}</ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>Machine Purchased</ion-col>\n        <ion-col>{{d.u_MachinePurchased}}</ion-col>\n      </ion-row>\n      \n    </ion-card-content>\n  </ion-card>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/cust-details/cust-details.html"*/,
+            selector: 'page-cust-details',template:/*ion-inline-start:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/cust-details/cust-details.html"*/'<!--\n  Generated template for the CustDetailsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Customer Details</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-searchbar  (ionChange)="filterList($event)"></ion-searchbar>\n  <div *ngFor="let d of userDetail">\n  <ion-card>\n    <ion-card-header>\n     <h2><b> {{d.u_name}}</b> </h2>\n    </ion-card-header>\n    <ion-card-content>\n      <ion-row>\n        <ion-col>Email</ion-col>\n        <ion-col>{{d.u_email}}</ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>Address</ion-col>\n        <ion-col>{{d.u_address}}</ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>Password</ion-col>\n        <ion-col>{{d.u_password}}</ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>Machine Purchased</ion-col>\n        <ion-col>{{d.u_MachinePurchased}}</ion-col>\n      </ion-row>\n      <ion-row>\n        <button full ion-button float="right" expand="full" (click)="updateUser(d.u_id)">Update</button>\n      </ion-row>\n      \n    </ion-card-content>\n  </ion-card>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/cust-details/cust-details.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* RestProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */], __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* RestProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], CustDetailsPage);
     return CustDetailsPage;
 }());
@@ -1287,14 +1467,153 @@ var CustDetailsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 169:
+/***/ 171:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UpdateCustomerModalPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_toast_toast__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_mock_data__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__validators_password_validator__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__(22);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+/**
+ * Generated class for the UpdateCustomerModalPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var UpdateCustomerModalPage = /** @class */ (function () {
+    function UpdateCustomerModalPage(navCtrl, viewCtrl, toast, formBuilder, rest, navParams) {
+        this.navCtrl = navCtrl;
+        this.viewCtrl = viewCtrl;
+        this.toast = toast;
+        this.formBuilder = formBuilder;
+        this.rest = rest;
+        this.navParams = navParams;
+        this.passwordEye = "eye";
+        this.cPassEye = "eye";
+        this.form = [
+            { key: "new", val: 'New', isChecked: true },
+            { key: "reCondition", val: 'Re Conditioned', isChecked: false }
+        ];
+        this.password_type = "password";
+        this.cpassword_type = "password";
+        this.validation_messages = __WEBPACK_IMPORTED_MODULE_4__app_mock_data__["a" /* MockData */].adminCreateCustomerValidationMessage;
+        this.maxDate = new Date().toISOString();
+    }
+    UpdateCustomerModalPage.prototype.ionViewDidLoad = function () {
+        var _this = this;
+        var data = {
+            "u_id": this.navParams.get('userId')
+        };
+        this.rest.getUserByID(data).subscribe(function (result) {
+            _this.validations_form.patchValue({
+                name: result.data[0].u_name,
+                phone: result.data[0].u_mobile,
+                alter: result.data[0].u_altermobile,
+                email: result.data[0].u_email,
+            });
+            _this.current_pass = result.data[0].u_password;
+        });
+    };
+    UpdateCustomerModalPage.prototype.closeModal = function () {
+        this.viewCtrl.dismiss({ status: "dismiss" });
+    };
+    UpdateCustomerModalPage.prototype.changePaswordType = function () {
+        this.passwordEye = this.passwordEye === "eye" ? "eye-off" : "eye";
+        this.password_type = this.password_type === "text" ? "password" : "text";
+    };
+    UpdateCustomerModalPage.prototype.changecPaswordType = function () {
+        this.cPassEye = this.cPassEye === "eye" ? "eye-off" : "eye";
+        this.cpassword_type = this.cpassword_type === "text" ? "password" : "text";
+    };
+    UpdateCustomerModalPage.prototype.ngOnInit = function () {
+        this.matching_passwords_group = new __WEBPACK_IMPORTED_MODULE_6__angular_forms__["c" /* FormGroup */]({
+            u_password: new __WEBPACK_IMPORTED_MODULE_6__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_6__angular_forms__["h" /* Validators */].compose([
+                __WEBPACK_IMPORTED_MODULE_6__angular_forms__["h" /* Validators */].minLength(5),
+                __WEBPACK_IMPORTED_MODULE_6__angular_forms__["h" /* Validators */].required,
+                __WEBPACK_IMPORTED_MODULE_6__angular_forms__["h" /* Validators */].pattern('')
+            ])),
+            u_cpassword: new __WEBPACK_IMPORTED_MODULE_6__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_6__angular_forms__["h" /* Validators */].required)
+        }, function (formGroup) {
+            return __WEBPACK_IMPORTED_MODULE_5__validators_password_validator__["a" /* PasswordValidator */].areEqual(formGroup);
+        });
+        this.validations_form = this.formBuilder.group({
+            // u_dateOf_Purchased: new FormControl('', Validators.required),
+            // purchase_condation: new FormControl(''),
+            // address: new FormControl(""),
+            // u_MachinePurchased: new FormControl('', Validators.required),
+            alter: new __WEBPACK_IMPORTED_MODULE_6__angular_forms__["b" /* FormControl */]("", [__WEBPACK_IMPORTED_MODULE_6__angular_forms__["h" /* Validators */].minLength(10), __WEBPACK_IMPORTED_MODULE_6__angular_forms__["h" /* Validators */].maxLength(10), __WEBPACK_IMPORTED_MODULE_6__angular_forms__["h" /* Validators */].pattern("^((\\+91-?)|0)?[0-9]{10}$")]),
+            name: new __WEBPACK_IMPORTED_MODULE_6__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_6__angular_forms__["h" /* Validators */].required),
+            // u_note: new FormControl(''),
+            // service_period:new FormControl('',Validators.required),
+            // warrenty_period:new FormControl('',Validators.required),
+            // Machine_No:new FormControl('', Validators.required),
+            email: new __WEBPACK_IMPORTED_MODULE_6__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_6__angular_forms__["h" /* Validators */].compose([
+                __WEBPACK_IMPORTED_MODULE_6__angular_forms__["h" /* Validators */].required,
+                __WEBPACK_IMPORTED_MODULE_6__angular_forms__["h" /* Validators */].pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+            ])),
+            matching_passwords: this.matching_passwords_group,
+            phone: new __WEBPACK_IMPORTED_MODULE_6__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_6__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_6__angular_forms__["h" /* Validators */].minLength(10), __WEBPACK_IMPORTED_MODULE_6__angular_forms__["h" /* Validators */].maxLength(10), __WEBPACK_IMPORTED_MODULE_6__angular_forms__["h" /* Validators */].pattern("^((\\+91-?)|0)?[0-9]{10}$")])
+        });
+    };
+    UpdateCustomerModalPage.prototype.onSubmit = function (formValue) {
+        var _this = this;
+        var payload = {
+            "u_mobile": formValue.phone,
+            "u_password": formValue.matching_passwords.u_password,
+            "u_cpassword": formValue.matching_passwords.u_cpassword,
+            "u_name": formValue.name,
+            "u_id": this.navParams.get('userId'),
+            "u_altermobile": formValue.alter
+        };
+        this.rest.updateUserByID(payload).subscribe(function (result) {
+            if (result.status === "success") {
+                _this.toast.showToast("Record updated successfully!");
+            }
+        });
+    };
+    UpdateCustomerModalPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-update-customer-modal',template:/*ion-inline-start:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/update-customer-modal/update-customer-modal.html"*/'<!--\n  Generated template for the UpdateCustomerModalPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Update User</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)="closeModal()">\n          <ion-icon item-right name="ios-close-outline"></ion-icon>\n      </button>\n  </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-list lines="none">\n    <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">\n\n      <ion-item>\n        <ion-label floating>Customer Name<span style="color:red">*</span></ion-label>\n        <ion-input type="text" formControlName="name" ></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label floating>Mobile Number<span style="color:red">*</span></ion-label>\n        <ion-input type="text" formControlName="phone"></ion-input>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.phone">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'phone\').hasError(validation.type) && (validations_form.get(\'phone\').dirty || validations_form.get(\'phone\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n\n      <ion-item>\n        <ion-label floating>Alternative Contact number</ion-label>\n        <ion-input type="text" formControlName="alter"></ion-input>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.alter">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'alter\').hasError(validation.type) && (validations_form.get(\'alter\').dirty || validations_form.get(\'alter\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n\n      <ion-item>\n        <ion-label floating>Email<span style="color:red">*</span></ion-label>\n        <ion-input type="email" formControlName="email" disabled></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label floating>Current Password</ion-label>\n        <ion-input type="text" value="{{current_pass}}" disabled></ion-input>\n      </ion-item>\n\n<!-- \n      <ion-item>\n        <ion-label floating>Address<span style="color:red">*</span></ion-label>\n        <ion-textarea formControlName="address"></ion-textarea>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Machine purchased<span style="color:red">*</span></ion-label>\n        <ion-select formControlName="u_MachinePurchased">\n          <ion-option *ngFor="let mach of typesOfMachin" [value]="mach">\n            {{mach}}</ion-option>\n        </ion-select>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.u_MachinePurchased">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'u_MachinePurchased\').hasError(validation.type) && (validations_form.get(\'u_MachinePurchased\').dirty || validations_form.get(\'u_MachinePurchased\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n      <ion-list radio-group formControlName="purchase_condation">\n        <ion-list-header>\n          Purchase Type\n        </ion-list-header>\n\n        <ion-item *ngFor="let f of form ">\n          <ion-label>{{f.val}}</ion-label>\n          <ion-radio checked="{{f.isChecked}}" value="{{f.key}}"></ion-radio>\n        </ion-item>\n      </ion-list>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.purchase_condation">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'purchase_condation\').hasError(validation.type) && (validations_form.get(\'purchase_condation\').dirty || validations_form.get(\'purchase_condation\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n\n\n\n      <ion-item>\n        <ion-label floating>Note</ion-label>\n        <ion-input type="text" formControlName="u_note"></ion-input>\n      </ion-item>\n\n\n      <ion-item>\n        <ion-label floating>Machine No<span style="color:red">*</span></ion-label>\n        <ion-input type="text" formControlName="Machine_No"></ion-input>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.Machine_No">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'Machine_No\').hasError(validation.type) && (validations_form.get(\'Machine_No\').dirty || validations_form.get(\'Machine_No\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n\n      <ion-item>\n        <ion-label>Service Period<span style="color:red">*</span></ion-label>\n        <ion-select formControlName="service_period">\n          <ion-option *ngFor="let i of getMonth()" [value]="i">\n            {{i}}</ion-option>\n        </ion-select>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.service_period">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'service_period\').hasError(validation.type) && (validations_form.get(\'service_period\').dirty || validations_form.get(\'service_period\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n      <ion-item>\n        <ion-label>Warrenty Period<span style="color:red">*</span></ion-label>\n        <ion-select formControlName="warrenty_period">\n          <ion-option *ngFor="let category of getMonth();let i=index;" [value]=\'category\' [selected]="i===0">\n            {{category}}\n          </ion-option>\n        </ion-select>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.warrenty_period">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'warrenty_period\').hasError(validation.type) && (validations_form.get(\'warrenty_period\').dirty || validations_form.get(\'warrenty_period\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n\n      <ion-item>\n        <ion-label>Date of purchase<span style="color:red">*</span></ion-label>\n          <ion-datetime [max]="maxDate" formControlName="u_dateOf_Purchased" display-timezone="utc"></ion-datetime>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.u_dateOf_Purchased">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'u_dateOf_Purchased\').hasError(validation.type) && (validations_form.get(\'u_dateOf_Purchased\').dirty || validations_form.get(\'u_dateOf_Purchased\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>-->\n\n      <div formGroupName="matching_passwords">\n        <ion-item>\n          <ion-label position="floating" color="primary">Password<span style="color:red">*</span></ion-label>\n          <ion-input [type]="password_type" formControlName="u_password"></ion-input>\n\n          <button style="width:auto" ion-button clear color="dark" type="button" item-right\n            (click)="changePaswordType()">\n            <ion-icon [name]="passwordEye"> </ion-icon>\n          </button>\n        </ion-item>\n        <div class="validation-errors">\n          <ng-container *ngFor="let validation of validation_messages.u_password">\n            <div class="error-message"\n              *ngIf="validations_form.get(\'matching_passwords\').get(\'u_password\').hasError(validation.type) && (validations_form.get(\'matching_passwords\').get(\'u_password\').dirty || validations_form.get(\'matching_passwords\').get(\'u_password\').touched)">\n              <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n            </div>\n          </ng-container>\n        </div>\n\n        <ion-item>\n          <ion-label position="floating" color="primary">Confirm Password<span style="color:red">*</span></ion-label>\n          <ion-input [type]="cpassword_type" formControlName="u_cpassword"></ion-input>\n\n          <button ion-button style="width:auto" clear color="dark" type="button" item-right\n            (click)="changecPaswordType()">\n            <ion-icon [name]="cPassEye"> </ion-icon>\n          </button>\n        </ion-item>\n        <div class="validation-errors">\n          <ng-container *ngFor="let validation of validation_messages.u_cpassword">\n            <div class="error-message"\n              *ngIf="validations_form.get(\'matching_passwords\').get(\'u_cpassword\').hasError(validation.type) && (validations_form.get(\'matching_passwords\').get(\'u_cpassword\').dirty || validations_form.get(\'matching_passwords\').get(\'u_cpassword\').touched)">\n              <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n            </div>\n          </ng-container>\n        </div>\n      </div>\n      <!-- These validations are for the form group --> \n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.matching_passwords">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'matching_passwords\').hasError(validation.type) && (validations_form.get(\'matching_passwords\').get(\'u_cpassword\').dirty || validations_form.get(\'matching_passwords\').get(\'u_cpassword\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div> \n      <button full ion-button expand="full" type="submit"\n      [disabled]="!validations_form.valid">Update</button>\n    </form>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/update-customer-modal/update-customer-modal.html"*/,
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__providers_toast_toast__["a" /* ToastProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_toast_toast__["a" /* ToastProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_6__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__angular_forms__["a" /* FormBuilder */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* RestProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* RestProvider */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _f || Object])
+    ], UpdateCustomerModalPage);
+    return UpdateCustomerModalPage;
+    var _a, _b, _c, _d, _e, _f;
+}());
+
+//# sourceMappingURL=update-customer-modal.js.map
+
+/***/ }),
+
+/***/ 172:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EnggDetailsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(20);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1363,7 +1682,7 @@ var EnggDetailsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 180:
+/***/ 183:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -1376,11 +1695,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 180;
+webpackEmptyAsyncContext.id = 183;
 
 /***/ }),
 
-/***/ 21:
+/***/ 20:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1453,79 +1772,90 @@ var RestProvider = /** @class */ (function () {
     RestProvider.prototype.createComplaint = function (data) {
         return this.http.post(__WEBPACK_IMPORTED_MODULE_2__app_app_settings__["a" /* AppSettings */].baseUrl + 'complaint/newComplaint', data);
     };
+    RestProvider.prototype.getUserByID = function (uId) {
+        return this.http.post(__WEBPACK_IMPORTED_MODULE_2__app_app_settings__["a" /* AppSettings */].baseUrl + 'users/getUserById', uId);
+    };
+    RestProvider.prototype.updateUserByID = function (data) {
+        return this.http.post(__WEBPACK_IMPORTED_MODULE_2__app_app_settings__["a" /* AppSettings */].baseUrl + 'users/updateUserById', data);
+    };
     RestProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object])
     ], RestProvider);
     return RestProvider;
+    var _a;
 }());
 
 //# sourceMappingURL=rest.js.map
 
 /***/ }),
 
-/***/ 224:
+/***/ 227:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/admin-assign-engg/admin-assign-engg.module": [
-		700,
-		14
+		701,
+		15
 	],
 	"../pages/admin-create-customer/admin-create-customer.module": [
-		701,
-		13
+		711,
+		14
 	],
 	"../pages/admin-create-engg/admin-create-engg.module": [
 		702,
-		12
+		13
 	],
 	"../pages/admin-dashboard/admin-dashboard.module": [
 		703,
-		11
+		12
 	],
 	"../pages/admin-view-previous/admin-view-previous.module": [
 		704,
-		10
+		11
 	],
 	"../pages/assign-engg-modal/assign-engg-modal.module": [
 		705,
-		9
+		10
 	],
 	"../pages/cust-dashboard/cust-dashboard.module": [
 		706,
-		8
+		9
 	],
 	"../pages/cust-details/cust-details.module": [
 		707,
-		7
+		8
 	],
 	"../pages/cust-raise-complaint/cust-raise-complaint.module": [
 		708,
-		6
+		7
 	],
 	"../pages/cust-view-complaint/cust-view-complaint.module": [
 		709,
-		5
+		6
 	],
 	"../pages/engg-accept-complaint/engg-accept-complaint.module": [
+		712,
+		5
+	],
+	"../pages/engg-dashboard/engg-dashboard.module": [
 		710,
 		4
 	],
-	"../pages/engg-dashboard/engg-dashboard.module": [
-		711,
+	"../pages/engg-details/engg-details.module": [
+		713,
 		3
 	],
-	"../pages/engg-details/engg-details.module": [
-		712,
+	"../pages/engg-view-complaint/engg-view-complaint.module": [
+		714,
 		2
 	],
-	"../pages/engg-view-complaint/engg-view-complaint.module": [
-		713,
+	"../pages/engg-view-previous/engg-view-previous.module": [
+		715,
 		1
 	],
-	"../pages/engg-view-previous/engg-view-previous.module": [
-		714,
+	"../pages/update-customer-modal/update-customer-modal.module": [
+		716,
 		0
 	]
 };
@@ -1540,164 +1870,19 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 224;
+webpackAsyncContext.id = 227;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 321:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PasswordValidator; });
-var PasswordValidator = /** @class */ (function () {
-    function PasswordValidator() {
-    }
-    // Inspired on: http://plnkr.co/edit/Zcbg2T3tOxYmhxs7vaAm?p=preview
-    PasswordValidator.areEqual = function (formGroup) {
-        var val;
-        var valid = true;
-        for (var key in formGroup.controls) {
-            if (formGroup.controls.hasOwnProperty(key)) {
-                var control = formGroup.controls[key];
-                if (val === undefined) {
-                    val = control.value;
-                }
-                else {
-                    if (val !== control.value) {
-                        valid = false;
-                        break;
-                    }
-                }
-            }
-        }
-        if (valid) {
-            return null;
-        }
-        return {
-            areEqual: true
-        };
-    };
-    return PasswordValidator;
-}());
-
-//# sourceMappingURL=password.validator.js.map
-
-/***/ }),
-
-/***/ 322:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MockData; });
-var MockData = /** @class */ (function () {
-    function MockData() {
-    }
-    //public static validationPasswordPattern:string='^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]+$'
-    MockData.validationPasswordPattern = '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]+$';
-    MockData.adminCreateCustomerValidationMessage = {
-        'u_dateOf_Purchased': [
-            { type: 'required', message: 'Date is required.' }
-        ],
-        'u_MachinePurchased': [
-            { type: 'required', message: 'Machine name is required.' }
-        ],
-        'purchase_condation': [
-            {
-                type: 'required', message: 'Purchase condation is required.'
-            }
-        ],
-        'name': [
-            { type: 'required', message: 'Name is required.' }
-        ],
-        'lastname': [
-            { type: 'required', message: 'Last name is required.' }
-        ],
-        'email': [
-            { type: 'required', message: 'Email is required.' },
-            { type: 'pattern', message: 'Please enter a valid email.' }
-        ],
-        'phone': [
-            { type: 'required', message: 'Phone is required.' },
-            { type: 'maxLength', message: 'The phone is incorrect' },
-            { type: 'pattern', message: 'The phone is incorrect' },
-            { type: 'minLength', message: 'The phone is incorrect' }
-        ],
-        'alter': [
-            { type: 'maxLength', message: 'The phone is incorrect' },
-            { type: 'pattern', message: 'The phone is incorrect' }
-        ],
-        'u_password': [
-            { type: 'required', message: 'Password is required.' },
-            { type: 'minlength', message: 'Password must be at least 5 characters long.' },
-            { type: 'pattern', message: 'Your password must contain at least one uppercase, one lowercase, and one number.' }
-        ],
-        'u_cpassword': [
-            { type: 'required', message: 'Confirm password is required.' }
-        ],
-        'matching_passwords': [
-            { type: 'areEqual', message: 'Password mismatch.' }
-        ],
-        'terms': [
-            { type: 'pattern', message: 'You must accept terms and conditions.' }
-        ],
-    };
-    MockData.adminEnggValidationMsg = {
-        'u_Joining_date': [
-            { type: 'required', message: 'Date is required.' }
-        ],
-        'engg_type': [
-            { type: 'required', message: 'Machine name is required.' }
-        ],
-        'name': [
-            { type: 'required', message: 'Name is required.' }
-        ],
-        'lastname': [
-            { type: 'required', message: 'Last name is required.' }
-        ],
-        'email': [
-            { type: 'required', message: 'Email is required.' },
-            { type: 'pattern', message: 'Please enter a valid email.' }
-        ],
-        'phone': [
-            { type: 'required', message: 'Phone is required.' },
-            { type: 'maxLength', message: 'The phone is incorrect' },
-            { type: 'pattern', message: 'The phone is incorrect' }
-        ],
-        'alter': [
-            { type: 'maxLength', message: 'The phone is incorrect' },
-            { type: 'pattern', message: 'The phone is incorrect' }
-        ],
-        'u_password': [
-            { type: 'required', message: 'Password is required.' },
-            { type: 'minlength', message: 'Password must be at least 5 characters long.' },
-            { type: 'pattern', message: 'Your password must contain at least one uppercase, one lowercase, and one number.' }
-        ],
-        'u_cpassword': [
-            { type: 'required', message: 'Confirm password is required.' }
-        ],
-        'matching_passwords': [
-            { type: 'areEqual', message: 'Password mismatch.' }
-        ],
-        'terms': [
-            { type: 'pattern', message: 'You must accept terms and conditions.' }
-        ],
-    };
-    return MockData;
-}());
-
-//# sourceMappingURL=mock-data.js.map
-
-/***/ }),
-
-/***/ 323:
+/***/ 324:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoaderProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1743,13 +1928,13 @@ var LoaderProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 367:
+/***/ 368:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(368);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(372);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(369);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(373);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -1757,44 +1942,45 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 372:
+/***/ 373:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(363);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(366);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(694);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(364);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(367);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(695);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_engg_dashboard_engg_dashboard__ = __webpack_require__(160);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_rest_rest__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_engg_view_complaint_engg_view_complaint__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_engg_accept_complaint_engg_accept_complaint__ = __webpack_require__(161);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_engg_view_previous_engg_view_previous__ = __webpack_require__(163);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_admin_dashboard_admin_dashboard__ = __webpack_require__(159);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_admin_create_customer_admin_create_customer__ = __webpack_require__(157);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_admin_create_engg_admin_create_engg__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_admin_assign_engg_admin_assign_engg__ = __webpack_require__(155);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_admin_view_previous_admin_view_previous__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_cust_dashboard_cust_dashboard__ = __webpack_require__(164);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_cust_raise_complaint_cust_raise_complaint__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_cust_view_complaint_cust_view_complaint__ = __webpack_require__(166);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__swimlane_ngx_datatable__ = __webpack_require__(227);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_cust_details_cust_details__ = __webpack_require__(168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_engg_details_engg_details__ = __webpack_require__(169);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_assign_engg_modal_assign_engg_modal__ = __webpack_require__(156);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__angular_common_http__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__providers_loader_loader__ = __webpack_require__(323);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__providers_toast_toast__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__reusable_component_header_header_component__ = __webpack_require__(695);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__reusable_component_loader_page_loader__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_tab_tab__ = __webpack_require__(696);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_components_show_password_components_show_password__ = __webpack_require__(697);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pipes_convert_machin_name_convert_machin_name__ = __webpack_require__(698);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__directives_directives_show_password_directives_show_password__ = __webpack_require__(699);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_engg_dashboard_engg_dashboard__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_rest_rest__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_engg_view_complaint_engg_view_complaint__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_engg_accept_complaint_engg_accept_complaint__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_engg_view_previous_engg_view_previous__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_admin_dashboard_admin_dashboard__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_admin_create_customer_admin_create_customer__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_admin_create_engg_admin_create_engg__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_admin_assign_engg_admin_assign_engg__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_admin_view_previous_admin_view_previous__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_cust_dashboard_cust_dashboard__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_cust_raise_complaint_cust_raise_complaint__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_cust_view_complaint_cust_view_complaint__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__swimlane_ngx_datatable__ = __webpack_require__(230);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_cust_details_cust_details__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_engg_details_engg_details__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_assign_engg_modal_assign_engg_modal__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_update_customer_modal_update_customer_modal__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__angular_common_http__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__providers_loader_loader__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__providers_toast_toast__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__reusable_component_header_header_component__ = __webpack_require__(696);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__reusable_component_loader_page_loader__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_tab_tab__ = __webpack_require__(697);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_components_show_password_components_show_password__ = __webpack_require__(698);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pipes_convert_machin_name_convert_machin_name__ = __webpack_require__(699);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__directives_directives_show_password_directives_show_password__ = __webpack_require__(700);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1824,6 +2010,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+//Modal
+
 
 //http call
 
@@ -1846,10 +2034,10 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_22__pages_engg_details_engg_details__["a" /* EnggDetailsPage */],
                 __WEBPACK_IMPORTED_MODULE_21__pages_cust_details_cust_details__["a" /* CustDetailsPage */],
-                __WEBPACK_IMPORTED_MODULE_31__pipes_convert_machin_name_convert_machin_name__["a" /* ConvertMachinNamePipe */],
-                __WEBPACK_IMPORTED_MODULE_30__components_components_show_password_components_show_password__["a" /* ComponentsShowPasswordComponent */],
-                __WEBPACK_IMPORTED_MODULE_32__directives_directives_show_password_directives_show_password__["a" /* DirectivesShowPasswordDirective */],
-                __WEBPACK_IMPORTED_MODULE_29__components_tab_tab__["a" /* TabComponent */],
+                __WEBPACK_IMPORTED_MODULE_32__pipes_convert_machin_name_convert_machin_name__["a" /* ConvertMachinNamePipe */],
+                __WEBPACK_IMPORTED_MODULE_31__components_components_show_password_components_show_password__["a" /* ComponentsShowPasswordComponent */],
+                __WEBPACK_IMPORTED_MODULE_33__directives_directives_show_password_directives_show_password__["a" /* DirectivesShowPasswordDirective */],
+                __WEBPACK_IMPORTED_MODULE_30__components_tab_tab__["a" /* TabComponent */],
                 __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */],
                 __WEBPACK_IMPORTED_MODULE_7__pages_engg_dashboard_engg_dashboard__["a" /* EnggDashboardPage */],
@@ -1859,21 +2047,21 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_12__pages_admin_dashboard_admin_dashboard__["a" /* AdminDashboardPage */],
                 __WEBPACK_IMPORTED_MODULE_14__pages_admin_create_engg_admin_create_engg__["a" /* AdminCreateEnggPage */],
                 __WEBPACK_IMPORTED_MODULE_13__pages_admin_create_customer_admin_create_customer__["a" /* AdminCreateCustomerPage */],
-                __WEBPACK_IMPORTED_MODULE_28__reusable_component_loader_page_loader__["a" /* PageLoader */],
+                __WEBPACK_IMPORTED_MODULE_29__reusable_component_loader_page_loader__["a" /* PageLoader */],
                 __WEBPACK_IMPORTED_MODULE_15__pages_admin_assign_engg_admin_assign_engg__["a" /* AdminAssignEnggPage */],
                 __WEBPACK_IMPORTED_MODULE_16__pages_admin_view_previous_admin_view_previous__["a" /* AdminViewPreviousPage */],
                 __WEBPACK_IMPORTED_MODULE_17__pages_cust_dashboard_cust_dashboard__["a" /* CustDashboardPage */],
                 __WEBPACK_IMPORTED_MODULE_19__pages_cust_view_complaint_cust_view_complaint__["a" /* CustViewComplaintPage */],
                 __WEBPACK_IMPORTED_MODULE_18__pages_cust_raise_complaint_cust_raise_complaint__["a" /* CustRaiseComplaintPage */],
-                __WEBPACK_IMPORTED_MODULE_27__reusable_component_header_header_component__["a" /* HeaderComponent */],
+                __WEBPACK_IMPORTED_MODULE_28__reusable_component_header_header_component__["a" /* HeaderComponent */],
                 __WEBPACK_IMPORTED_MODULE_23__pages_assign_engg_modal_assign_engg_modal__["a" /* AssignEnggModalPage */],
+                __WEBPACK_IMPORTED_MODULE_24__pages_update_customer_modal_update_customer_modal__["a" /* UpdateCustomerModalPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/admin-assign-engg/admin-assign-engg.module#AdminAssignEnggPageModule', name: 'AdminAssignEnggPage', segment: 'admin-assign-engg', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/admin-create-customer/admin-create-customer.module#AdminCreateCustomerPageModule', name: 'AdminCreateCustomerPage', segment: 'admin-create-customer', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/admin-create-engg/admin-create-engg.module#AdminCreateEnggPageModule', name: 'AdminCreateEnggPage', segment: 'admin-create-engg', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/admin-dashboard/admin-dashboard.module#AdminDashboardPageModule', name: 'AdminDashboardPage', segment: 'admin-dashboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/admin-view-previous/admin-view-previous.module#AdminViewPreviousPageModule', name: 'AdminViewPreviousPage', segment: 'admin-view-previous', priority: 'low', defaultHistory: [] },
@@ -1882,14 +2070,16 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/cust-details/cust-details.module#CustDetailsPageModule', name: 'CustDetailsPage', segment: 'cust-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cust-raise-complaint/cust-raise-complaint.module#CustRaiseComplaintPageModule', name: 'CustRaiseComplaintPage', segment: 'cust-raise-complaint', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cust-view-complaint/cust-view-complaint.module#CustViewComplaintPageModule', name: 'CustViewComplaintPage', segment: 'cust-view-complaint', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/engg-accept-complaint/engg-accept-complaint.module#EnggAcceptComplaintPageModule', name: 'EnggAcceptComplaintPage', segment: 'engg-accept-complaint', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/engg-dashboard/engg-dashboard.module#EnggDashboardPageModule', name: 'EnggDashboardPage', segment: 'engg-dashboard', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/admin-create-customer/admin-create-customer.module#AdminCreateCustomerPageModule', name: 'AdminCreateCustomerPage', segment: 'admin-create-customer', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/engg-accept-complaint/engg-accept-complaint.module#EnggAcceptComplaintPageModule', name: 'EnggAcceptComplaintPage', segment: 'engg-accept-complaint', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/engg-details/engg-details.module#EnggDetailsPageModule', name: 'EnggDetailsPage', segment: 'engg-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/engg-view-complaint/engg-view-complaint.module#EnggViewComplaintPageModule', name: 'EnggViewComplaintPage', segment: 'engg-view-complaint', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/engg-view-previous/engg-view-previous.module#EnggViewPreviousPageModule', name: 'EnggViewPreviousPage', segment: 'engg-view-previous', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/engg-view-previous/engg-view-previous.module#EnggViewPreviousPageModule', name: 'EnggViewPreviousPage', segment: 'engg-view-previous', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/update-customer-modal/update-customer-modal.module#UpdateCustomerModalPageModule', name: 'UpdateCustomerModalPage', segment: 'update-customer-modal', priority: 'low', defaultHistory: [] }
                     ]
                 }),
-                __WEBPACK_IMPORTED_MODULE_24__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_25__angular_common_http__["b" /* HttpClientModule */],
                 __WEBPACK_IMPORTED_MODULE_20__swimlane_ngx_datatable__["b" /* NgxDatatableModule */]
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicApp */]],
@@ -1908,19 +2098,20 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_13__pages_admin_create_customer_admin_create_customer__["a" /* AdminCreateCustomerPage */],
                 __WEBPACK_IMPORTED_MODULE_15__pages_admin_assign_engg_admin_assign_engg__["a" /* AdminAssignEnggPage */],
                 __WEBPACK_IMPORTED_MODULE_16__pages_admin_view_previous_admin_view_previous__["a" /* AdminViewPreviousPage */],
-                __WEBPACK_IMPORTED_MODULE_28__reusable_component_loader_page_loader__["a" /* PageLoader */],
+                __WEBPACK_IMPORTED_MODULE_29__reusable_component_loader_page_loader__["a" /* PageLoader */],
                 __WEBPACK_IMPORTED_MODULE_17__pages_cust_dashboard_cust_dashboard__["a" /* CustDashboardPage */],
                 __WEBPACK_IMPORTED_MODULE_19__pages_cust_view_complaint_cust_view_complaint__["a" /* CustViewComplaintPage */],
                 __WEBPACK_IMPORTED_MODULE_18__pages_cust_raise_complaint_cust_raise_complaint__["a" /* CustRaiseComplaintPage */],
-                __WEBPACK_IMPORTED_MODULE_27__reusable_component_header_header_component__["a" /* HeaderComponent */]
+                __WEBPACK_IMPORTED_MODULE_28__reusable_component_header_header_component__["a" /* HeaderComponent */],
+                __WEBPACK_IMPORTED_MODULE_24__pages_update_customer_modal_update_customer_modal__["a" /* UpdateCustomerModalPage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
                 { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] },
                 __WEBPACK_IMPORTED_MODULE_8__providers_rest_rest__["a" /* RestProvider */],
-                __WEBPACK_IMPORTED_MODULE_25__providers_loader_loader__["a" /* LoaderProvider */],
-                __WEBPACK_IMPORTED_MODULE_26__providers_toast_toast__["a" /* ToastProvider */]
+                __WEBPACK_IMPORTED_MODULE_26__providers_loader_loader__["a" /* LoaderProvider */],
+                __WEBPACK_IMPORTED_MODULE_27__providers_toast_toast__["a" /* ToastProvider */]
             ]
         })
     ], AppModule);
@@ -1931,14 +2122,14 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 43:
+/***/ 40:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ToastProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1987,15 +2178,15 @@ var ToastProvider = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__engg_dashboard_engg_dashboard__ = __webpack_require__(160);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_rest_rest__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_loader_loader__ = __webpack_require__(323);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_toast_toast__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__admin_dashboard_admin_dashboard__ = __webpack_require__(159);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_forms__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__engg_dashboard_engg_dashboard__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_rest_rest__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_loader_loader__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_toast_toast__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__admin_dashboard_admin_dashboard__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_forms__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__reusable_component_loader_page_loader__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__cust_dashboard_cust_dashboard__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__cust_dashboard_cust_dashboard__ = __webpack_require__(166);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2089,15 +2280,15 @@ var HomePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 694:
+/***/ 695:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(366);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(363);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(367);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(364);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(65);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2135,13 +2326,13 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 695:
+/***/ 696:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeaderComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2201,7 +2392,7 @@ var HeaderComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 696:
+/***/ 697:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2273,7 +2464,7 @@ var TabComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 697:
+/***/ 698:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2319,13 +2510,13 @@ var ComponentsShowPasswordComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 698:
+/***/ 699:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConvertMachinNamePipe; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_rest_rest__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_rest_rest__ = __webpack_require__(20);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2374,7 +2565,7 @@ var ConvertMachinNamePipe = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 699:
+/***/ 700:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2423,5 +2614,5 @@ var DirectivesShowPasswordDirective = /** @class */ (function () {
 
 /***/ })
 
-},[367]);
+},[368]);
 //# sourceMappingURL=main.js.map

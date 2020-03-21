@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ModalController } from 'ionic-angular';
 import { RestProvider } from "../../providers/rest/rest"
-
+import {UpdateCustomerModalPage} from "../update-customer-modal/update-customer-modal"
 /**
  * Generated class for the CustDetailsPage page.
  *
@@ -17,7 +17,7 @@ import { RestProvider } from "../../providers/rest/rest"
 export class CustDetailsPage {
   userDetail:any;
 
-  constructor(public navCtrl: NavController,private service:RestProvider , public navParams: NavParams) {
+  constructor(public navCtrl: NavController,    public modalCtrl: ModalController,private service:RestProvider , public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -50,7 +50,15 @@ export class CustDetailsPage {
         }
       })
     }
-   
+}
+
+updateUser(uId:any){
+  const updateModal = this.modalCtrl.create(UpdateCustomerModalPage,
+    { userId: uId })
+  updateModal.onDidDismiss((data: any) => {
+    this.getUserDeatils()
+  })
+  updateModal.present();
 }
   
 

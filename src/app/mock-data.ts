@@ -8,6 +8,12 @@ public static adminCreateCustomerValidationMessage={
     'u_MachinePurchased': [
       { type: 'required', message: 'Machine name is required.' }
     ],
+    'service_period': [
+      { type: 'required', message: 'Please select service period.' }
+    ],
+    'warrenty_period': [
+      { type: 'required', message: 'Please select warrenty period.' }
+    ],
     'purchase_condation':[
       {
          type: 'required', message: 'Purchase condation is required.' 
@@ -15,6 +21,9 @@ public static adminCreateCustomerValidationMessage={
     ],
     'name': [
       { type: 'required', message: 'Name is required.' }
+    ],
+    'Machine_No':[
+      { type: 'required', message: 'Machine Number is required.' } 
     ],
     'lastname': [
       { type: 'required', message: 'Last name is required.' }

@@ -34,6 +34,9 @@
         <ion-col>Machine Purchased</ion-col>
         <ion-col>{{d.u_MachinePurchased}}</ion-col>
       </ion-row>
+      <ion-row>
+        <button full ion-button float="right" expand="full" (click)="updateUser(d.u_id)">Update</button>
+      </ion-row>
       
     </ion-card-content>
   </ion-card>

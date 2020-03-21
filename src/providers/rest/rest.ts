@@ -66,5 +66,12 @@ export class RestProvider {
     return this.http.post(AppSettings.baseUrl + 'complaint/newComplaint', data);
   }
 
+  public getUserByID(uId:any){
+    return this.http.post(AppSettings.baseUrl + 'users/getUserById', uId);    
+  }
+
+  public updateUserByID(data:any){
+    return this.http.post(AppSettings.baseUrl + 'users/updateUserById', data);    
+  }
 
 }

@@ -22,7 +22,11 @@ import { CustViewComplaintPage } from "../pages/cust-view-complaint/cust-view-co
 import { NgxDatatableModule} from "@swimlane/ngx-datatable"
 import { CustDetailsPage } from "../pages/cust-details/cust-details"
 import { EnggDetailsPage } from "../pages/engg-details/engg-details";
+
+//Modal
 import { AssignEnggModalPage } from "../pages/assign-engg-modal/assign-engg-modal"
+import { UpdateCustomerModalPage } from "../pages/update-customer-modal/update-customer-modal"
+
 //http call
 import { HttpClientModule } from '@angular/common/http'
 import { LoaderProvider } from '../providers/loader/loader';
@@ -67,6 +71,7 @@ import { DirectivesShowPasswordDirective } from "../directives/directives-show-p
     CustRaiseComplaintPage,
     HeaderComponent,
     AssignEnggModalPage,
+    UpdateCustomerModalPage
   ],
   imports: [
     BrowserModule,
@@ -95,7 +100,8 @@ import { DirectivesShowPasswordDirective } from "../directives/directives-show-p
     CustDashboardPage,
     CustViewComplaintPage,
     CustRaiseComplaintPage,
-    HeaderComponent
+    HeaderComponent,
+    UpdateCustomerModalPage
   ],
   providers: [
     StatusBar,

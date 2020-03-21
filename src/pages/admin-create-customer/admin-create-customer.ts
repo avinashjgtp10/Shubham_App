@@ -18,18 +18,18 @@ import { MockData } from "../../app/mock-data"
   templateUrl: 'admin-create-customer.html',
 })
 export class AdminCreateCustomerPage {
-passwordEye="eye";
-cPassEye="eye"
+  passwordEye = "eye";
+  cPassEye = "eye"
   public form = [
-    { key:"new",val: 'New',isChecked:true},
-    { key:"reCondition",val: 'Re Conditioned',isChecked:false }
+    { key: "new", val: 'New', isChecked: true },
+    { key: "reCondition", val: 'Re Conditioned', isChecked: false }
   ];
-  password_type:string="password";
-  cpassword_type:string="password"
+  password_type: string = "password";
+  cpassword_type: string = "password"
   validations_form: FormGroup;
   matching_passwords_group: FormGroup;
-  validation_messages=MockData.adminCreateCustomerValidationMessage;
-  maxDate:string=new Date().toISOString();
+  validation_messages = MockData.adminCreateCustomerValidationMessage;
+  maxDate: string = new Date().toISOString();
 
   typesOfMachin: any = [
     "Computerised Embroidery Machines",
@@ -48,18 +48,26 @@ cPassEye="eye"
     console.log('ionViewDidLoad AdminCreateCustomerPage');
   }
 
-  changePaswordType(){
-    this.passwordEye = this.passwordEye === "eye" ? "eye-off":"eye";
-    this.password_type=this.password_type === "text" ? "password":"text";
+  getMonth(){
+    let arr=[]
+    for(let i=1;i<=12;i++){
+      arr.push(i)
+    }
+    return arr
   }
-  changecPaswordType(){
-    this.cPassEye=this.cPassEye === "eye"?"eye-off":"eye";
-    this.cpassword_type=this.cpassword_type === "text" ? "password":"text";
+
+  changePaswordType() {
+    this.passwordEye = this.passwordEye === "eye" ? "eye-off" : "eye";
+    this.password_type = this.password_type === "text" ? "password" : "text";
+  }
+  changecPaswordType() {
+    this.cPassEye = this.cPassEye === "eye" ? "eye-off" : "eye";
+    this.cpassword_type = this.cpassword_type === "text" ? "password" : "text";
   }
 
 
   ngOnInit() {
-    
+
     this.matching_passwords_group = new FormGroup({
       u_password: new FormControl('', Validators.compose([
         Validators.minLength(5),
@@ -73,17 +81,21 @@ cPassEye="eye"
 
     this.validations_form = this.formBuilder.group({
       u_dateOf_Purchased: new FormControl('', Validators.required),
-      purchase_condation:new FormControl(''),
+      purchase_condation: new FormControl(''),
       address: new FormControl(""),
       u_MachinePurchased: new FormControl('', Validators.required),
-      alter: new FormControl("", [Validators.minLength(10),Validators.maxLength(10), Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]),
+      alter: new FormControl("", [Validators.minLength(10), Validators.maxLength(10), Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]),
       name: new FormControl('', Validators.required),
+      u_note: new FormControl(''),
+      service_period:new FormControl('',Validators.required),
+      warrenty_period:new FormControl('',Validators.required),
+      Machine_No:new FormControl('', Validators.required),
       email: new FormControl('', Validators.compose([
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
       ])),
       matching_passwords: this.matching_passwords_group,
-      phone: new FormControl('', [Validators.required, Validators.minLength(10),Validators.maxLength(10) ,Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")])
+      phone: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")])
     });
   }
 
@@ -98,21 +110,25 @@ cPassEye="eye"
       "u_dateOf_Purchased": new Date(values.u_dateOf_Purchased),
       "u_password": values.matching_passwords.u_password,
       "u_cpassword": values.matching_passwords.u_cpassword,
-      "u_purchase_con":values.purchase_condation,
+      "u_purchase_con": values.purchase_condation,
+      "u_note": values.u_note,
+      "u_MachineNo": values.Machine_No,
+      "u_ServicePeriod": values.service_period,
+      "u_WarrentyPeriod": values.warrenty_period,
       "u_role": 1,
       "u_roleType": null,
       "u_joinDate": new Date()
     }
 
-        this.rest.createCustomer(Obj).subscribe((result: any) => {
-          if (result.status === "success") {
-            this.toast.showToast("Customer Details saved");
-            this.validations_form.reset();
-          }
-          if(result.status === "error"){
-            this.toast.showToast(result.message)
-          }
-        })
-      
+    this.rest.createCustomer(Obj).subscribe((result: any) => {
+      if (result.status === "success") {
+        this.toast.showToast("Customer Details saved");
+        this.validations_form.reset();
+      }
+      if (result.status === "error") {
+        this.toast.showToast(result.message)
+      }
+    })
+
   }
 }

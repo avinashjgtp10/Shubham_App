@@ -1,14 +1,14 @@
 webpackJsonp([10],{
 
-/***/ 704:
+/***/ 705:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminViewPreviousPageModule", function() { return AdminViewPreviousPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AssignEnggModalPageModule", function() { return AssignEnggModalPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__admin_view_previous__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__assign_engg_modal__ = __webpack_require__(158);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AdminViewPreviousPageModule = /** @class */ (function () {
-    function AdminViewPreviousPageModule() {
+var AssignEnggModalPageModule = /** @class */ (function () {
+    function AssignEnggModalPageModule() {
     }
-    AdminViewPreviousPageModule = __decorate([
+    AssignEnggModalPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__admin_view_previous__["a" /* AdminViewPreviousPage */],
+                __WEBPACK_IMPORTED_MODULE_2__assign_engg_modal__["a" /* AssignEnggModalPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__admin_view_previous__["a" /* AdminViewPreviousPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__assign_engg_modal__["a" /* AssignEnggModalPage */]),
             ],
         })
-    ], AdminViewPreviousPageModule);
-    return AdminViewPreviousPageModule;
+    ], AssignEnggModalPageModule);
+    return AssignEnggModalPageModule;
 }());
 
-//# sourceMappingURL=admin-view-previous.module.js.map
+//# sourceMappingURL=assign-engg-modal.module.js.map
 
 /***/ })
 

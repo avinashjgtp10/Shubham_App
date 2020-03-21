@@ -89,45 +89,85 @@
         </ng-container>
       </div>
 
-        <!-- <ion-item > -->
+      <ion-list radio-group formControlName="purchase_condation">
+        <ion-list-header>
+          Purchase Type
+        </ion-list-header>
 
-
-          <!-- <ion-list radio-group>
-            <ion-list-header>
-              <ion-label>condition </ion-label>
-            </ion-list-header>
-        
-            <ion-item *ngFor="let entry of form">
-              <ion-label>             {{entry.key}} </ion-label>
-              <ion-radio slot="start" value="{{entry.val}}"></ion-radio>
-            </ion-item>
-        
-          </ion-list> -->
-          <ion-list radio-group formControlName="purchase_condation">
-            <ion-list-header>
-              Purchase Type
-            </ion-list-header>
-          
-            <ion-item *ngFor="let f of form ">
-              <ion-label>{{f.val}}</ion-label>
-              <ion-radio checked="{{f.isChecked}}"  value="{{f.key}}"></ion-radio>
-            </ion-item>
-          </ion-list>
-          <div class="validation-errors">
-            <ng-container *ngFor="let validation of validation_messages.purchase_condation">
-              <div class="error-message"
-                *ngIf="validations_form.get('purchase_condation').hasError(validation.type) && (validations_form.get('purchase_condation').dirty || validations_form.get('purchase_condation').touched)">
-                <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
-              </div>
-            </ng-container>
+        <ion-item *ngFor="let f of form ">
+          <ion-label>{{f.val}}</ion-label>
+          <ion-radio checked="{{f.isChecked}}" value="{{f.key}}"></ion-radio>
+        </ion-item>
+      </ion-list>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.purchase_condation">
+          <div class="error-message"
+            *ngIf="validations_form.get('purchase_condation').hasError(validation.type) && (validations_form.get('purchase_condation').dirty || validations_form.get('purchase_condation').touched)">
+            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
           </div>
+        </ng-container>
+      </div>
 
-        <!-- </ion-item> -->
+
+
+
+      <ion-item>
+        <ion-label floating>Note</ion-label>
+        <ion-input type="text" formControlName="u_note"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label floating>Machine No<span style="color:red">*</span></ion-label>
+        <ion-input type="text" formControlName="Machine_No"></ion-input>
+      </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.Machine_No">
+          <div class="error-message"
+            *ngIf="validations_form.get('Machine_No').hasError(validation.type) && (validations_form.get('Machine_No').dirty || validations_form.get('Machine_No').touched)">
+            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+
+      <ion-item>
+        <ion-label>Service Period<span style="color:red">*</span></ion-label>
+        <ion-select formControlName="service_period">
+          <ion-option *ngFor="let i of getMonth()" [value]="i">
+            {{i}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.service_period">
+          <div class="error-message"
+            *ngIf="validations_form.get('service_period').hasError(validation.type) && (validations_form.get('service_period').dirty || validations_form.get('service_period').touched)">
+            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-item>
+        <ion-label>Warrenty Period<span style="color:red">*</span></ion-label>
+        <ion-select formControlName="warrenty_period">
+          <ion-option *ngFor="let category of getMonth();let i=index;" [value]='category' [selected]="i===0">
+            {{category}}
+          </ion-option>
+        </ion-select>
+      </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.warrenty_period">
+          <div class="error-message"
+            *ngIf="validations_form.get('warrenty_period').hasError(validation.type) && (validations_form.get('warrenty_period').dirty || validations_form.get('warrenty_period').touched)">
+            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
 
       <ion-item>
         <ion-label>Date of purchase<span style="color:red">*</span></ion-label>
-        <!-- <ion-input type="Date" formControlName="u_dateOf_Purchased"></ion-input> -->
-        <ion-datetime [max]="maxDate" formControlName="u_dateOf_Purchased"  display-timezone="utc"></ion-datetime>
+          <ion-datetime [max]="maxDate" formControlName="u_dateOf_Purchased" display-timezone="utc"></ion-datetime>
       </ion-item>
       <div class="validation-errors">
         <ng-container *ngFor="let validation of validation_messages.u_dateOf_Purchased">
@@ -142,26 +182,34 @@
         <ion-item>
           <ion-label position="floating" color="primary">Password<span style="color:red">*</span></ion-label>
           <ion-input [type]="password_type" formControlName="u_password"></ion-input>
-          
-          <button style="width:auto" ion-button clear color="dark" type="button" item-right (click)="changePaswordType()"> <ion-icon [name]="passwordEye"> </ion-icon> </button>
+
+          <button style="width:auto" ion-button clear color="dark" type="button" item-right
+            (click)="changePaswordType()">
+            <ion-icon [name]="passwordEye"> </ion-icon>
+          </button>
         </ion-item>
         <div class="validation-errors">
           <ng-container *ngFor="let validation of validation_messages.u_password">
-            <div class="error-message" *ngIf="validations_form.get('matching_passwords').get('u_password').hasError(validation.type) && (validations_form.get('matching_passwords').get('u_password').dirty || validations_form.get('matching_passwords').get('u_password').touched)">
+            <div class="error-message"
+              *ngIf="validations_form.get('matching_passwords').get('u_password').hasError(validation.type) && (validations_form.get('matching_passwords').get('u_password').dirty || validations_form.get('matching_passwords').get('u_password').touched)">
               <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
             </div>
           </ng-container>
         </div>
-  
+
         <ion-item>
           <ion-label position="floating" color="primary">Confirm Password<span style="color:red">*</span></ion-label>
           <ion-input [type]="cpassword_type" formControlName="u_cpassword"></ion-input>
-          
-          <button ion-button  style="width:auto"  clear color="dark" type="button" item-right (click)="changecPaswordType()"> <ion-icon [name]="cPassEye"> </ion-icon> </button>
+
+          <button ion-button style="width:auto" clear color="dark" type="button" item-right
+            (click)="changecPaswordType()">
+            <ion-icon [name]="cPassEye"> </ion-icon>
+          </button>
         </ion-item>
         <div class="validation-errors">
           <ng-container *ngFor="let validation of validation_messages.u_cpassword">
-            <div class="error-message" *ngIf="validations_form.get('matching_passwords').get('u_cpassword').hasError(validation.type) && (validations_form.get('matching_passwords').get('u_cpassword').dirty || validations_form.get('matching_passwords').get('u_cpassword').touched)">
+            <div class="error-message"
+              *ngIf="validations_form.get('matching_passwords').get('u_cpassword').hasError(validation.type) && (validations_form.get('matching_passwords').get('u_cpassword').dirty || validations_form.get('matching_passwords').get('u_cpassword').touched)">
               <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
             </div>
           </ng-container>
@@ -170,7 +218,8 @@
       <!-- These validations are for the form group -->
       <div class="validation-errors">
         <ng-container *ngFor="let validation of validation_messages.matching_passwords">
-          <div class="error-message" *ngIf="validations_form.get('matching_passwords').hasError(validation.type) && (validations_form.get('matching_passwords').get('u_cpassword').dirty || validations_form.get('matching_passwords').get('u_cpassword').touched)">
+          <div class="error-message"
+            *ngIf="validations_form.get('matching_passwords').hasError(validation.type) && (validations_form.get('matching_passwords').get('u_cpassword').dirty || validations_form.get('matching_passwords').get('u_cpassword').touched)">
             <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
           </div>
         </ng-container>
