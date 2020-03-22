@@ -26,10 +26,6 @@
             </div>
           </ng-container>
         </div>
-
-
-  
-
         <ion-item>
           <ion-label>Engg Type</ion-label>
           <ion-select formControlName="engg_type">
@@ -48,7 +44,8 @@
 
         <ion-item>
           <ion-label>Problem Starting Date</ion-label>
-          <ion-input type="Date" formControlName="u_Joining_date"></ion-input>
+          <ion-datetime [max]="maxDate" formControlName="u_Joining_date" display-timezone="utc"></ion-datetime>
+          
         </ion-item>
         <div class="validation-errors">
           <ng-container *ngFor="let validation of validation_messages.u_Joining_date">

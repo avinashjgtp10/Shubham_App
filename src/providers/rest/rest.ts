@@ -73,5 +73,9 @@ export class RestProvider {
   public updateUserByID(data:any){
     return this.http.post(AppSettings.baseUrl + 'users/updateUserById', data);    
   }
+  public deleteUserByID(data:any){
+    return this.http.post(AppSettings.baseUrl + 'users/deleteUserById', data);    
+  }
+
 
 }

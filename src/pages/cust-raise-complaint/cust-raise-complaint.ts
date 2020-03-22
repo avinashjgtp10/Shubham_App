@@ -18,7 +18,7 @@ import { ToastProvider } from "../../providers/toast/toast"
 export class CustRaiseComplaintPage {
 
   validations_form: FormGroup;
-
+  maxDate: string = new Date().toISOString();
   typesOfMachin: any = [{ key: 1, value: "Mechnical" }, { key: 2, value: "Electronic" }, { key: 3, value: "Designing" }]
 
   constructor(public toast: ToastProvider, public navCtrl: NavController, public rest: RestProvider, public formBuilder: FormBuilder, public navParams: NavParams) {

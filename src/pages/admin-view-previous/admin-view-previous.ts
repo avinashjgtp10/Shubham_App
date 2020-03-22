@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest'
 import { AppSettings } from "../../app/app.settings"
+
 /**
  * Generated class for the AdminViewPreviousPage page.
  *
@@ -54,6 +55,10 @@ export class AdminViewPreviousPage {
     if(val.length === 0){
       this.initializeItems();   // Reset items back to all of the items
     }
+  }
+
+  filterItem(){
+
   }
   
 }

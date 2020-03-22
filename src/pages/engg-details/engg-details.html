@@ -15,7 +15,8 @@
   <div *ngFor="let d of userDetail">
   <ion-card>
     <ion-card-header>
-     <h2><b> {{d.u_name}}</b> </h2>
+     <span><b> {{d.u_name}}</b> </span>
+     <ion-icon style="float: right;" (click)="delete(d)" name="trash"></ion-icon>
     </ion-card-header>
     <ion-card-content>
       <ion-row>
@@ -33,6 +34,9 @@
       <ion-row>
         <ion-col>Machine Purchased</ion-col>
         <ion-col>{{d.u_MachinePurchased}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <button full ion-button float="right" expand="full" (click)="updateUser(d.u_id)">Update</button>
       </ion-row>
       
     </ion-card-content>

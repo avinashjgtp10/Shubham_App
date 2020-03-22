@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="io.ionic.starter"
+    package="ticketing.app.starter"
     android:hardwareAccelerated="true"
     android:versionCode="1"
     android:versionName="0.0.1" >
 
     <uses-sdk
         android:minSdkVersion="19"
-        android:targetSdkVersion="27" />
+        android:targetSdkVersion="28" />
 
     <supports-screens
         android:anyDensity="true"
@@ -26,7 +26,7 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true" >
         <activity
-            android:name="io.ionic.starter.MainActivity"
+            android:name="ticketing.app.starter.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
             android:label="@string/activity_name"
             android:launchMode="singleTop"

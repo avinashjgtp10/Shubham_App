@@ -11,60 +11,33 @@
 </ion-header>
 
 <ion-content padding>
-  <!-- <ion-searchbar></ion-searchbar> -->
-  <!-- <ion-grid>
-    <ion-row>
-      <ion-col>
-        <div>
-          Comp. No.
-        </div>
-      </ion-col>
-      <ion-col>
-        <div>
-          Comp. Date
-        </div>
-      </ion-col>
-      <ion-col>
-        <div>
-          Action
-        </div>
-      </ion-col>
-    </ion-row>
-    <ion-row *ngFor="let c of complaintData">
-      <ion-col>
-        <div>
-          {{c.c_id}}
-        </div>
-      </ion-col>
-      <ion-col>
-        <div>
-          {{c.c_date}}
-        </div>
-      </ion-col>
-      <ion-col>
-        <div>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <b *ngIf="complaintData.length === 0" style="text-align: center;    display: block;font-size: 2em; color:red;">Data not
+    Found</b>
+  <div *ngFor="let c of complaintData">
+    <ion-card>
+      <ion-card-header>
+        <h2><b> {{c.c_id}}</b> </h2>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-row>
+          <ion-col> {{c.c_desc}} </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Date:</ion-col>
+          <ion-col>{{c.c_date | convertMachinName}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Status:</ion-col>
+          <ion-col>{{c.c_status}}</ion-col>
+        </ion-row>
+        <ion-row>
           <button (click)="action(c)" ion-button>View</button>
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid> -->
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
 
-  <table>
-    <thead>
-      <th> C.No</th>
-      <th> Complaint</th>
-      <th> Complaint Date </th>
-      <th> Action</th>
-    </thead>
-    <tbody>
-      <tr *ngFor="let c of complaintData">
-        <td> {{c.c_id}}</td>
-        <td>
-          {{c.c_desc}}
-        </td>
-        <td> {{c.c_date}}</td>
-        <td> <button (click)="action(c)" ion-button>View</button> </td>
-      </tr>
-    </tbody>
-  </table>
+
+
 </ion-content>

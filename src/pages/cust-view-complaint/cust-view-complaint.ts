@@ -21,6 +21,10 @@ export class CustViewComplaintPage {
   }
 
   ionViewDidLoad() {
+    this.initializeItems();
+  }
+
+  initializeItems(){
     this._rest.getAllComplaint().subscribe((data: any) => {
       this.complaintData = data.data.filter(el => {
         if (el.c_assignBy === this.navParams.get("user_id")) {
@@ -33,6 +37,25 @@ export class CustViewComplaintPage {
         };
       });
     });
+  }
+
+
+
+  getItems(ev: any) {
+    // set val to the value of the searchbar
+    const val = ev.target.value;
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.complaintData = this.complaintData.filter((item) => {
+       if(parseInt(item.c_id) === parseInt(val)){
+        return parseInt(item.c_id) === parseInt(val);
+       }
+        
+      })
+    }
+    if(val.length === 0){
+      this.initializeItems();   // Reset items back to all of the items
+    }
   }
 
 

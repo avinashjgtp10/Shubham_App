@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ModalController } from 'ionic-angular';
 import { RestProvider } from "../../providers/rest/rest"
-
+import {UpdateCustomerModalPage} from "../update-customer-modal/update-customer-modal"
+import { AlertController } from 'ionic-angular';
+import { ToastProvider } from "../../providers/toast/toast"
 /**
  * Generated class for the EnggDetailsPage page.
  *
@@ -17,7 +19,14 @@ import { RestProvider } from "../../providers/rest/rest"
 export class EnggDetailsPage {
   userDetail:any;
 
-  constructor(public navCtrl: NavController,private service:RestProvider , public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+        private toast:ToastProvider,
+        public modalCtrl: ModalController,
+        private service:RestProvider ,
+        public alertCtrl: AlertController,
+         public navParams: NavParams
+  ) {
   }
 
   ionViewDidLoad() {
@@ -50,6 +59,50 @@ export class EnggDetailsPage {
         }
       })
     }
-   
 }
+
+updateUser(uId:any){
+  const updateModal = this.modalCtrl.create(UpdateCustomerModalPage,
+    { userId: uId })
+  updateModal.onDidDismiss((data: any) => {
+    this.getUserDeatils()
+  })
+  updateModal.present();
+}
+
+delete(data:any){
+  const confirm= this.alertCtrl.create({
+    title:"Alert",
+    message:"Are you sure you want to delete?",
+    buttons: [
+     {
+       text: 'No',
+       handler: () => {
+         console.log('Disagree clicked');
+       }
+     },
+     {
+       text: 'Yes',
+       handler: () => {
+         let payload={
+           "u_id":data.u_id
+         }
+         this.service.deleteUserByID(payload).subscribe((result:any)=>{
+           if( result.status === "success"){
+             this.toast.showToast("Record has been successfully deleted!")
+             this.getUserDeatils()
+           }else{
+            this.toast.showToast(" Cannot delete !")
+           }
+
+         })
+         console.log('Agree clicked');
+       }
+     }
+   ]
+  })
+  confirm.present();
+ }
+
+
 }

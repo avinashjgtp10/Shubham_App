@@ -25700,6 +25700,10 @@ table, th, td {
   border: 1px solid black;
 }
 
+.card-header-md {
+  background: orange;
+}
+
 tab .firstContainer {
   width: 100%;
   text-align: center;
@@ -25879,15 +25883,6 @@ page-cust-view-complaint ion-content table {
   margin: 10px auto;
 }
 
-page-engg-accept-complaint ion-content .col {
-  border: 1px solid #f781a1 !important;
-}
-
-page-engg-accept-complaint ion-content .searchbar-input-container {
-  width: 70% !important;
-  margin: auto;
-}
-
 page-engg-dashboard ion-header .back-button.show-back-button {
   display: none;
 }
@@ -25924,6 +25919,10 @@ page-engg-dashboard ion-content section .container img {
 page-engg-dashboard ion-content section .container label {
   display: block;
   text-align: center;
+}
+
+page-engg-details .card-header-md {
+  background: orange;
 }
 
 page-engg-view-complaint .text-input-md {

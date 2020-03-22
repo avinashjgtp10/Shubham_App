@@ -9,7 +9,7 @@ INJECTED from /Users/avinash/Apps/complaints_tracker/App/Shubham_App/platforms/a
 INJECTED from /Users/avinash/Apps/complaints_tracker/App/Shubham_App/platforms/android/app/src/main/AndroidManifest.xml:2:1-14:12
 INJECTED from /Users/avinash/Apps/complaints_tracker/App/Shubham_App/platforms/android/app/src/main/AndroidManifest.xml:2:1-14:12
 	package
-		ADDED from /Users/avinash/Apps/complaints_tracker/App/Shubham_App/platforms/android/app/src/main/AndroidManifest.xml:2:98-124
+		ADDED from /Users/avinash/Apps/complaints_tracker/App/Shubham_App/platforms/android/app/src/main/AndroidManifest.xml:2:98-129
 		INJECTED from /Users/avinash/Apps/complaints_tracker/App/Shubham_App/platforms/android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/avinash/Apps/complaints_tracker/App/Shubham_App/platforms/android/app/src/main/AndroidManifest.xml
 	android:versionName
@@ -19,7 +19,7 @@ INJECTED from /Users/avinash/Apps/complaints_tracker/App/Shubham_App/platforms/a
 	android:hardwareAccelerated
 		ADDED from /Users/avinash/Apps/complaints_tracker/App/Shubham_App/platforms/android/app/src/main/AndroidManifest.xml:2:11-45
 	xmlns:android
-		ADDED from /Users/avinash/Apps/complaints_tracker/App/Shubham_App/platforms/android/app/src/main/AndroidManifest.xml:2:125-183
+		ADDED from /Users/avinash/Apps/complaints_tracker/App/Shubham_App/platforms/android/app/src/main/AndroidManifest.xml:2:130-188
 	android:versionCode
 		ADDED from /Users/avinash/Apps/complaints_tracker/App/Shubham_App/platforms/android/app/src/main/AndroidManifest.xml:2:46-69
 		INJECTED from /Users/avinash/Apps/complaints_tracker/App/Shubham_App/platforms/android/app/src/main/AndroidManifest.xml
@@ -54,7 +54,7 @@ ADDED from /Users/avinash/Apps/complaints_tracker/App/Shubham_App/platforms/andr
 		ADDED from /Users/avinash/Apps/complaints_tracker/App/Shubham_App/platforms/android/app/src/main/AndroidManifest.xml:5:53-80
 	android:networkSecurityConfig
 		ADDED from /Users/avinash/Apps/complaints_tracker/App/Shubham_App/platforms/android/app/src/main/AndroidManifest.xml:5:114-174
-activity#io.ionic.starter.MainActivity
+activity#ticketing.app.starter.MainActivity
 ADDED from /Users/avinash/Apps/complaints_tracker/App/Shubham_App/platforms/android/app/src/main/AndroidManifest.xml:6:9-11:20
 	android:label
 		ADDED from /Users/avinash/Apps/complaints_tracker/App/Shubham_App/platforms/android/app/src/main/AndroidManifest.xml:6:97-134

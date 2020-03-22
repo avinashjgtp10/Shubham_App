@@ -1,14 +1,14 @@
 webpackJsonp([7],{
 
-/***/ 708:
+/***/ 711:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustRaiseComplaintPageModule", function() { return CustRaiseComplaintPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustViewComplaintPageModule", function() { return CustViewComplaintPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cust_raise_complaint__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cust_view_complaint__ = __webpack_require__(169);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var CustRaiseComplaintPageModule = /** @class */ (function () {
-    function CustRaiseComplaintPageModule() {
+var CustViewComplaintPageModule = /** @class */ (function () {
+    function CustViewComplaintPageModule() {
     }
-    CustRaiseComplaintPageModule = __decorate([
+    CustViewComplaintPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__cust_raise_complaint__["a" /* CustRaiseComplaintPage */],
+                __WEBPACK_IMPORTED_MODULE_2__cust_view_complaint__["a" /* CustViewComplaintPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cust_raise_complaint__["a" /* CustRaiseComplaintPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cust_view_complaint__["a" /* CustViewComplaintPage */]),
             ],
         })
-    ], CustRaiseComplaintPageModule);
-    return CustRaiseComplaintPageModule;
+    ], CustViewComplaintPageModule);
+    return CustViewComplaintPageModule;
 }());
 
-//# sourceMappingURL=cust-raise-complaint.module.js.map
+//# sourceMappingURL=cust-view-complaint.module.js.map
 
 /***/ })
 
