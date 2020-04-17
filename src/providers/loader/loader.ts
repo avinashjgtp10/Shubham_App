@@ -13,7 +13,7 @@ export class LoaderProvider {
 
    loading:any;
   constructor(public http: HttpClient, public loadingController: LoadingController) {
-    console.log('Hello LoaderProvider Provider');
+
     this.loading = this.loadingController.create({
       content: 'Please Wait....',
       duration: 3000

@@ -422,135 +422,11 @@ var AssignEnggModalPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminCreateEnggPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validators_password_validator__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_rest_rest__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_toast_toast__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_mock_data__ = __webpack_require__(135);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-/**
- * Generated class for the AdminCreateEnggPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var AdminCreateEnggPage = /** @class */ (function () {
-    function AdminCreateEnggPage(toast, navCtrl, rest, formBuilder, navParams) {
-        this.toast = toast;
-        this.navCtrl = navCtrl;
-        this.rest = rest;
-        this.formBuilder = formBuilder;
-        this.navParams = navParams;
-        this.passwordEye = "eye";
-        this.confirmEye = "eye";
-        this.validation_messages = __WEBPACK_IMPORTED_MODULE_6__app_mock_data__["a" /* MockData */].adminEnggValidationMsg;
-        this.password_type = "password";
-        this.cpassword_type = "password";
-        this.maxDate = new Date().toISOString();
-        this.typesOfMachin = [{ key: 1, value: "Mechnical" }, { key: 2, value: "Electronic" }, { key: 3, value: "Designing" }];
-    }
-    AdminCreateEnggPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad AdminCreateEnggPage');
-    };
-    AdminCreateEnggPage.prototype.ngOnInit = function () {
-        this.matching_passwords_group = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormGroup */]({
-            u_password: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].compose([
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].minLength(5),
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required,
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].pattern('')
-            ])),
-            u_cpassword: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required)
-        }, function (formGroup) {
-            return __WEBPACK_IMPORTED_MODULE_3__validators_password_validator__["a" /* PasswordValidator */].areEqual(formGroup);
-        });
-        this.validations_form = this.formBuilder.group({
-            u_Joining_date: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
-            address: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */](""),
-            engg_type: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
-            alter: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]("", [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].minLength(10), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].pattern("^((\\+91-?)|0)?[0-9]{10}$")]),
-            name: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
-            email: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].compose([
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required,
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-            ])),
-            matching_passwords: this.matching_passwords_group,
-            phone: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].minLength(10), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].pattern("^((\\+91-?)|0)?[0-9]{10}$")])
-        });
-    };
-    AdminCreateEnggPage.prototype.changePaswordType = function () {
-        this.passwordEye = this.passwordEye === "eye" ? "eye-off" : "eye";
-        this.password_type = this.password_type === "text" ? "password" : "text";
-    };
-    AdminCreateEnggPage.prototype.changecPaswordType = function () {
-        this.confirmEye = this.confirmEye === "eye" ? "eye-off" : "eye";
-        this.cpassword_type = this.cpassword_type === "text" ? "password" : "text";
-    };
-    AdminCreateEnggPage.prototype.onSubmit = function (values) {
-        var _this = this;
-        var Obj = {
-            "u_name": values.name,
-            "u_mobile": values.phone,
-            "u_altermobile": values.alter,
-            "u_email": values.email,
-            "u_address": values.address,
-            "u_MachinePurchased": null,
-            "u_dateOf_Purchased": new Date(values.u_dateOf_Purchased),
-            "u_password": values.matching_passwords.u_password,
-            "u_cpassword": values.matching_passwords.u_cpassword,
-            "u_role": 3,
-            "u_roleType": values.engg_type,
-            "u_joinDate": values.u_Joining_date
-        };
-        this.rest.createCustomer(Obj).subscribe(function (result) {
-            if (result.status === "success") {
-                _this.toast.showToast("Engineer Details saved");
-                _this.validations_form.reset();
-            }
-            if (result.status === "error") {
-                _this.toast.showToast(result.message);
-            }
-        });
-    };
-    AdminCreateEnggPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-admin-create-engg',template:/*ion-inline-start:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/admin-create-engg/admin-create-engg.html"*/'<!--\n  Generated template for the AdminCreateCustomerPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Create Service Enginner</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list lines="none">\n    <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">\n\n      <ion-item>\n        <ion-label floating>Enter Name<span style="color:red">*</span></ion-label>\n        <ion-input type="text" formControlName="name"></ion-input>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.name">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'name\').hasError(validation.type) && (validations_form.get(\'name\').dirty || validations_form.get(\'name\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n      <ion-item>\n        <ion-label floating>Mobile Number<span style="color:red">*</span></ion-label>\n        <ion-input type="text" formControlName="phone"></ion-input>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.phone">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'phone\').hasError(validation.type) && (validations_form.get(\'phone\').dirty || validations_form.get(\'phone\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n\n      <ion-item>\n        <ion-label floating>Alternative Contact number</ion-label>\n        <ion-input type="text" formControlName="alter"></ion-input>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.alter">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'alter\').hasError(validation.type) && (validations_form.get(\'alter\').dirty || validations_form.get(\'alter\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n\n      <ion-item>\n        <ion-label floating>Email<span style="color:red">*</span></ion-label>\n        <ion-input type="email" formControlName="email"></ion-input>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.email">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'email\').hasError(validation.type) && (validations_form.get(\'email\').dirty || validations_form.get(\'email\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n      <ion-item>\n        <ion-label floating>Address<span style="color:red">*</span></ion-label>\n        <ion-textarea formControlName="address"></ion-textarea>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Engg Type<span style="color:red">*</span></ion-label>\n        <ion-select formControlName="engg_type">\n          <ion-option *ngFor="let mach of typesOfMachin" [value]="mach.key">\n            {{mach.value}}</ion-option>\n        </ion-select>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.engg_type">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'engg_type\').hasError(validation.type) && (validations_form.get(\'engg_type\').dirty || validations_form.get(\'engg_type\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n      <ion-item>\n        <ion-label>Date of Joining<span style="color:red">*</span></ion-label>\n        <!-- <ion-input type="Date" formControlName="u_Joining_date"></ion-input> -->\n        <ion-datetime [max]="maxDate" formControlName="u_Joining_date"  display-timezone="utc"></ion-datetime>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.u_Joining_date">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'u_Joining_date\').hasError(validation.type) && (validations_form.get(\'u_Joining_date\').dirty || validations_form.get(\'u_Joining_date\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n      <div formGroupName="matching_passwords">\n        <ion-item>\n          <ion-label position="floating" color="primary">Password<span style="color:red">*</span></ion-label>\n          <ion-input [type]="password_type" formControlName="u_password"></ion-input>\n          <button ion-button  style="width:auto"  clear color="dark" type="button" item-right (click)="changePaswordType()"> <ion-icon [name]="passwordEye"> </ion-icon> </button>\n        </ion-item>\n        <div class="validation-errors">\n          <ng-container *ngFor="let validation of validation_messages.u_password">\n            <div class="error-message" *ngIf="validations_form.get(\'matching_passwords\').get(\'u_password\').hasError(validation.type) && (validations_form.get(\'matching_passwords\').get(\'u_password\').dirty || validations_form.get(\'matching_passwords\').get(\'u_password\').touched)">\n              <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n            </div>\n          </ng-container>\n        </div>\n  \n        <ion-item>\n          <ion-label position="floating" color="primary">Confirm Password<span style="color:red">*</span></ion-label>\n          <ion-input [type]="cpassword_type" formControlName="u_cpassword"></ion-input>\n          <button ion-button  style="width:auto"  clear color="dark" type="button" item-right (click)="changecPaswordType()"> <ion-icon [name]="confirmEye"> </ion-icon> </button>\n           \n        </ion-item>\n        <div class="validation-errors">\n          <ng-container *ngFor="let validation of validation_messages.u_cpassword">\n            <div class="error-message" *ngIf="validations_form.get(\'matching_passwords\').get(\'u_cpassword\').hasError(validation.type) && (validations_form.get(\'matching_passwords\').get(\'u_cpassword\').dirty || validations_form.get(\'matching_passwords\').get(\'u_cpassword\').touched)">\n              <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n            </div>\n          </ng-container>\n        </div>\n      </div>\n      <!-- These validations are for the form group -->\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.matching_passwords">\n          <div class="error-message" *ngIf="validations_form.get(\'matching_passwords\').hasError(validation.type) && (validations_form.get(\'matching_passwords\').get(\'u_cpassword\').dirty || validations_form.get(\'matching_passwords\').get(\'u_cpassword\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n      <button full color="primary" class="submit-btn" expand="full" type="submit"\n        [disabled]="!validations_form.valid">Submit</button>\n    </form>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/admin-create-engg/admin-create-engg.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5__providers_toast_toast__["a" /* ToastProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__providers_rest_rest__["a" /* RestProvider */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
-    ], AdminCreateEnggPage);
-    return AdminCreateEnggPage;
-}());
-
-//# sourceMappingURL=admin-create-engg.js.map
-
-/***/ }),
-
-/***/ 161:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminDashboardPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__admin_create_customer_admin_create_customer__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__admin_create_engg_admin_create_engg__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__admin_create_customer_admin_create_customer__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__admin_create_engg_admin_create_engg__ = __webpack_require__(162);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__admin_assign_engg_admin_assign_engg__ = __webpack_require__(158);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__admin_view_previous_admin_view_previous__ = __webpack_require__(170);
@@ -656,7 +532,7 @@ var AdminDashboardPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 162:
+/***/ 161:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -810,6 +686,130 @@ var AdminCreateCustomerPage = /** @class */ (function () {
 
 /***/ }),
 
+/***/ 162:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminCreateEnggPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__validators_password_validator__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_rest_rest__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_toast_toast__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_mock_data__ = __webpack_require__(135);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+/**
+ * Generated class for the AdminCreateEnggPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var AdminCreateEnggPage = /** @class */ (function () {
+    function AdminCreateEnggPage(toast, navCtrl, rest, formBuilder, navParams) {
+        this.toast = toast;
+        this.navCtrl = navCtrl;
+        this.rest = rest;
+        this.formBuilder = formBuilder;
+        this.navParams = navParams;
+        this.passwordEye = "eye";
+        this.confirmEye = "eye";
+        this.validation_messages = __WEBPACK_IMPORTED_MODULE_6__app_mock_data__["a" /* MockData */].adminEnggValidationMsg;
+        this.password_type = "password";
+        this.cpassword_type = "password";
+        this.maxDate = new Date().toISOString();
+        this.typesOfMachin = [{ key: 1, value: "Mechnical" }, { key: 2, value: "Electronic" }, { key: 3, value: "Designing" }];
+    }
+    AdminCreateEnggPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AdminCreateEnggPage');
+    };
+    AdminCreateEnggPage.prototype.ngOnInit = function () {
+        this.matching_passwords_group = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormGroup */]({
+            u_password: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].compose([
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].minLength(5),
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required,
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].pattern('')
+            ])),
+            u_cpassword: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required)
+        }, function (formGroup) {
+            return __WEBPACK_IMPORTED_MODULE_3__validators_password_validator__["a" /* PasswordValidator */].areEqual(formGroup);
+        });
+        this.validations_form = this.formBuilder.group({
+            u_Joining_date: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
+            address: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */](""),
+            engg_type: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
+            alter: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]("", [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].minLength(10), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].pattern("^((\\+91-?)|0)?[0-9]{10}$")]),
+            name: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required),
+            email: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].compose([
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required,
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+            ])),
+            matching_passwords: this.matching_passwords_group,
+            phone: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].minLength(10), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].pattern("^((\\+91-?)|0)?[0-9]{10}$")])
+        });
+    };
+    AdminCreateEnggPage.prototype.changePaswordType = function () {
+        this.passwordEye = this.passwordEye === "eye" ? "eye-off" : "eye";
+        this.password_type = this.password_type === "text" ? "password" : "text";
+    };
+    AdminCreateEnggPage.prototype.changecPaswordType = function () {
+        this.confirmEye = this.confirmEye === "eye" ? "eye-off" : "eye";
+        this.cpassword_type = this.cpassword_type === "text" ? "password" : "text";
+    };
+    AdminCreateEnggPage.prototype.onSubmit = function (values) {
+        var _this = this;
+        var Obj = {
+            "u_name": values.name,
+            "u_mobile": values.phone,
+            "u_altermobile": values.alter,
+            "u_email": values.email,
+            "u_address": values.address,
+            "u_MachinePurchased": null,
+            "u_dateOf_Purchased": new Date(values.u_dateOf_Purchased),
+            "u_password": values.matching_passwords.u_password,
+            "u_cpassword": values.matching_passwords.u_cpassword,
+            "u_role": 3,
+            "u_roleType": values.engg_type,
+            "u_joinDate": values.u_Joining_date
+        };
+        this.rest.createCustomer(Obj).subscribe(function (result) {
+            if (result.status === "success") {
+                _this.toast.showToast("Engineer Details saved");
+                _this.validations_form.reset();
+            }
+            if (result.status === "error") {
+                _this.toast.showToast(result.message);
+            }
+        });
+    };
+    AdminCreateEnggPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-admin-create-engg',template:/*ion-inline-start:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/admin-create-engg/admin-create-engg.html"*/'<!--\n  Generated template for the AdminCreateCustomerPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Create Service Enginner</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list lines="none">\n    <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">\n\n      <ion-item>\n        <ion-label floating>Enter Name<span style="color:red">*</span></ion-label>\n        <ion-input type="text" formControlName="name"></ion-input>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.name">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'name\').hasError(validation.type) && (validations_form.get(\'name\').dirty || validations_form.get(\'name\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n      <ion-item>\n        <ion-label floating>Mobile Number<span style="color:red">*</span></ion-label>\n        <ion-input type="text" formControlName="phone"></ion-input>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.phone">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'phone\').hasError(validation.type) && (validations_form.get(\'phone\').dirty || validations_form.get(\'phone\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n\n      <ion-item>\n        <ion-label floating>Alternative Contact number</ion-label>\n        <ion-input type="text" formControlName="alter"></ion-input>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.alter">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'alter\').hasError(validation.type) && (validations_form.get(\'alter\').dirty || validations_form.get(\'alter\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n\n      <ion-item>\n        <ion-label floating>Email<span style="color:red">*</span></ion-label>\n        <ion-input type="email" formControlName="email"></ion-input>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.email">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'email\').hasError(validation.type) && (validations_form.get(\'email\').dirty || validations_form.get(\'email\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n      <ion-item>\n        <ion-label floating>Address<span style="color:red">*</span></ion-label>\n        <ion-textarea formControlName="address"></ion-textarea>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Engg Type<span style="color:red">*</span></ion-label>\n        <ion-select formControlName="engg_type">\n          <ion-option *ngFor="let mach of typesOfMachin" [value]="mach.key">\n            {{mach.value}}</ion-option>\n        </ion-select>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.engg_type">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'engg_type\').hasError(validation.type) && (validations_form.get(\'engg_type\').dirty || validations_form.get(\'engg_type\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n      <ion-item>\n        <ion-label>Date of Joining<span style="color:red">*</span></ion-label>\n        <!-- <ion-input type="Date" formControlName="u_Joining_date"></ion-input> -->\n        <ion-datetime [max]="maxDate" formControlName="u_Joining_date"  display-timezone="utc"></ion-datetime>\n      </ion-item>\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.u_Joining_date">\n          <div class="error-message"\n            *ngIf="validations_form.get(\'u_Joining_date\').hasError(validation.type) && (validations_form.get(\'u_Joining_date\').dirty || validations_form.get(\'u_Joining_date\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n      <div formGroupName="matching_passwords">\n        <ion-item>\n          <ion-label position="floating" color="primary">Password<span style="color:red">*</span></ion-label>\n          <ion-input [type]="password_type" formControlName="u_password"></ion-input>\n          <button ion-button  style="width:auto"  clear color="dark" type="button" item-right (click)="changePaswordType()"> <ion-icon [name]="passwordEye"> </ion-icon> </button>\n        </ion-item>\n        <div class="validation-errors">\n          <ng-container *ngFor="let validation of validation_messages.u_password">\n            <div class="error-message" *ngIf="validations_form.get(\'matching_passwords\').get(\'u_password\').hasError(validation.type) && (validations_form.get(\'matching_passwords\').get(\'u_password\').dirty || validations_form.get(\'matching_passwords\').get(\'u_password\').touched)">\n              <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n            </div>\n          </ng-container>\n        </div>\n  \n        <ion-item>\n          <ion-label position="floating" color="primary">Confirm Password<span style="color:red">*</span></ion-label>\n          <ion-input [type]="cpassword_type" formControlName="u_cpassword"></ion-input>\n          <button ion-button  style="width:auto"  clear color="dark" type="button" item-right (click)="changecPaswordType()"> <ion-icon [name]="confirmEye"> </ion-icon> </button>\n           \n        </ion-item>\n        <div class="validation-errors">\n          <ng-container *ngFor="let validation of validation_messages.u_cpassword">\n            <div class="error-message" *ngIf="validations_form.get(\'matching_passwords\').get(\'u_cpassword\').hasError(validation.type) && (validations_form.get(\'matching_passwords\').get(\'u_cpassword\').dirty || validations_form.get(\'matching_passwords\').get(\'u_cpassword\').touched)">\n              <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n            </div>\n          </ng-container>\n        </div>\n      </div>\n      <!-- These validations are for the form group -->\n      <div class="validation-errors">\n        <ng-container *ngFor="let validation of validation_messages.matching_passwords">\n          <div class="error-message" *ngIf="validations_form.get(\'matching_passwords\').hasError(validation.type) && (validations_form.get(\'matching_passwords\').get(\'u_cpassword\').dirty || validations_form.get(\'matching_passwords\').get(\'u_cpassword\').touched)">\n            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}\n          </div>\n        </ng-container>\n      </div>\n\n      <button full color="primary" class="submit-btn" expand="full" type="submit"\n        [disabled]="!validations_form.valid">Submit</button>\n    </form>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/admin-create-engg/admin-create-engg.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5__providers_toast_toast__["a" /* ToastProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__providers_rest_rest__["a" /* RestProvider */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+    ], AdminCreateEnggPage);
+    return AdminCreateEnggPage;
+}());
+
+//# sourceMappingURL=admin-create-engg.js.map
+
+/***/ }),
+
 /***/ 163:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -946,10 +946,9 @@ var EnggAcceptComplaintPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-engg-accept-complaint',template:/*ion-inline-start:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/engg-accept-complaint/engg-accept-complaint.html"*/'<!--\n  Generated template for the AcceptComplaintPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Accept Complaint</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n  <b *ngIf="complaintData.length === 0" style="text-align: center;    display: block;font-size: 2em; color:red;">Data not\n    Found</b>\n  <div *ngFor="let c of complaintData">\n    <ion-card>\n      <ion-card-header>\n        <h2><b> {{c.c_id}}</b> </h2>\n      </ion-card-header>\n      <ion-card-content>\n        <ion-row>\n          <ion-col> {{c.c_desc}} </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>Date:</ion-col>\n          <ion-col>{{c.c_date | convertMachinName}}</ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>Status:</ion-col>\n          <ion-col>{{c.c_status}}</ion-col>\n        </ion-row>\n        <ion-row>\n          <button (click)="action(c)" ion-button>View</button>\n        </ion-row>\n      </ion-card-content>\n    </ion-card>\n  </div>\n\n\n\n</ion-content>'/*ion-inline-end:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/engg-accept-complaint/engg-accept-complaint.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__providers_rest_rest__["a" /* RestProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_rest_rest__["a" /* RestProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__providers_rest_rest__["a" /* RestProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], EnggAcceptComplaintPage);
     return EnggAcceptComplaintPage;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=engg-accept-complaint.js.map
@@ -1078,7 +1077,6 @@ var EnggViewPreviousPage = /** @class */ (function () {
     EnggViewPreviousPage.prototype.ionViewDidLoad = function () {
         var _this = this;
         this._rest.getAllComplaint().subscribe(function (data) {
-            console.log(JSON.stringify(data));
             _this.complaintData = data.data.filter(function (el) {
                 if (el.c_assignTo === _this.navParams.get("user_id")) {
                     if (el.c_status === 2) {
@@ -1087,7 +1085,6 @@ var EnggViewPreviousPage = /** @class */ (function () {
                 }
                 ;
             });
-            console.log(JSON.stringify(_this.complaintData));
         });
     };
     EnggViewPreviousPage = __decorate([
@@ -1367,17 +1364,51 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  */
 var AdminViewPreviousPage = /** @class */ (function () {
     function AdminViewPreviousPage(rest, navCtrl, navParams) {
+        var _this = this;
         this.rest = rest;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.allcomplaint = [];
+        this.complaintArray = [];
+        this.openFilter = false;
+        this.customPickerOptionFrom = {
+            buttons: [{
+                    text: 'Clear',
+                    handler: function () {
+                        _this.data.startDate = "";
+                        _this.data.endDate = "";
+                    }
+                }]
+        };
+        this.customPickerOptionEndFrom = {
+            buttons: [{
+                    text: 'Clear',
+                    handler: function () {
+                        return _this.data.endDate = "";
+                    }
+                }]
+        };
+        this.data = {
+            startDate: "",
+            endDate: "",
+            status: "",
+            searchBy: "",
+            searchByText: ""
+        };
+        this.maxDate = new Date().toISOString();
+        this.status = __WEBPACK_IMPORTED_MODULE_3__app_app_settings__["a" /* AppSettings */].status;
     }
     AdminViewPreviousPage.prototype.ionViewDidLoad = function () {
         this.initializeItems();
-        console.log('ionViewDidLoad AdminViewPreviousPage');
+        this.totalRecord = this.allcomplaint.length;
+    };
+    AdminViewPreviousPage.prototype.onCancel = function (ev) {
+        console.log(ev);
     };
     AdminViewPreviousPage.prototype.initializeItems = function () {
         var _this = this;
+        console.log("calling ini");
+        this.allcomplaint = [];
         this.rest.getAllComplaint().subscribe(function (result) {
             _this.allcomplaint = result.data;
             _this.allcomplaint = _this.allcomplaint.filter(function (ele) {
@@ -1388,16 +1419,34 @@ var AdminViewPreviousPage = /** @class */ (function () {
                 });
                 return ele;
             });
+            _this.complaintArray = _this.allcomplaint;
+            _this.totalRecord = _this.allcomplaint.length;
         });
     };
     AdminViewPreviousPage.prototype.getItems = function (ev) {
+        var _this = this;
         // set val to the value of the searchbar
         var val = ev.target.value;
         // if the value is an empty string don't filter the items
         if (val && val.trim() != '') {
-            this.allcomplaint = this.allcomplaint.filter(function (item) {
-                if (parseInt(item.c_id) === parseInt(val)) {
-                    return parseInt(item.c_id) === parseInt(val);
+            var arr_1 = [];
+            this.rest.getAllUsers().subscribe(function (user) {
+                arr_1 = user.data.filter(function (el) {
+                    if (el.u_name === val || el.u_MachineNo === val) {
+                        return el.u_id;
+                    }
+                });
+                if (arr_1) {
+                    _this.allcomplaint = _this.allcomplaint.filter(function (item) {
+                        for (var i = 0; i < arr_1.length; i++) {
+                            if (parseInt(arr_1[i].u_id) === parseInt(item.c_assignTo)) {
+                                return parseInt(arr_1[i].u_id) === parseInt(item.c_assignTo);
+                            }
+                            if (parseInt(arr_1[i].u_id) === parseInt(item.c_assignBy)) {
+                                return parseInt(arr_1[i].u_id) === parseInt(item.c_assignBy);
+                            }
+                        }
+                    });
                 }
             });
         }
@@ -1405,11 +1454,43 @@ var AdminViewPreviousPage = /** @class */ (function () {
             this.initializeItems(); // Reset items back to all of the items
         }
     };
-    AdminViewPreviousPage.prototype.filterItem = function () {
+    AdminViewPreviousPage.prototype.getRealTimeUserData = function (value) {
+        this.rest.getAllUsers().subscribe(function (result) {
+        });
+    };
+    AdminViewPreviousPage.prototype.openFilterModal = function () {
+        this.openFilter = !this.openFilter;
+        if (!this.openFilter) {
+            this.initializeItems();
+        }
+        else
+            (this.filterItem(this.data));
+    };
+    AdminViewPreviousPage.prototype.filterItem = function (data) {
+        console.log(data);
+        this.allcomplaint = this.complaintArray.filter(function (item) {
+            // if (this.data.searchBy) {
+            //   if(this.data.searchBy === "party"){
+            //     this.rest.getAllUsers().subscribe((partyData:any)=>{
+            //     })
+            //   }
+            //  }
+            // else {
+            if ((data.status !== "") && (data.startDate !== "")) {
+                return (item.c_status === data.status) && ((new Date(data.startDate) <= new Date(item.c_date)) && (new Date(data.endDate) >= new Date(item.c_date)));
+            }
+            else if (data.status && data.startDate === "") {
+                return (item.c_status === data.status);
+            }
+            else if ((data.status === "") && (data.startDate !== "")) {
+                return (new Date(data.startDate) <= new Date(item.c_date)) && (new Date(data.endDate) >= new Date(item.c_date));
+            }
+            //}
+        });
     };
     AdminViewPreviousPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-admin-view-previous',template:/*ion-inline-start:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/admin-view-previous/admin-view-previous.html"*/'<!--\n  Generated template for the AdminViewPreviousPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>View</ion-title>\n    \n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n  <b *ngIf="allcomplaint.length === 0" style="text-align: center;    display: block;font-size: 2em; color:red;">Data not\n    Found</b>\n  <div *ngFor="let c of allcomplaint">\n    <ion-card>\n      <ion-card-header>\n        <h2><b> {{c.c_id}}</b> </h2>\n      </ion-card-header>\n      <ion-card-content>\n        <ion-row>\n          <ion-col> {{c.c_desc}} </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>Date:</ion-col>\n          <ion-col>{{c.c_date | convertMachinName}}</ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>Status:</ion-col>\n          <ion-col>{{c.c_status}}</ion-col>\n        </ion-row>\n      </ion-card-content>\n    </ion-card>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/admin-view-previous/admin-view-previous.html"*/,
+            selector: 'page-admin-view-previous',template:/*ion-inline-start:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/admin-view-previous/admin-view-previous.html"*/'<!--\n  Generated template for the AdminViewPreviousPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>View</ion-title>\n\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-item>\n    <ion-searchbar [showCancelButton]="shouldShowCancel"  (ionCancel)="onCancel($event)" (ionInput)="getItems($event)" ></ion-searchbar>\n    <ion-badge item-end (click)="openFilterModal()">\n      <ion-icon name="funnel"></ion-icon>\n    </ion-badge>\n  </ion-item>\n\n  <div *ngIf="openFilter">\n    <ion-list>\n      <ion-item>\n        <ion-label>Start Date</ion-label>\n        <ion-datetime [max]="maxDate" [pickerOptions]="customPickerOptionFrom" [(ngModel)]="data.startDate"\n          display-timezone="utc">X</ion-datetime>\n      </ion-item>\n      <ion-item>\n        <ion-label>End Date</ion-label>\n        <ion-datetime [max]="maxDate" [min]="data.startDate" [pickerOptions]="customPickerOptionEndFrom"\n          [(ngModel)]="data.endDate" display-timezone="utc" (ionChange)="filterItem(data)" [disabled]="data.startDate">\n        </ion-datetime>\n      </ion-item>\n      <ion-item>\n        <ion-label>Status</ion-label>\n        <ion-select [(ngModel)]="data.status" (ionChange)="filterItem(data)">\n          <ion-option *ngFor="let s of status" [value]="s.value">\n            {{s.value}}</ion-option>\n        </ion-select>\n      </ion-item>\n    </ion-list>\n\n    <!-- <ion-list radio-group [(ngModel)]="data.searchBy">\n\n      <ion-item>\n        <ion-label>Party Name</ion-label>\n        <ion-radio  value="party"   ></ion-radio>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Engineer Name</ion-label>\n        <ion-radio value="engineer"></ion-radio>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Machine No</ion-label>\n        <ion-radio value="machine" ></ion-radio>\n      </ion-item>\n    </ion-list> -->\n\n    <ion-list>\n      <ion-item *ngIf="data.searchBy" (input)="filterItem(data)">\n        <ion-input value="" [(ngModel)]="data.searchByText" [placeholder]="data.searchBy"></ion-input>\n      </ion-item> \n      <ion-item>\n        <ion-label>Showing {{allcomplaint.length}} of {{totalRecord}} entries</ion-label>\n      </ion-item>\n      <ion-item *ngIf="allcomplaint.length === 0">\n        <ion-label>Data not Found</ion-label>\n      </ion-item>\n    </ion-list>\n  </div>\n\n\n  <div *ngFor="let c of allcomplaint">\n    <ion-card>\n      <ion-card-header>\n        <h2><b> {{c.c_id}}</b> </h2>\n      </ion-card-header>\n      <ion-card-content>\n        <ion-row>\n          <ion-col> {{c.c_desc}} </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>Date:</ion-col>\n          <ion-col>{{c.c_date | convertMachinName}}</ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>Status:</ion-col>\n          <ion-col>{{c.c_status}}</ion-col>\n        </ion-row>\n      </ion-card-content>\n    </ion-card>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/admin-view-previous/admin-view-previous.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* RestProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], AdminViewPreviousPage);
@@ -1801,39 +1882,39 @@ var map = {
 		16
 	],
 	"../pages/admin-create-customer/admin-create-customer.module": [
-		716,
+		704,
 		15
 	],
 	"../pages/admin-create-engg/admin-create-engg.module": [
-		702,
+		703,
 		14
 	],
 	"../pages/admin-dashboard/admin-dashboard.module": [
-		703,
+		702,
 		13
 	],
 	"../pages/admin-view-previous/admin-view-previous.module": [
-		704,
+		705,
 		12
 	],
 	"../pages/assign-engg-modal/assign-engg-modal.module": [
-		705,
+		706,
 		11
 	],
 	"../pages/common-cart/common-cart.module": [
-		706,
+		707,
 		0
 	],
 	"../pages/cust-dashboard/cust-dashboard.module": [
-		707,
+		708,
 		10
 	],
 	"../pages/cust-details/cust-details.module": [
-		708,
+		709,
 		9
 	],
 	"../pages/cust-raise-complaint/cust-raise-complaint.module": [
-		709,
+		710,
 		8
 	],
 	"../pages/cust-view-complaint/cust-view-complaint.module": [
@@ -1841,7 +1922,7 @@ var map = {
 		7
 	],
 	"../pages/engg-accept-complaint/engg-accept-complaint.module": [
-		710,
+		713,
 		6
 	],
 	"../pages/engg-dashboard/engg-dashboard.module": [
@@ -1849,15 +1930,15 @@ var map = {
 		5
 	],
 	"../pages/engg-details/engg-details.module": [
-		713,
+		714,
 		4
 	],
 	"../pages/engg-view-complaint/engg-view-complaint.module": [
-		714,
+		715,
 		3
 	],
 	"../pages/engg-view-previous/engg-view-previous.module": [
-		715,
+		716,
 		2
 	],
 	"../pages/update-customer-modal/update-customer-modal.module": [
@@ -1961,7 +2042,6 @@ var LoaderProvider = /** @class */ (function () {
     function LoaderProvider(http, loadingController) {
         this.http = http;
         this.loadingController = loadingController;
-        console.log('Hello LoaderProvider Provider');
         this.loading = this.loadingController.create({
             content: 'Please Wait....',
             duration: 3000
@@ -2015,9 +2095,9 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_engg_view_complaint_engg_view_complaint__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_engg_accept_complaint_engg_accept_complaint__ = __webpack_require__(164);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_engg_view_previous_engg_view_previous__ = __webpack_require__(166);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_admin_dashboard_admin_dashboard__ = __webpack_require__(161);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_admin_create_customer_admin_create_customer__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_admin_create_engg_admin_create_engg__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_admin_dashboard_admin_dashboard__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_admin_create_customer_admin_create_customer__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_admin_create_engg_admin_create_engg__ = __webpack_require__(162);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_admin_assign_engg_admin_assign_engg__ = __webpack_require__(158);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_admin_view_previous_admin_view_previous__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_cust_dashboard_cust_dashboard__ = __webpack_require__(167);
@@ -2118,21 +2198,21 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/admin-assign-engg/admin-assign-engg.module#AdminAssignEnggPageModule', name: 'AdminAssignEnggPage', segment: 'admin-assign-engg', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/admin-create-engg/admin-create-engg.module#AdminCreateEnggPageModule', name: 'AdminCreateEnggPage', segment: 'admin-create-engg', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/admin-dashboard/admin-dashboard.module#AdminDashboardPageModule', name: 'AdminDashboardPage', segment: 'admin-dashboard', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/admin-create-engg/admin-create-engg.module#AdminCreateEnggPageModule', name: 'AdminCreateEnggPage', segment: 'admin-create-engg', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/admin-create-customer/admin-create-customer.module#AdminCreateCustomerPageModule', name: 'AdminCreateCustomerPage', segment: 'admin-create-customer', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/admin-view-previous/admin-view-previous.module#AdminViewPreviousPageModule', name: 'AdminViewPreviousPage', segment: 'admin-view-previous', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/assign-engg-modal/assign-engg-modal.module#AssignEnggModalPageModule', name: 'AssignEnggModalPage', segment: 'assign-engg-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/common-cart/common-cart.module#CommonCartPageModule', name: 'CommonCartPage', segment: 'common-cart', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cust-dashboard/cust-dashboard.module#CustDashboardPageModule', name: 'CustDashboardPage', segment: 'cust-dashboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cust-details/cust-details.module#CustDetailsPageModule', name: 'CustDetailsPage', segment: 'cust-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cust-raise-complaint/cust-raise-complaint.module#CustRaiseComplaintPageModule', name: 'CustRaiseComplaintPage', segment: 'cust-raise-complaint', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/engg-accept-complaint/engg-accept-complaint.module#EnggAcceptComplaintPageModule', name: 'EnggAcceptComplaintPage', segment: 'engg-accept-complaint', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cust-view-complaint/cust-view-complaint.module#CustViewComplaintPageModule', name: 'CustViewComplaintPage', segment: 'cust-view-complaint', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/engg-dashboard/engg-dashboard.module#EnggDashboardPageModule', name: 'EnggDashboardPage', segment: 'engg-dashboard', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/engg-accept-complaint/engg-accept-complaint.module#EnggAcceptComplaintPageModule', name: 'EnggAcceptComplaintPage', segment: 'engg-accept-complaint', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/engg-details/engg-details.module#EnggDetailsPageModule', name: 'EnggDetailsPage', segment: 'engg-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/engg-view-complaint/engg-view-complaint.module#EnggViewComplaintPageModule', name: 'EnggViewComplaintPage', segment: 'engg-view-complaint', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/engg-view-previous/engg-view-previous.module#EnggViewPreviousPageModule', name: 'EnggViewPreviousPage', segment: 'engg-view-previous', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/admin-create-customer/admin-create-customer.module#AdminCreateCustomerPageModule', name: 'AdminCreateCustomerPage', segment: 'admin-create-customer', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/update-customer-modal/update-customer-modal.module#UpdateCustomerModalPageModule', name: 'UpdateCustomerModalPage', segment: 'update-customer-modal', priority: 'low', defaultHistory: [] }
                     ]
                 }),
@@ -2190,7 +2270,7 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_rest_rest__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_loader_loader__ = __webpack_require__(324);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_toast_toast__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__admin_dashboard_admin_dashboard__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__admin_dashboard_admin_dashboard__ = __webpack_require__(160);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_forms__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__reusable_component_loader_page_loader__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__cust_dashboard_cust_dashboard__ = __webpack_require__(167);
@@ -2245,7 +2325,6 @@ var HomePage = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_7__angular_forms__["h" /* Validators */].pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
             ]))
         });
-        console.log(this.validations_form.get('email'));
     };
     HomePage.prototype.login = function (value) {
         var _this = this;
@@ -2388,7 +2467,7 @@ var HeaderComponent = /** @class */ (function () {
     ], HeaderComponent.prototype, "onClick", void 0);
     HeaderComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'header-component',template:/*ion-inline-start:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/reusable_component/header/header_component.html"*/'<ion-header>\n    <ion-navbar hideBackButton>\n        <ion-title>\n            <ion-icon ios="ios-home" md="md-home"> {{label}} </ion-icon>\n        </ion-title>\n        <ion-buttons right>\n            <button ion-button icon-only (click)="onClickButton($event)">\n                <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>\n            </button>\n        </ion-buttons>\n    </ion-navbar>\n</ion-header>'/*ion-inline-end:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/reusable_component/header/header_component.html"*/
+            selector: 'header-component',template:/*ion-inline-start:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/reusable_component/header/header_component.html"*/'<ion-header>\n    <ion-navbar hideBackButton>\n        <ion-title>\n             {{label}} \n        </ion-title>\n        <ion-buttons right>\n            <button ion-button icon-only (click)="onClickButton($event)">\n                <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>\n            </button>\n        </ion-buttons>\n    </ion-navbar>\n</ion-header>'/*ion-inline-end:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/reusable_component/header/header_component.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], HeaderComponent);
@@ -2501,7 +2580,6 @@ var ComponentsShowPasswordComponent = /** @class */ (function () {
         this.text = 'Hello World';
     }
     ComponentsShowPasswordComponent.prototype.changeShow = function () {
-        console.log(this.password_type);
         this.password_type = this.password_type === 'text' ? "password" : "text";
     };
     ComponentsShowPasswordComponent = __decorate([
@@ -2552,7 +2630,6 @@ var ConvertMachinNamePipe = /** @class */ (function () {
         for (var _i = 1; _i < arguments.length; _i++) {
             args[_i - 1] = arguments[_i];
         }
-        console.log(value);
         return this.getDate(value);
     };
     ConvertMachinNamePipe.prototype.getDate = function (val) {

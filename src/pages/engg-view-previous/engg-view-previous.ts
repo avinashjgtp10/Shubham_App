@@ -22,7 +22,6 @@ export class EnggViewPreviousPage {
 
   ionViewDidLoad() {
     this._rest.getAllComplaint().subscribe((data: any) => {
-      console.log(JSON.stringify(data));
       this.complaintData = data.data.filter((el:any) => {
         if (el.c_assignTo === this.navParams.get("user_id")) {
           if (el.c_status === 2) {
@@ -30,7 +29,7 @@ export class EnggViewPreviousPage {
           }
         };
       });
-      console.log(JSON.stringify(this.complaintData));
+
     });
 
   }

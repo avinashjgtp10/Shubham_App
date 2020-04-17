@@ -21,7 +21,6 @@ export class ComponentsShowPasswordComponent {
   }
 
   changeShow(){
-    console.log(this.password_type)
     this.password_type=this.password_type === 'text' ? "password":"text";
   }
 

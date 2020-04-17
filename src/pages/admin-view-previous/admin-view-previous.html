@@ -7,15 +7,72 @@
 <ion-header>
   <ion-navbar>
     <ion-title>View</ion-title>
-    
+
   </ion-navbar>
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-searchbar [showCancelButton]="shouldShowCancel"  (ionCancel)="onCancel($event)" (ionInput)="getItems($event)" ></ion-searchbar>
+    <ion-badge item-end (click)="openFilterModal()">
+      <ion-icon name="funnel"></ion-icon>
+    </ion-badge>
+  </ion-item>
 
-  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-  <b *ngIf="allcomplaint.length === 0" style="text-align: center;    display: block;font-size: 2em; color:red;">Data not
-    Found</b>
+  <div *ngIf="openFilter">
+    <ion-list>
+      <ion-item>
+        <ion-label>Start Date</ion-label>
+        <ion-datetime [max]="maxDate" [pickerOptions]="customPickerOptionFrom" [(ngModel)]="data.startDate"
+          display-timezone="utc">X</ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>End Date</ion-label>
+        <ion-datetime [max]="maxDate" [min]="data.startDate" [pickerOptions]="customPickerOptionEndFrom"
+          [(ngModel)]="data.endDate" display-timezone="utc" (ionChange)="filterItem(data)" [disabled]="data.startDate">
+        </ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Status</ion-label>
+        <ion-select [(ngModel)]="data.status" (ionChange)="filterItem(data)">
+          <ion-option *ngFor="let s of status" [value]="s.value">
+            {{s.value}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <!-- <ion-list radio-group [(ngModel)]="data.searchBy">
+
+      <ion-item>
+        <ion-label>Party Name</ion-label>
+        <ion-radio  value="party"   ></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Engineer Name</ion-label>
+        <ion-radio value="engineer"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Machine No</ion-label>
+        <ion-radio value="machine" ></ion-radio>
+      </ion-item>
+    </ion-list> -->
+
+    <ion-list>
+      <ion-item *ngIf="data.searchBy" (input)="filterItem(data)">
+        <ion-input value="" [(ngModel)]="data.searchByText" [placeholder]="data.searchBy"></ion-input>
+      </ion-item> 
+      <ion-item>
+        <ion-label>Showing {{allcomplaint.length}} of {{totalRecord}} entries</ion-label>
+      </ion-item>
+      <ion-item *ngIf="allcomplaint.length === 0">
+        <ion-label>Data not Found</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+
   <div *ngFor="let c of allcomplaint">
     <ion-card>
       <ion-card-header>

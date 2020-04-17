@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ticketing.app.starter"
+    package="shubham.app.starter"
     android:hardwareAccelerated="true"
     android:versionCode="1"
     android:versionName="0.0.1" >
@@ -26,7 +26,7 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true" >
         <activity
-            android:name="ticketing.app.starter.MainActivity"
+            android:name="shubham.app.starter.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
             android:label="@string/activity_name"
             android:launchMode="singleTop"

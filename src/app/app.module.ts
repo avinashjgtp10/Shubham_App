@@ -27,6 +27,7 @@ import { EnggDetailsPage } from "../pages/engg-details/engg-details";
 import { AssignEnggModalPage } from "../pages/assign-engg-modal/assign-engg-modal"
 import { UpdateCustomerModalPage } from "../pages/update-customer-modal/update-customer-modal"
 
+
 //http call
 import { HttpClientModule } from '@angular/common/http'
 import { LoaderProvider } from '../providers/loader/loader';

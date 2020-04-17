@@ -16,7 +16,6 @@ export class ConvertMachinNamePipe implements PipeTransform {
   constructor(public rest: RestProvider) { }
 
   transform(value: string, ...args) {
-    console.log(value);
     return this.getDate(value);
   }
   getDate(val){

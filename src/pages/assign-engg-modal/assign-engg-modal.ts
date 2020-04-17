@@ -65,8 +65,6 @@ export class AssignEnggModalPage {
       }
     })
   }
-
-
   closeModal(){
     this.viewCtrl.dismiss({status:"dismiss"})
   }
