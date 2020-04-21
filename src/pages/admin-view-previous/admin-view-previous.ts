@@ -3,7 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest'
 import { AppSettings } from "../../app/app.settings"
 import { Observable } from 'rxjs';
-
+import * as papa from 'papaparse';
+import { FileTransformationProvider } from "../../providers/file-transformation/file-transformation"
 /**
  * Generated class for the AdminViewPreviousPage page.
  *
@@ -47,7 +48,7 @@ export class AdminViewPreviousPage {
   }
   maxDate: string = new Date().toISOString();
   status = AppSettings.status;
-  constructor(public rest: RestProvider, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public file:FileTransformationProvider,public rest: RestProvider, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -60,7 +61,6 @@ export class AdminViewPreviousPage {
   }
 
   initializeItems() {
-    console.log("calling ini")
     this.allcomplaint = []
     this.rest.getAllComplaint().subscribe((result: any) => {
       this.allcomplaint = result.data;
@@ -123,16 +123,7 @@ export class AdminViewPreviousPage {
     )
   }
   filterItem(data: any) {
-    console.log(data)
     this.allcomplaint = this.complaintArray.filter((item) => {
-      // if (this.data.searchBy) {
-      //   if(this.data.searchBy === "party"){
-      //     this.rest.getAllUsers().subscribe((partyData:any)=>{
-
-      //     })
-      //   }
-      //  }
-      // else {
         if ((data.status !== "") && (data.startDate !== "")) {
           return (item.c_status === data.status) && ((new Date(data.startDate) <= new Date(item.c_date)) && (new Date(data.endDate) >= new Date(item.c_date)));
         } else if (data.status && data.startDate === "") {
@@ -144,6 +135,13 @@ export class AdminViewPreviousPage {
     })
 
   }
+
+  convertToExcel(){
+    this.file.generateExcel(this.allcomplaint)
+
+  }
+
+
 
 
 }

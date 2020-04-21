@@ -3,6 +3,8 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';
+import { File } from '@ionic-native/file/ngx';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -32,6 +34,7 @@ import { UpdateCustomerModalPage } from "../pages/update-customer-modal/update-c
 import { HttpClientModule } from '@angular/common/http'
 import { LoaderProvider } from '../providers/loader/loader';
 import { ToastProvider } from '../providers/toast/toast';
+import { FileTransformationProvider } from '../providers/file-transformation/file-transformation'
 
 //Reusable Component
 import { HeaderComponent } from "../reusable_component/header/header_component"
@@ -110,7 +113,10 @@ import { DirectivesShowPasswordDirective } from "../directives/directives-show-p
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     RestProvider,
     LoaderProvider,
-    ToastProvider
+    ToastProvider,
+    FileTransformationProvider,
+    FileTransfer,
+    File
   ]
 })
 export class AppModule { }

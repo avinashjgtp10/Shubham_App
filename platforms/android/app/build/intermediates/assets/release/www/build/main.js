@@ -422,6 +422,120 @@ var AssignEnggModalPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminDashboardPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__admin_create_customer_admin_create_customer__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__admin_create_engg_admin_create_engg__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__admin_assign_engg_admin_assign_engg__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__admin_view_previous_admin_view_previous__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__cust_details_cust_details__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__engg_details_engg_details__ = __webpack_require__(172);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+/**
+ * Generated class for the AdminDashboardPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var AdminDashboardPage = /** @class */ (function () {
+    function AdminDashboardPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.label = "Admin";
+        this.tabData = [
+            { url: "../../assets/imgs/creatCust.jpeg",
+                title: "Create Customer",
+                title1: "Create Service Enginner",
+                event: "createCustomer",
+                class: "",
+                class1: "",
+                event1: "createService",
+                url1: "../../assets/imgs/serviceEngg.png" },
+            { url: "../../assets/imgs/assignService.png",
+                title: "Assign Enginner",
+                event: "assignEnginner",
+                class: "",
+                class1: "",
+                event1: "viewComplaint",
+                title1: "View Complaint",
+                url1: "../../assets/imgs/viewComplaint.png" },
+            { url: "../../assets/imgs/cust_details.png",
+                title: "Customer Details",
+                event: "custDetails",
+                class: "",
+                class1: "",
+                event1: "enggDetails",
+                title1: "Engineer Details ",
+                url1: "../../assets/imgs/engg_details.png" }
+        ];
+    }
+    AdminDashboardPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AdminDashboardPage');
+    };
+    AdminDashboardPage.prototype.goToHome = function (event) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__home_home__["a" /* HomePage */]);
+    };
+    AdminDashboardPage.prototype.tabEvent = function (value) {
+        if (value === "createCustomer") {
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__admin_create_customer_admin_create_customer__["a" /* AdminCreateCustomerPage */], { user_id: this.navParams.get("user_id") });
+        }
+        if (value === "custDetails") {
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_7__cust_details_cust_details__["a" /* CustDetailsPage */], { user_id: this.navParams.get("user_id") });
+        }
+        if (value === "assignEnginner") {
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__admin_assign_engg_admin_assign_engg__["a" /* AdminAssignEnggPage */], { user_id: this.navParams.get("user_id") });
+        }
+    };
+    AdminDashboardPage.prototype.tabEvent2 = function (value) {
+        if (value === "createService") {
+            console.log(value);
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__admin_create_engg_admin_create_engg__["a" /* AdminCreateEnggPage */], { user_id: this.navParams.get("user_id") });
+        }
+        if (value === "viewComplaint") {
+            console.log(value);
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__admin_view_previous_admin_view_previous__["a" /* AdminViewPreviousPage */], { user_id: this.navParams.get("user_id") });
+        }
+        if (value === "enggDetails") {
+            console.log(value);
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_8__engg_details_engg_details__["a" /* EnggDetailsPage */], { user_id: this.navParams.get("user_id") });
+        }
+    };
+    AdminDashboardPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-admin-dashboard',template:/*ion-inline-start:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/admin-dashboard/admin-dashboard.html"*/'<header-component (onClick)="goToHome($event)" [label]="label"></header-component>\n<ion-content>\n  <section class="container">\n    <ion-grid *ngFor="let d of tabData">\n      <tab [imgSrc1]="d.url" [imgSrc2]="d.url1" [title]="d.title" [title1]="d.title1" (onChange)="tabEvent(d.event)" (onChange1)="tabEvent2(d.event1)"></tab>\n    </ion-grid>\n  </section>\n</ion-content>'/*ion-inline-end:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/admin-dashboard/admin-dashboard.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+    ], AdminDashboardPage);
+    return AdminDashboardPage;
+}());
+
+//# sourceMappingURL=admin-dashboard.js.map
+
+/***/ }),
+
+/***/ 161:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminCreateCustomerPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
@@ -572,7 +686,7 @@ var AdminCreateCustomerPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 161:
+/***/ 162:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -693,120 +807,6 @@ var AdminCreateEnggPage = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=admin-create-engg.js.map
-
-/***/ }),
-
-/***/ 162:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminDashboardPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__admin_create_customer_admin_create_customer__ = __webpack_require__(160);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__admin_create_engg_admin_create_engg__ = __webpack_require__(161);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__admin_assign_engg_admin_assign_engg__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__admin_view_previous_admin_view_previous__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__cust_details_cust_details__ = __webpack_require__(171);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__engg_details_engg_details__ = __webpack_require__(172);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-
-
-/**
- * Generated class for the AdminDashboardPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var AdminDashboardPage = /** @class */ (function () {
-    function AdminDashboardPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.label = "Admin";
-        this.tabData = [
-            { url: "../../assets/imgs/creatCust.jpeg",
-                title: "Create Customer",
-                title1: "Create Service Enginner",
-                event: "createCustomer",
-                class: "",
-                class1: "",
-                event1: "createService",
-                url1: "../../assets/imgs/serviceEngg.png" },
-            { url: "../../assets/imgs/assignService.png",
-                title: "Assign Enginner",
-                event: "assignEnginner",
-                class: "",
-                class1: "",
-                event1: "viewComplaint",
-                title1: "View Complaint",
-                url1: "../../assets/imgs/viewComplaint.png" },
-            { url: "../../assets/imgs/cust_details.png",
-                title: "Customer Details",
-                event: "custDetails",
-                class: "",
-                class1: "",
-                event1: "enggDetails",
-                title1: "Engineer Details ",
-                url1: "../../assets/imgs/engg_details.png" }
-        ];
-    }
-    AdminDashboardPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad AdminDashboardPage');
-    };
-    AdminDashboardPage.prototype.goToHome = function (event) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__home_home__["a" /* HomePage */]);
-    };
-    AdminDashboardPage.prototype.tabEvent = function (value) {
-        if (value === "createCustomer") {
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__admin_create_customer_admin_create_customer__["a" /* AdminCreateCustomerPage */], { user_id: this.navParams.get("user_id") });
-        }
-        if (value === "custDetails") {
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_7__cust_details_cust_details__["a" /* CustDetailsPage */], { user_id: this.navParams.get("user_id") });
-        }
-        if (value === "assignEnginner") {
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__admin_assign_engg_admin_assign_engg__["a" /* AdminAssignEnggPage */], { user_id: this.navParams.get("user_id") });
-        }
-    };
-    AdminDashboardPage.prototype.tabEvent2 = function (value) {
-        if (value === "createService") {
-            console.log(value);
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__admin_create_engg_admin_create_engg__["a" /* AdminCreateEnggPage */], { user_id: this.navParams.get("user_id") });
-        }
-        if (value === "viewComplaint") {
-            console.log(value);
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__admin_view_previous_admin_view_previous__["a" /* AdminViewPreviousPage */], { user_id: this.navParams.get("user_id") });
-        }
-        if (value === "enggDetails") {
-            console.log(value);
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_8__engg_details_engg_details__["a" /* EnggDetailsPage */], { user_id: this.navParams.get("user_id") });
-        }
-    };
-    AdminDashboardPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-admin-dashboard',template:/*ion-inline-start:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/admin-dashboard/admin-dashboard.html"*/'<header-component (onClick)="goToHome($event)" [label]="label"></header-component>\n<ion-content>\n  <section class="container">\n    <ion-grid *ngFor="let d of tabData">\n      <tab [imgSrc1]="d.url" [imgSrc2]="d.url1" [title]="d.title" [title1]="d.title1" (onChange)="tabEvent(d.event)" (onChange1)="tabEvent2(d.event1)"></tab>\n    </ion-grid>\n  </section>\n</ion-content>'/*ion-inline-end:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/admin-dashboard/admin-dashboard.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
-    ], AdminDashboardPage);
-    return AdminDashboardPage;
-}());
-
-//# sourceMappingURL=admin-dashboard.js.map
 
 /***/ }),
 
@@ -1391,16 +1391,23 @@ var AdminViewPreviousPage = /** @class */ (function () {
         this.data = {
             startDate: "",
             endDate: "",
-            status: ""
+            status: "",
+            searchBy: "",
+            searchByText: ""
         };
         this.maxDate = new Date().toISOString();
         this.status = __WEBPACK_IMPORTED_MODULE_3__app_app_settings__["a" /* AppSettings */].status;
     }
     AdminViewPreviousPage.prototype.ionViewDidLoad = function () {
         this.initializeItems();
+        this.totalRecord = this.allcomplaint.length;
+    };
+    AdminViewPreviousPage.prototype.onCancel = function (ev) {
+        console.log(ev);
     };
     AdminViewPreviousPage.prototype.initializeItems = function () {
         var _this = this;
+        console.log("calling ini");
         this.allcomplaint = [];
         this.rest.getAllComplaint().subscribe(function (result) {
             _this.allcomplaint = result.data;
@@ -1413,22 +1420,43 @@ var AdminViewPreviousPage = /** @class */ (function () {
                 return ele;
             });
             _this.complaintArray = _this.allcomplaint;
+            _this.totalRecord = _this.allcomplaint.length;
         });
     };
     AdminViewPreviousPage.prototype.getItems = function (ev) {
+        var _this = this;
         // set val to the value of the searchbar
         var val = ev.target.value;
         // if the value is an empty string don't filter the items
         if (val && val.trim() != '') {
-            this.allcomplaint = this.allcomplaint.filter(function (item) {
-                if (parseInt(item.c_id) === parseInt(val)) {
-                    return parseInt(item.c_id) === parseInt(val);
+            var arr_1 = [];
+            this.rest.getAllUsers().subscribe(function (user) {
+                arr_1 = user.data.filter(function (el) {
+                    if (el.u_name === val || el.u_MachineNo === val) {
+                        return el.u_id;
+                    }
+                });
+                if (arr_1) {
+                    _this.allcomplaint = _this.allcomplaint.filter(function (item) {
+                        for (var i = 0; i < arr_1.length; i++) {
+                            if (parseInt(arr_1[i].u_id) === parseInt(item.c_assignTo)) {
+                                return parseInt(arr_1[i].u_id) === parseInt(item.c_assignTo);
+                            }
+                            if (parseInt(arr_1[i].u_id) === parseInt(item.c_assignBy)) {
+                                return parseInt(arr_1[i].u_id) === parseInt(item.c_assignBy);
+                            }
+                        }
+                    });
                 }
             });
         }
         if (val.length === 0) {
             this.initializeItems(); // Reset items back to all of the items
         }
+    };
+    AdminViewPreviousPage.prototype.getRealTimeUserData = function (value) {
+        this.rest.getAllUsers().subscribe(function (result) {
+        });
     };
     AdminViewPreviousPage.prototype.openFilterModal = function () {
         this.openFilter = !this.openFilter;
@@ -1439,7 +1467,15 @@ var AdminViewPreviousPage = /** @class */ (function () {
             (this.filterItem(this.data));
     };
     AdminViewPreviousPage.prototype.filterItem = function (data) {
+        console.log(data);
         this.allcomplaint = this.complaintArray.filter(function (item) {
+            // if (this.data.searchBy) {
+            //   if(this.data.searchBy === "party"){
+            //     this.rest.getAllUsers().subscribe((partyData:any)=>{
+            //     })
+            //   }
+            //  }
+            // else {
             if ((data.status !== "") && (data.startDate !== "")) {
                 return (item.c_status === data.status) && ((new Date(data.startDate) <= new Date(item.c_date)) && (new Date(data.endDate) >= new Date(item.c_date)));
             }
@@ -1449,16 +1485,16 @@ var AdminViewPreviousPage = /** @class */ (function () {
             else if ((data.status === "") && (data.startDate !== "")) {
                 return (new Date(data.startDate) <= new Date(item.c_date)) && (new Date(data.endDate) >= new Date(item.c_date));
             }
+            //}
         });
     };
     AdminViewPreviousPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-admin-view-previous',template:/*ion-inline-start:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/admin-view-previous/admin-view-previous.html"*/'<!--\n  Generated template for the AdminViewPreviousPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>View</ion-title>\n    \n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-item>\n    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n    <ion-badge item-end (click)="openFilterModal()"><ion-icon name="funnel"></ion-icon></ion-badge>\n  </ion-item>\n  \n  <div *ngIf="openFilter">\n    <ion-list>\n      <ion-item>\n        <ion-label>Start Date</ion-label>\n          <ion-datetime [max]="maxDate" [pickerOptions]="customPickerOptionFrom"  [(ngModel)]="data.startDate" display-timezone="utc" >X</ion-datetime>\n      </ion-item>\n      <ion-item>\n        <ion-label>End Date</ion-label>\n          <ion-datetime [max]="maxDate" [min]="data.startDate" [pickerOptions]="customPickerOptionEndFrom"    [(ngModel)]="data.endDate" display-timezone="utc" (ionChange)="filterItem(data)" [disabled]="data.startDate"></ion-datetime>\n      </ion-item>\n      <ion-item>\n        <ion-label>Status</ion-label>\n        <ion-select [(ngModel)]="data.status" (ionChange)="filterItem(data)">\n          <ion-option *ngFor="let s of status" [value]="s.value">\n            {{s.value}}</ion-option>\n        </ion-select>\n      </ion-item>\n    </ion-list> \n  </div>  \n\n  <span *ngIf="allcomplaint.length === 0" style="text-align: center;    display: block;font-size: 2em; color:red;">Data not\n    Found</span>\n\n  <div *ngFor="let c of allcomplaint">\n    <ion-card>\n      <ion-card-header>\n        <h2><b> {{c.c_id}}</b> </h2>\n      </ion-card-header>\n      <ion-card-content>\n        <ion-row>\n          <ion-col> {{c.c_desc}} </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>Date:</ion-col>\n          <ion-col>{{c.c_date | convertMachinName}}</ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>Status:</ion-col>\n          <ion-col>{{c.c_status}}</ion-col>\n        </ion-row>\n      </ion-card-content>\n    </ion-card>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/admin-view-previous/admin-view-previous.html"*/,
+            selector: 'page-admin-view-previous',template:/*ion-inline-start:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/admin-view-previous/admin-view-previous.html"*/'<!--\n  Generated template for the AdminViewPreviousPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>View</ion-title>\n\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-item>\n    <ion-searchbar [showCancelButton]="shouldShowCancel"  (ionCancel)="onCancel($event)" (ionInput)="getItems($event)" ></ion-searchbar>\n    <ion-badge item-end (click)="openFilterModal()">\n      <ion-icon name="funnel"></ion-icon>\n    </ion-badge>\n  </ion-item>\n\n  <div *ngIf="openFilter">\n    <ion-list>\n      <ion-item>\n        <ion-label>Start Date</ion-label>\n        <ion-datetime [max]="maxDate" [pickerOptions]="customPickerOptionFrom" [(ngModel)]="data.startDate"\n          display-timezone="utc">X</ion-datetime>\n      </ion-item>\n      <ion-item>\n        <ion-label>End Date</ion-label>\n        <ion-datetime [max]="maxDate" [min]="data.startDate" [pickerOptions]="customPickerOptionEndFrom"\n          [(ngModel)]="data.endDate" display-timezone="utc" (ionChange)="filterItem(data)" [disabled]="data.startDate">\n        </ion-datetime>\n      </ion-item>\n      <ion-item>\n        <ion-label>Status</ion-label>\n        <ion-select [(ngModel)]="data.status" (ionChange)="filterItem(data)">\n          <ion-option *ngFor="let s of status" [value]="s.value">\n            {{s.value}}</ion-option>\n        </ion-select>\n      </ion-item>\n    </ion-list>\n\n    <!-- <ion-list radio-group [(ngModel)]="data.searchBy">\n\n      <ion-item>\n        <ion-label>Party Name</ion-label>\n        <ion-radio  value="party"   ></ion-radio>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Engineer Name</ion-label>\n        <ion-radio value="engineer"></ion-radio>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Machine No</ion-label>\n        <ion-radio value="machine" ></ion-radio>\n      </ion-item>\n    </ion-list> -->\n\n    <ion-list>\n      <ion-item *ngIf="data.searchBy" (input)="filterItem(data)">\n        <ion-input value="" [(ngModel)]="data.searchByText" [placeholder]="data.searchBy"></ion-input>\n      </ion-item> \n      <ion-item>\n        <ion-label>Showing {{allcomplaint.length}} of {{totalRecord}} entries</ion-label>\n      </ion-item>\n      <ion-item *ngIf="allcomplaint.length === 0">\n        <ion-label>Data not Found</ion-label>\n      </ion-item>\n    </ion-list>\n  </div>\n\n\n  <div *ngFor="let c of allcomplaint">\n    <ion-card>\n      <ion-card-header>\n        <h2><b> {{c.c_id}}</b> </h2>\n      </ion-card-header>\n      <ion-card-content>\n        <ion-row>\n          <ion-col> {{c.c_desc}} </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>Date:</ion-col>\n          <ion-col>{{c.c_date | convertMachinName}}</ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>Status:</ion-col>\n          <ion-col>{{c.c_status}}</ion-col>\n        </ion-row>\n      </ion-card-content>\n    </ion-card>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/pages/admin-view-previous/admin-view-previous.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* RestProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* RestProvider */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* RestProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], AdminViewPreviousPage);
     return AdminViewPreviousPage;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=admin-view-previous.js.map
@@ -1846,7 +1882,7 @@ var map = {
 		16
 	],
 	"../pages/admin-create-customer/admin-create-customer.module": [
-		702,
+		704,
 		15
 	],
 	"../pages/admin-create-engg/admin-create-engg.module": [
@@ -1854,7 +1890,7 @@ var map = {
 		14
 	],
 	"../pages/admin-dashboard/admin-dashboard.module": [
-		704,
+		702,
 		13
 	],
 	"../pages/admin-view-previous/admin-view-previous.module": [
@@ -1886,11 +1922,11 @@ var map = {
 		7
 	],
 	"../pages/engg-accept-complaint/engg-accept-complaint.module": [
-		712,
+		713,
 		6
 	],
 	"../pages/engg-dashboard/engg-dashboard.module": [
-		713,
+		712,
 		5
 	],
 	"../pages/engg-details/engg-details.module": [
@@ -2059,9 +2095,9 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_engg_view_complaint_engg_view_complaint__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_engg_accept_complaint_engg_accept_complaint__ = __webpack_require__(164);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_engg_view_previous_engg_view_previous__ = __webpack_require__(166);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_admin_dashboard_admin_dashboard__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_admin_create_customer_admin_create_customer__ = __webpack_require__(160);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_admin_create_engg_admin_create_engg__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_admin_dashboard_admin_dashboard__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_admin_create_customer_admin_create_customer__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_admin_create_engg_admin_create_engg__ = __webpack_require__(162);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_admin_assign_engg_admin_assign_engg__ = __webpack_require__(158);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_admin_view_previous_admin_view_previous__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_cust_dashboard_cust_dashboard__ = __webpack_require__(167);
@@ -2162,9 +2198,9 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/admin-assign-engg/admin-assign-engg.module#AdminAssignEnggPageModule', name: 'AdminAssignEnggPage', segment: 'admin-assign-engg', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/admin-create-customer/admin-create-customer.module#AdminCreateCustomerPageModule', name: 'AdminCreateCustomerPage', segment: 'admin-create-customer', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/admin-create-engg/admin-create-engg.module#AdminCreateEnggPageModule', name: 'AdminCreateEnggPage', segment: 'admin-create-engg', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/admin-dashboard/admin-dashboard.module#AdminDashboardPageModule', name: 'AdminDashboardPage', segment: 'admin-dashboard', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/admin-create-engg/admin-create-engg.module#AdminCreateEnggPageModule', name: 'AdminCreateEnggPage', segment: 'admin-create-engg', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/admin-create-customer/admin-create-customer.module#AdminCreateCustomerPageModule', name: 'AdminCreateCustomerPage', segment: 'admin-create-customer', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/admin-view-previous/admin-view-previous.module#AdminViewPreviousPageModule', name: 'AdminViewPreviousPage', segment: 'admin-view-previous', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/assign-engg-modal/assign-engg-modal.module#AssignEnggModalPageModule', name: 'AssignEnggModalPage', segment: 'assign-engg-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/common-cart/common-cart.module#CommonCartPageModule', name: 'CommonCartPage', segment: 'common-cart', priority: 'low', defaultHistory: [] },
@@ -2172,8 +2208,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/cust-details/cust-details.module#CustDetailsPageModule', name: 'CustDetailsPage', segment: 'cust-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cust-raise-complaint/cust-raise-complaint.module#CustRaiseComplaintPageModule', name: 'CustRaiseComplaintPage', segment: 'cust-raise-complaint', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cust-view-complaint/cust-view-complaint.module#CustViewComplaintPageModule', name: 'CustViewComplaintPage', segment: 'cust-view-complaint', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/engg-accept-complaint/engg-accept-complaint.module#EnggAcceptComplaintPageModule', name: 'EnggAcceptComplaintPage', segment: 'engg-accept-complaint', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/engg-dashboard/engg-dashboard.module#EnggDashboardPageModule', name: 'EnggDashboardPage', segment: 'engg-dashboard', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/engg-accept-complaint/engg-accept-complaint.module#EnggAcceptComplaintPageModule', name: 'EnggAcceptComplaintPage', segment: 'engg-accept-complaint', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/engg-details/engg-details.module#EnggDetailsPageModule', name: 'EnggDetailsPage', segment: 'engg-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/engg-view-complaint/engg-view-complaint.module#EnggViewComplaintPageModule', name: 'EnggViewComplaintPage', segment: 'engg-view-complaint', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/engg-view-previous/engg-view-previous.module#EnggViewPreviousPageModule', name: 'EnggViewPreviousPage', segment: 'engg-view-previous', priority: 'low', defaultHistory: [] },
@@ -2234,7 +2270,7 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_rest_rest__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_loader_loader__ = __webpack_require__(324);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_toast_toast__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__admin_dashboard_admin_dashboard__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__admin_dashboard_admin_dashboard__ = __webpack_require__(160);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_forms__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__reusable_component_loader_page_loader__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__cust_dashboard_cust_dashboard__ = __webpack_require__(167);
@@ -2431,7 +2467,7 @@ var HeaderComponent = /** @class */ (function () {
     ], HeaderComponent.prototype, "onClick", void 0);
     HeaderComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'header-component',template:/*ion-inline-start:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/reusable_component/header/header_component.html"*/'<ion-header>\n    <ion-navbar hideBackButton>\n        <ion-title>\n            <ion-icon ios="ios-home" md="md-home"> {{label}} </ion-icon>\n        </ion-title>\n        <ion-buttons right>\n            <button ion-button icon-only (click)="onClickButton($event)">\n                <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>\n            </button>\n        </ion-buttons>\n    </ion-navbar>\n</ion-header>'/*ion-inline-end:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/reusable_component/header/header_component.html"*/
+            selector: 'header-component',template:/*ion-inline-start:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/reusable_component/header/header_component.html"*/'<ion-header>\n    <ion-navbar hideBackButton>\n        <ion-title>\n             {{label}} \n        </ion-title>\n        <ion-buttons right>\n            <button ion-button icon-only (click)="onClickButton($event)">\n                <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>\n            </button>\n        </ion-buttons>\n    </ion-navbar>\n</ion-header>'/*ion-inline-end:"/Users/avinash/Apps/complaints_tracker/App/Shubham_App/src/reusable_component/header/header_component.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], HeaderComponent);

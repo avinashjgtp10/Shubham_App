@@ -7,13 +7,18 @@
 <ion-header>
   <ion-navbar>
     <ion-title>View</ion-title>
-
+    <ion-buttons end>
+      <button ion-button icon-only (click)="convertToExcel()">
+          <ion-icon item-right name="download"></ion-icon>
+      </button>
+  </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <ion-item>
-    <ion-searchbar [showCancelButton]="shouldShowCancel"  (ionCancel)="onCancel($event)" (ionInput)="getItems($event)" ></ion-searchbar>
+    <ion-searchbar [showCancelButton]="shouldShowCancel" (ionCancel)="onCancel($event)" (ionInput)="getItems($event)">
+    </ion-searchbar>
     <ion-badge item-end (click)="openFilterModal()">
       <ion-icon name="funnel"></ion-icon>
     </ion-badge>
@@ -41,28 +46,10 @@
       </ion-item>
     </ion-list>
 
-    <!-- <ion-list radio-group [(ngModel)]="data.searchBy">
-
-      <ion-item>
-        <ion-label>Party Name</ion-label>
-        <ion-radio  value="party"   ></ion-radio>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Engineer Name</ion-label>
-        <ion-radio value="engineer"></ion-radio>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Machine No</ion-label>
-        <ion-radio value="machine" ></ion-radio>
-      </ion-item>
-    </ion-list> -->
-
     <ion-list>
       <ion-item *ngIf="data.searchBy" (input)="filterItem(data)">
         <ion-input value="" [(ngModel)]="data.searchByText" [placeholder]="data.searchBy"></ion-input>
-      </ion-item> 
+      </ion-item>
       <ion-item>
         <ion-label>Showing {{allcomplaint.length}} of {{totalRecord}} entries</ion-label>
       </ion-item>
