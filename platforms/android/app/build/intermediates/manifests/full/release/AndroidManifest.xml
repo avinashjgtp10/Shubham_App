@@ -18,6 +18,7 @@
         android:xlargeScreens="true" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:hardwareAccelerated="true"
@@ -38,6 +39,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name="de.appplant.cordova.emailcomposer.Provider"
+            android:authorities="shubham.app.starter.emailcomposer.provider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/emailcomposer_provider_paths" />
+        </provider>
     </application>
 
 </manifest>

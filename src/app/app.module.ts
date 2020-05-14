@@ -3,8 +3,11 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';
-import { File } from '@ionic-native/file/ngx';
+import { EmailComposer } from "@ionic-native/email-composer";
+import {FileTransfer,FileTransferObject} from '@ionic-native/file-transfer';
+import {File} from '@ionic-native/file';
+
+
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -21,7 +24,7 @@ import { AdminViewPreviousPage } from "../pages/admin-view-previous/admin-view-p
 import { CustDashboardPage } from "../pages/cust-dashboard/cust-dashboard"
 import { CustRaiseComplaintPage } from "../pages/cust-raise-complaint/cust-raise-complaint"
 import { CustViewComplaintPage } from "../pages/cust-view-complaint/cust-view-complaint"
-import { NgxDatatableModule} from "@swimlane/ngx-datatable"
+import { NgxDatatableModule } from "@swimlane/ngx-datatable"
 import { CustDetailsPage } from "../pages/cust-details/cust-details"
 import { EnggDetailsPage } from "../pages/engg-details/engg-details";
 
@@ -34,14 +37,12 @@ import { UpdateCustomerModalPage } from "../pages/update-customer-modal/update-c
 import { HttpClientModule } from '@angular/common/http'
 import { LoaderProvider } from '../providers/loader/loader';
 import { ToastProvider } from '../providers/toast/toast';
-import { FileTransformationProvider } from '../providers/file-transformation/file-transformation'
 
 //Reusable Component
 import { HeaderComponent } from "../reusable_component/header/header_component"
 import { PageLoader } from "../reusable_component/loader/page_loader";
 import { TabComponent } from "../components/tab/tab"
 import { ComponentsShowPasswordComponent } from "../components/components-show-password/components-show-password"
-
 
 //pipe
 import { ConvertMachinNamePipe } from "../pipes/convert-machin-name/convert-machin-name"
@@ -79,9 +80,9 @@ import { DirectivesShowPasswordDirective } from "../directives/directives-show-p
   ],
   imports: [
     BrowserModule,
-    
     IonicModule.forRoot(MyApp),
     HttpClientModule,
+
     NgxDatatableModule
   ],
   bootstrap: [IonicApp],
@@ -108,15 +109,16 @@ import { DirectivesShowPasswordDirective } from "../directives/directives-show-p
     UpdateCustomerModalPage
   ],
   providers: [
+    FileTransfer,  
+    FileTransferObject,  
+    File  ,
     StatusBar,
     SplashScreen,
+    EmailComposer,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     RestProvider,
     LoaderProvider,
-    ToastProvider,
-    FileTransformationProvider,
-    FileTransfer,
-    File
+    ToastProvider
   ]
 })
 export class AppModule { }

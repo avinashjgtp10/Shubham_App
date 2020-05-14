@@ -52,7 +52,7 @@
   "cordova-plugin-file-transfer": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-file-transfer"
+      "id": "cordova-plugin-file-transfer@^1.7.1"
     },
     "is_top_level": true,
     "variables": {}
@@ -60,9 +60,17 @@
   "cordova-plugin-file": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-file@>=5.0.0"
+      "id": "cordova-plugin-file@^6.0.2"
     },
-    "is_top_level": false,
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-email-composer": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-email-composer@0.9.2"
+    },
+    "is_top_level": true,
     "variables": {}
   }
 }

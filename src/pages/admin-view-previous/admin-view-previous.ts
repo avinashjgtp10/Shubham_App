@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest'
 import { AppSettings } from "../../app/app.settings"
+import { AlertController } from 'ionic-angular';
+import { ToastProvider } from "../../providers/toast/toast"
+import { PageLoader } from "../../reusable_component/loader/page_loader"
 import { Observable } from 'rxjs';
-import * as papa from 'papaparse';
-import { FileTransformationProvider } from "../../providers/file-transformation/file-transformation"
+
 /**
  * Generated class for the AdminViewPreviousPage page.
  *
@@ -20,6 +22,7 @@ import { FileTransformationProvider } from "../../providers/file-transformation/
 export class AdminViewPreviousPage {
   totalRecord: any;
   allcomplaint = []
+  @ViewChild(PageLoader) loadPage: PageLoader;
   complaintArray = []
   openFilter: boolean = false
   customPickerOptionFrom = {
@@ -48,7 +51,7 @@ export class AdminViewPreviousPage {
   }
   maxDate: string = new Date().toISOString();
   status = AppSettings.status;
-  constructor(public file:FileTransformationProvider,public rest: RestProvider, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private toast: ToastProvider,private alertCtrl: AlertController, public rest: RestProvider, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -56,7 +59,7 @@ export class AdminViewPreviousPage {
     this.totalRecord = this.allcomplaint.length;
   }
 
-  onCancel(ev:any){
+  onCancel(ev: any) {
     console.log(ev)
   }
 
@@ -81,26 +84,27 @@ export class AdminViewPreviousPage {
     // set val to the value of the searchbar
     const val = ev.target.value;
     // if the value is an empty string don't filter the items
-    if (val && val.trim() != ''  ) {
-      let arr=[];
-      this.rest.getAllUsers().subscribe((user:any) =>{
-        arr=user.data.filter((el:any)=>{
-         if(el.u_name === val || el.u_MachineNo === val){
-           return el.u_id
-         }
+    if (val && val.trim() != '') {
+      let arr = [];
+      this.rest.getAllUsers().subscribe((user: any) => {
+        arr = user.data.filter((el: any) => {
+          if (el.u_name === val || el.u_MachineNo === val) {
+            return el.u_id
+          }
         })
-        if(arr){
+        if (arr) {
           this.allcomplaint = this.allcomplaint.filter((item) => {
-              for(let i=0;i<arr.length;i++){
-                if(parseInt(arr[i].u_id) === parseInt(item.c_assignTo) ){
-                return parseInt(arr[i].u_id) === parseInt(item.c_assignTo) 
+            for (let i = 0; i < arr.length; i++) {
+              if (parseInt(arr[i].u_id) === parseInt(item.c_assignTo)) {
+                return parseInt(arr[i].u_id) === parseInt(item.c_assignTo)
               }
-              if(parseInt(arr[i].u_id) === parseInt(item.c_assignBy) ){
-                return parseInt(arr[i].u_id) === parseInt(item.c_assignBy) 
+              if (parseInt(arr[i].u_id) === parseInt(item.c_assignBy)) {
+                return parseInt(arr[i].u_id) === parseInt(item.c_assignBy)
               }
             }
-           }) 
-        } })
+          })
+        }
+      })
 
     }
     if (val.length === 0) {
@@ -108,8 +112,8 @@ export class AdminViewPreviousPage {
     }
   }
 
-  getRealTimeUserData(value:any){
-     this.rest.getAllUsers().subscribe((result:any)=>{
+  getRealTimeUserData(value: any) {
+    this.rest.getAllUsers().subscribe((result: any) => {
 
     })
   }
@@ -124,21 +128,61 @@ export class AdminViewPreviousPage {
   }
   filterItem(data: any) {
     this.allcomplaint = this.complaintArray.filter((item) => {
-        if ((data.status !== "") && (data.startDate !== "")) {
-          return (item.c_status === data.status) && ((new Date(data.startDate) <= new Date(item.c_date)) && (new Date(data.endDate) >= new Date(item.c_date)));
-        } else if (data.status && data.startDate === "") {
-          return (item.c_status === data.status)
-        } else if ((data.status === "") && (data.startDate !== "")) {
-          return (new Date(data.startDate) <= new Date(item.c_date)) && (new Date(data.endDate) >= new Date(item.c_date))
-        }
+      if ((data.status !== "") && (data.startDate !== "")) {
+        return (item.c_status === data.status) && ((new Date(data.startDate) <= new Date(item.c_date)) && (new Date(data.endDate) >= new Date(item.c_date)));
+      } else if (data.status && data.startDate === "") {
+        return (item.c_status === data.status)
+      } else if ((data.status === "") && (data.startDate !== "")) {
+        return (new Date(data.startDate) <= new Date(item.c_date)) && (new Date(data.endDate) >= new Date(item.c_date))
+      }
       //}
     })
 
   }
 
-  convertToExcel(){
-    this.file.generateExcel(this.allcomplaint)
+  convertToExcel() {
 
+    let alert = this.alertCtrl.create({
+      title: 'Send Excel to mail',
+      inputs: [
+        {
+          name: 'email',
+          placeholder: 'Enter your email id '
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Login',
+          handler: data => {
+            this.loadPage.showLoader()
+            let payload = {
+              "email": data.email,
+              "data": this.allcomplaint
+            }
+            this.rest.sendDataExcel(payload).subscribe((result: any) => {
+              console.log(result)
+              if (result.status === "success"){
+                this.toast.showToast("email sent successfully");
+                this.loadPage.hideLoader()
+              }else{
+                this.toast.showToast("Please enter valid email");
+                this.loadPage.hideLoader()
+              }
+
+            })
+            
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
 

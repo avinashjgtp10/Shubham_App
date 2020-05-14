@@ -8,31 +8,34 @@
   },
   "installed_plugins": {
     "cordova-plugin-device": {
-      "PACKAGE_NAME": "io.ionic.starter"
+      "PACKAGE_NAME": "shubham.app.starter"
     },
-    "cordova-plugin-ionic-keyboard": {
-      "PACKAGE_NAME": "io.ionic.starter"
+    "cordova-plugin-email-composer": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "shubham.app.starter"
     },
-    "cordova-plugin-ionic-webview": {
-      "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+",
-      "PACKAGE_NAME": "io.ionic.starter"
-    },
-    "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "io.ionic.starter"
-    },
-    "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "io.ionic.starter"
-    },
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "io.ionic.starter"
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "shubham.app.starter"
     },
     "cordova-plugin-file-transfer": {
       "PACKAGE_NAME": "shubham.app.starter"
-    }
-  },
-  "dependent_plugins": {
-    "cordova-plugin-file": {
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "shubham.app.starter"
+    },
+    "cordova-plugin-ionic-webview": {
+      "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+",
+      "PACKAGE_NAME": "shubham.app.starter"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "shubham.app.starter"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "shubham.app.starter"
+    },
+    "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "shubham.app.starter"
     }
-  }
+  },
+  "dependent_plugins": {}
 }

@@ -77,5 +77,8 @@ export class RestProvider {
     return this.http.post(AppSettings.baseUrl + 'users/deleteUserById', data);    
   }
 
+  public sendDataExcel(data:any){
+    return this.http.post(AppSettings.baseUrl + 'users/excelToMail', data);
+  }
 
 }

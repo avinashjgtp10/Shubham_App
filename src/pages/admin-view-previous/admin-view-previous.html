@@ -4,11 +4,12 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+<page-loader></page-loader>
 <ion-header>
   <ion-navbar>
     <ion-title>View</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only (click)="convertToExcel()">
+      <button ion-button icon-only (click)="convertToExcel()" >
           <ion-icon item-right name="download"></ion-icon>
       </button>
   </ion-buttons>
@@ -16,10 +17,11 @@
 </ion-header>
 
 <ion-content>
+  
   <ion-item>
     <ion-searchbar [showCancelButton]="shouldShowCancel" (ionCancel)="onCancel($event)" (ionInput)="getItems($event)">
     </ion-searchbar>
-    <ion-badge item-end (click)="openFilterModal()">
+    <ion-badge item-end (click)="openFilterModal()" >
       <ion-icon name="funnel"></ion-icon>
     </ion-badge>
   </ion-item>
